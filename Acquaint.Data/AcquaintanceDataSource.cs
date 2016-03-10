@@ -21,7 +21,7 @@ namespace Acquaint.Data
 
 		public async Task SaveItem(Acquaintance item)
 		{
-			await EnsureInitialized();
+			await EnsureInitialized().ConfigureAwait(false);
 
 			if (_Acquaintances.Any(c => c.Id == item.Id))
 			{
@@ -33,28 +33,28 @@ namespace Acquaint.Data
 				_Acquaintances.Add(item);
 			}
 
-			await WriteFile(_RootFolder, _FileName, JsonConvert.SerializeObject(_Acquaintances));
+			await WriteFile(_RootFolder, _FileName, JsonConvert.SerializeObject(_Acquaintances)).ConfigureAwait(false);
 		}
 
 		public async Task DeleteItem(string id)
 		{
-			await EnsureInitialized();
+			await EnsureInitialized().ConfigureAwait(false);
 
 			_Acquaintances.RemoveAll(c => c.Id == id);
 
-			await WriteFile(_RootFolder, _FileName, JsonConvert.SerializeObject(_Acquaintances));
+			await WriteFile(_RootFolder, _FileName, JsonConvert.SerializeObject(_Acquaintances)).ConfigureAwait(false);
 		}
 
 		public async Task<Acquaintance> GetItem(string id)
 		{
-			await EnsureInitialized();
+			await EnsureInitialized().ConfigureAwait(false);
 
-			return await Task.FromResult(_Acquaintances.SingleOrDefault(x => x.Id == id));
+			return await Task.FromResult(_Acquaintances.SingleOrDefault(x => x.Id == id)).ConfigureAwait(false);
 		}
 
 		public async Task<ICollection<Acquaintance>> GetItems(int start = 0, int count = 100, string query = "")
 		{
-			await EnsureInitialized();
+			await EnsureInitialized().ConfigureAwait(false);
 
 			await Latency;
 
@@ -83,20 +83,20 @@ namespace Acquaint.Data
 
 		async Task Initialize()
 		{
-			if (!await FileExists(_RootFolder, _FileName))
+			if (!await FileExists(_RootFolder, _FileName).ConfigureAwait(false))
 			{
-				await CreateFile(_RootFolder, _FileName);
+				await CreateFile(_RootFolder, _FileName).ConfigureAwait(false);
 			}
 
-			if (string.IsNullOrWhiteSpace(await GetFileContents(await GetFile(_RootFolder, _FileName))))
+			if (string.IsNullOrWhiteSpace(await GetFileContents(await GetFile(_RootFolder, _FileName).ConfigureAwait(false)).ConfigureAwait(false)))
 			{
 				_Acquaintances = GenerateAcquaintances();
 
-				await WriteFile(_RootFolder, _FileName, JsonConvert.SerializeObject(_Acquaintances));
+				await WriteFile(_RootFolder, _FileName, JsonConvert.SerializeObject(_Acquaintances)).ConfigureAwait(false);
 			}
 			else
 			{
-				_Acquaintances = JsonConvert.DeserializeObject<List<Acquaintance>>(await GetFileContents(await GetFile(_RootFolder, _FileName)));    
+				_Acquaintances = JsonConvert.DeserializeObject<List<Acquaintance>>(await GetFileContents(await GetFile(_RootFolder, _FileName).ConfigureAwait(false)).ConfigureAwait(false));    
 			}
 
 			_IsInitialized = true;
@@ -105,7 +105,7 @@ namespace Acquaint.Data
 		async Task EnsureInitialized()
 		{
 			if (!_IsInitialized)
-				await Initialize();
+				await Initialize().ConfigureAwait(false);
 		}
 
 		/// <summary>
@@ -151,29 +151,29 @@ namespace Acquaint.Data
 
 		static async Task<bool> FileExists(IFolder folder, string fileName)
 		{
-			return await Task.FromResult<bool>(await folder.CheckExistsAsync(fileName) == ExistenceCheckResult.FileExists);
+			return await Task.FromResult<bool>(await folder.CheckExistsAsync(fileName) == ExistenceCheckResult.FileExists).ConfigureAwait(false);
 		}
 
 		static async Task<IFile> CreateFile(IFolder folder, string fileName)
 		{
-			return await folder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists);
+			return await folder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists).ConfigureAwait(false);
 		}
 
 		static async Task<IFile> GetFile(IFolder folder, string fileName)
 		{
-			return await folder.GetFileAsync(fileName);
+			return await folder.GetFileAsync(fileName).ConfigureAwait(false);
 		}
 
 		static async Task WriteFile(IFolder folder, string fileName, string fileContents)
 		{
-			var file = await GetFile(folder, fileName);
+			var file = await GetFile(folder, fileName).ConfigureAwait(false);
 
-			await file.WriteAllTextAsync(fileContents);
+			await file.WriteAllTextAsync(fileContents).ConfigureAwait(false);
 		}
 
 		static async Task<string> GetFileContents(IFile file)
 		{
-			return await file.ReadAllTextAsync();
+			return await file.ReadAllTextAsync().ConfigureAwait(false);
 		}
 
 		Task Latency
