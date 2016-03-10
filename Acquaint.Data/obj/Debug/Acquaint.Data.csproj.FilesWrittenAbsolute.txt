@@ -1,0 +1,9 @@
+/Users/joesauve/Projects/app-acquaint/Acquaint.Data/obj/Debug/.NETPortable,Version=v4.5,Profile=Profile78.AssemblyAttribute.cs
+/Users/joesauve/Projects/app-acquaint/Acquaint.Data/bin/Debug/Acquaint.Data.dll.mdb
+/Users/joesauve/Projects/app-acquaint/Acquaint.Data/bin/Debug/Acquaint.Data.dll
+/Users/joesauve/Projects/app-acquaint/Acquaint.Data/obj/Debug/Acquaint.Data.dll
+/Users/joesauve/Projects/app-acquaint/Acquaint.Data/obj/Debug/Acquaint.Data.dll.mdb
+/Users/joesauve/Projects/app-acquaint/Acquaint.Data/bin/Debug/PCLStorage.dll
+/Users/joesauve/Projects/app-acquaint/Acquaint.Data/bin/Debug/PCLStorage.Abstractions.dll
+/Users/joesauve/Projects/app-acquaint/Acquaint.Data/bin/Debug/Newtonsoft.Json.dll
+/Users/joesauve/Projects/app-acquaint/Acquaint.Data/bin/Debug/MvvmHelpers.dll
