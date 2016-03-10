@@ -34,53 +34,73 @@
 									</StackLayout>
 								</ContentView>
 								<ContentView IsEnabled="{Binding HasAddress}" IsVisible="{Binding HasAddress}">
-									<StackLayout>
-										<AbsoluteLayout>
-											<ContentView Padding="0, 0, 10, 0" AbsoluteLayout.LayoutFlags="XProportional" AbsoluteLayout.LayoutBounds="0,0,AutoSize,AutoSize">
-												<StackLayout Spacing="0">
-													<Label Text="{Binding Acquaintance.Street}" FontSize="Small" />
-													<Label Text="{Binding Acquaintance.City}" FontSize="Micro" />
-													<Label Text="{Binding Acquaintance.StatePostal}" FontSize="Micro" />
-												</StackLayout>
-											</ContentView>
-											<Image Source="directions" Aspect="AspectFit" HeightRequest="25" WidthRequest="25" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1,0.5,AutoSize,Autosize">
+									<Grid>
+										<Grid.RowDefinitions>
+									        <RowDefinition Height="Auto" />
+									    </Grid.RowDefinitions>
+									    <Grid.ColumnDefinitions>
+									        <ColumnDefinition Width="*" />
+									        <ColumnDefinition Width="20" />
+									    </Grid.ColumnDefinitions>
+									    <Grid.Children>
+										    <StackLayout Spacing="0" Grid.Row="0" Grid.Column="0">
+												<Label Text="{Binding Acquaintance.Street}" FontSize="Small" LineBreakMode="TailTruncation" />
+												<Label Text="{Binding Acquaintance.City}" FontSize="Micro" LineBreakMode="TailTruncation" />
+												<Label Text="{Binding Acquaintance.StatePostal}" FontSize="Micro" LineBreakMode="TailTruncation" />
+											</StackLayout>
+											<Image Source="directions" Aspect="AspectFit" HeightRequest="25" WidthRequest="25" Grid.Row="0" Grid.Column="1">
 												<Image.GestureRecognizers>
 													<TapGestureRecognizer Command="{Binding GetDirectionsCommand}" />
 												</Image.GestureRecognizers>
 											</Image>
-										</AbsoluteLayout>
-									</StackLayout>
+									    </Grid.Children>
+									</Grid>
 								</ContentView>
 								<ContentView HeightRequest="1" BackgroundColor="Silver" IsEnabled="{Binding HasAddress}" IsVisible="{Binding HasAddress}" />
 								<ContentView IsEnabled="{Binding HasPhoneNumber}" IsVisible="{Binding HasPhoneNumber}">
-									<AbsoluteLayout>
-										<Label Text="{Binding Acquaintance.Phone}" FontSize="Small" HeightRequest="20" VerticalTextAlignment="Center" AbsoluteLayout.LayoutFlags="XProportional" AbsoluteLayout.LayoutBounds="0,0,AutoSize,AutoSize" />
-										<StackLayout Orientation="Horizontal" Spacing="15" AbsoluteLayout.LayoutFlags="XProportional,HeightProportional" AbsoluteLayout.LayoutBounds="1,0,AutoSize,1">
-											<Image Source="message" Aspect="AspectFit" HeightRequest="20" WidthRequest="20">
+									<Grid>
+										<Grid.RowDefinitions>
+									        <RowDefinition Height="Auto" />
+									    </Grid.RowDefinitions>
+									    <Grid.ColumnDefinitions>
+									        <ColumnDefinition Width="*" />
+									        <ColumnDefinition Width="20" />
+									        <ColumnDefinition Width="20" />
+									    </Grid.ColumnDefinitions>
+									    <Grid.Children>
+										    <Label Text="{Binding Acquaintance.Phone}" FontSize="Small" HeightRequest="20" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" Grid.Row="0" Grid.Column="0" />
+											<Image Source="message" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" Grid.Row="0" Grid.Column="1">
 												<Image.GestureRecognizers>
 													<TapGestureRecognizer Command="{Binding MessageNumberCommand}" NumberOfTapsRequired="1" />
 												</Image.GestureRecognizers>
 											</Image>
-											<Image Source="phone" Aspect="AspectFit" HeightRequest="20" WidthRequest="20">
+											<Image Source="phone" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" Grid.Row="0" Grid.Column="2">
 												<Image.GestureRecognizers>
 													<TapGestureRecognizer Command="{Binding DialNumberCommand}" NumberOfTapsRequired="1" />
 												</Image.GestureRecognizers>
 											</Image>
-										</StackLayout>
-									</AbsoluteLayout>
+									    </Grid.Children>
+									</Grid>
 								</ContentView>
 								<ContentView HeightRequest="1" BackgroundColor="Silver" IsEnabled="{Binding HasPhoneNumber}" IsVisible="{Binding HasPhoneNumber}" />
 								<ContentView IsEnabled="{Binding HasEmailAddress}" IsVisible="{Binding HasEmailAddress}">
-									<AbsoluteLayout>
-										<ContentView Padding="0">
-											<Label Text="{Binding Acquaintance.Email}" FontSize="Micro" HeightRequest="20" LineBreakMode="TailTruncation" VerticalTextAlignment="Center" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" AbsoluteLayout.LayoutBounds="0,0,AutoSize,AutoSize" />
-										</ContentView>
-										<Image Source="email" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" AbsoluteLayout.LayoutFlags="XProportional,HeightProportional" AbsoluteLayout.LayoutBounds="1,0,AutoSize,1">
-											<Image.GestureRecognizers>
-												<TapGestureRecognizer Command="{Binding EmailCommand}" NumberOfTapsRequired="1" />
-											</Image.GestureRecognizers>
-										</Image>
-									</AbsoluteLayout>
+									<Grid>
+										<Grid.RowDefinitions>
+									        <RowDefinition Height="Auto" />
+									    </Grid.RowDefinitions>
+									    <Grid.ColumnDefinitions>
+									        <ColumnDefinition Width="*" />
+									        <ColumnDefinition Width="20" />
+									    </Grid.ColumnDefinitions>
+									    <Grid.Children>
+										    <Label Text="{Binding Acquaintance.Email}" FontSize="Micro" HeightRequest="20" LineBreakMode="TailTruncation" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0" />
+										    <Image Source="email" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" Grid.Row="0" Grid.Column="1">
+												<Image.GestureRecognizers>
+													<TapGestureRecognizer Command="{Binding EmailCommand}" NumberOfTapsRequired="1" />
+												</Image.GestureRecognizers>
+											</Image>
+									    </Grid.Children>
+									</Grid>
 								</ContentView>
 							</StackLayout>
 						</ContentView>
