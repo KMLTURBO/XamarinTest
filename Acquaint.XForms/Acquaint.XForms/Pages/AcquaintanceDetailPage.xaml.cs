@@ -33,8 +33,6 @@ namespace Acquaint.XForms
         {
             if (ViewModel.HasAddress)
             {
-
-                ViewModel.IsBusy = true;
                 Map.IsVisible = false;
 
                 // set to a default position
@@ -48,8 +46,6 @@ namespace Acquaint.XForms
                 {
                     ViewModel.DisplayGeocodingError();
 
-                    ViewModel.IsBusy = false;
-
                     // TODO: Show insights
                     Insights.Report(ex, Insights.Severity.Error);
 
@@ -60,8 +56,6 @@ namespace Acquaint.XForms
                 if (position.Latitude == 0 && position.Longitude == 0)
                 {
                     ViewModel.DisplayGeocodingError();
-
-                    ViewModel.IsBusy = false;
 
                     return;
                 }
@@ -80,7 +74,6 @@ namespace Acquaint.XForms
                 Map.MoveToRegion(MapSpan.FromCenterAndRadius(pin.Position, Distance.FromMiles(10)));
 
                 Map.IsVisible = true;
-                ViewModel.IsBusy = false;
             }
         }
     }
