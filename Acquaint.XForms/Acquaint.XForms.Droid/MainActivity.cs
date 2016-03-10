@@ -1,7 +1,6 @@
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using Acquaint.XForms.Droid;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms;
 using ImageCircle.Forms.Plugin.Droid;

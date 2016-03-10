@@ -1,8 +1,0 @@
-Z:\app-acquaint\Acquaint.Util\bin\Debug\Acquaint.Util.dll
-Z:\app-acquaint\Acquaint.Util\bin\Debug\Acquaint.Util.pdb
-Z:\app-acquaint\Acquaint.Util\obj\Debug\Acquaint.Util.dll
-Z:\app-acquaint\Acquaint.Util\obj\Debug\Acquaint.Util.pdb
-Z:\app-acquaint\Acquaint.Util\obj\Debug\Acquaint.Util.dll.mdb
-Z:\app-acquaint\Acquaint.Util\bin\Debug\Acquaint.Util.dll.mdb
-Z:\app-acquaint\Acquaint.Util\obj\Debug\Acquaint.Util.dll.mdb
-Z:\app-acquaint\Acquaint.Util\bin\Debug\Acquaint.Util.dll.mdb

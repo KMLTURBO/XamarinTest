@@ -1,5 +1,0 @@
-/Users/joesauve/Projects/app-acquaint/Acquaint.Util/obj/Debug/.NETPortable,Version=v4.5,Profile=Profile78.AssemblyAttribute.cs
-/Users/joesauve/Projects/app-acquaint/Acquaint.Util/bin/Debug/Acquaint.Util.dll.mdb
-/Users/joesauve/Projects/app-acquaint/Acquaint.Util/bin/Debug/Acquaint.Util.dll
-/Users/joesauve/Projects/app-acquaint/Acquaint.Util/obj/Debug/Acquaint.Util.dll
-/Users/joesauve/Projects/app-acquaint/Acquaint.Util/obj/Debug/Acquaint.Util.dll.mdb
