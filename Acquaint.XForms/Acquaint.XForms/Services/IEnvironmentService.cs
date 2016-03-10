@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Acquaint.XForms
+﻿namespace Acquaint.XForms
 {
     public interface IEnvironmentService
     {

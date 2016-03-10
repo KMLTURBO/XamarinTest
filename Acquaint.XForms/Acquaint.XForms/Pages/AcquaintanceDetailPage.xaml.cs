@@ -1,7 +1,6 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using System.Threading.Tasks;
-using FormsToolkit;
 using Xamarin;
 using System;
 
