@@ -71,15 +71,11 @@ namespace Acquaint.XForms
 
         Command _SaveAcquaintanceCommand;
 
-        /// <summary>
-        /// Command to save acquaintance
-        /// </summary>
         public Command SaveAcquaintanceCommand
         {
             get
             {
-                return _SaveAcquaintanceCommand ??
-                    (_SaveAcquaintanceCommand = new Command(() => ExecuteSaveAcquaintanceCommand()));
+                return _SaveAcquaintanceCommand ?? (_SaveAcquaintanceCommand = new Command(() => ExecuteSaveAcquaintanceCommand()));
             }
         }
 
@@ -134,9 +130,6 @@ namespace Acquaint.XForms
 
         Command _EditAcquaintanceCommand;
 
-        /// <summary>
-        /// Command to edit acquaintance
-        /// </summary>
         public Command EditAcquaintanceCommand
         {
             get
@@ -154,9 +147,6 @@ namespace Acquaint.XForms
 
         Command _DeleteAcquaintanceCommand;
 
-        /// <summary>
-        /// Command to delete acquaintance
-        /// </summary>
         public Command DeleteAcquaintanceCommand => _DeleteAcquaintanceCommand ??
                                                     (_DeleteAcquaintanceCommand = new Command(ExecuteDeleteAcquaintanceCommand));
 
@@ -184,9 +174,6 @@ namespace Acquaint.XForms
 
         Command _DialNumberCommand;
 
-        /// <summary>
-        /// Command to dial acquaintance phone number
-        /// </summary>
         public Command DialNumberCommand => _DialNumberCommand ??
                                             (_DialNumberCommand = new Command(ExecuteDialNumberCommand));
 
@@ -214,9 +201,6 @@ namespace Acquaint.XForms
 
         Command _MessageNumberCommand;
 
-        /// <summary>
-        /// Command to message acquaintance phone number
-        /// </summary>
         public Command MessageNumberCommand => _MessageNumberCommand ??
                                                (_MessageNumberCommand = new Command(ExecuteMessageNumberCommand));
 
@@ -244,9 +228,6 @@ namespace Acquaint.XForms
 
         Command _EmailCommand;
 
-        /// <summary>
-        /// Command to email acquaintance
-        /// </summary>
         public Command EmailCommand => _EmailCommand ??
                                        (_EmailCommand = new Command(ExecuteEmailCommandCommand));
 
@@ -352,10 +333,7 @@ namespace Acquaint.XForms
 
             return p;
         }
-
-        /// <summary>
-        /// Subscribes to "SaveAcquaintance" messages
-        /// </summary>
+			
         void SubscribeToSaveAcquaintanceMessages()
         {
             // This subscribes to the "SaveAcquaintance" message
@@ -372,10 +350,7 @@ namespace Acquaint.XForms
                     }
                 });
         }
-
-        /// <summary>
-        /// Subscribes to "AcquaintanceLocationUpdated" messages
-        /// </summary>
+			
         void SubscribeToAcquaintanceLocationUpdatedMessages()
         {
             // update the map when receiving the AcquaintanceLocationUpdated message
