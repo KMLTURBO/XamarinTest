@@ -40,11 +40,11 @@
 									    </Grid.RowDefinitions>
 									    <Grid.ColumnDefinitions>
 									        <ColumnDefinition Width="*" />
-									        <ColumnDefinition Width="20" />
+									        <ColumnDefinition Width="25" />
 									    </Grid.ColumnDefinitions>
 									    <Grid.Children>
 										    <StackLayout Spacing="0" Grid.Row="0" Grid.Column="0">
-												<Label Text="{Binding Acquaintance.Street}" FontSize="Small" LineBreakMode="TailTruncation" />
+												<Label Text="{Binding Acquaintance.Street}" FontSize="Micro" LineBreakMode="TailTruncation" />
 												<Label Text="{Binding Acquaintance.City}" FontSize="Micro" LineBreakMode="TailTruncation" />
 												<Label Text="{Binding Acquaintance.StatePostal}" FontSize="Micro" LineBreakMode="TailTruncation" />
 											</StackLayout>
@@ -65,6 +65,7 @@
 									    <Grid.ColumnDefinitions>
 									        <ColumnDefinition Width="*" />
 									        <ColumnDefinition Width="20" />
+									        <ColumnDefinition Width="5" />
 									        <ColumnDefinition Width="20" />
 									    </Grid.ColumnDefinitions>
 									    <Grid.Children>
@@ -74,7 +75,8 @@
 													<TapGestureRecognizer Command="{Binding MessageNumberCommand}" NumberOfTapsRequired="1" />
 												</Image.GestureRecognizers>
 											</Image>
-											<Image Source="phone" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" Grid.Row="0" Grid.Column="2">
+											<ContentView WidthRequest="5" Grid.Row="0" Grid.Column="2" />
+											<Image Source="phone" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" Grid.Row="0" Grid.Column="3">
 												<Image.GestureRecognizers>
 													<TapGestureRecognizer Command="{Binding DialNumberCommand}" NumberOfTapsRequired="1" />
 												</Image.GestureRecognizers>
