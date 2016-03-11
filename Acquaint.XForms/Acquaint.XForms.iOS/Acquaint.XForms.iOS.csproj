@@ -9,6 +9,7 @@
     <RootNamespace>Acquaint.XForms.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <XamarinInsightsApiKey>cae5ebd3854d2a623d778aded4218b442246b09f</XamarinInsightsApiKey>
+    <AssemblyName>AcquaintXFormsiOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
