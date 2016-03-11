@@ -16,7 +16,6 @@
     <AssemblyName>Acquaint.XForms.Droid</AssemblyName>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
-    <XamarinInsightsApiKey>cae5ebd3854d2a623d778aded4218b442246b09f</XamarinInsightsApiKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -119,9 +118,6 @@
     </Reference>
     <Reference Include="ImageCircle.Forms.Plugin.Abstractions">
       <HintPath>..\..\packages\Xam.Plugins.Forms.ImageCircle.1.4.1\lib\MonoAndroid10\ImageCircle.Forms.Plugin.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Insights">
-      <HintPath>..\..\packages\Xamarin.Insights.1.11.4\lib\MonoAndroid10\Xamarin.Insights.dll</HintPath>
     </Reference>
     <Reference Include="FormsToolkit.Android">
       <HintPath>..\..\packages\FormsToolkit.1.1.14\lib\MonoAndroid10\FormsToolkit.Android.dll</HintPath>

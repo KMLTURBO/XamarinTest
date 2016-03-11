@@ -14,7 +14,6 @@ namespace Acquaint.XForms.Droid
 	{
 		protected override void OnCreate (Bundle bundle)
 		{
-			Insights.Initialize (XamarinInsights.ApiKey, this);
 			// this line is essential to wiring up the toolbar styles defined in ~/Resources/layout/toolbar.axml
 			FormsAppCompatActivity.ToolbarResource = Resource.Layout.toolbar;
 			base.OnCreate (bundle);

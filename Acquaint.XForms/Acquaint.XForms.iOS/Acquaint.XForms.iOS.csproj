@@ -8,8 +8,6 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Acquaint.XForms.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <XamarinInsightsApiKey>cae5ebd3854d2a623d778aded4218b442246b09f</XamarinInsightsApiKey>
-    <AssemblyName>AcquaintXFormsiOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -127,12 +125,6 @@
     <Reference Include="ImageCircle.Forms.Plugin.Abstractions">
       <HintPath>..\..\packages\Xam.Plugins.Forms.ImageCircle.1.4.1\lib\Xamarin.iOS10\ImageCircle.Forms.Plugin.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Insights">
-      <HintPath>..\..\packages\Xamarin.Insights.1.11.4\lib\Xamarin.iOS10\Xamarin.Insights.dll</HintPath>
-    </Reference>
-    <Reference Include="PLCrashReporterUnifiedBinding">
-      <HintPath>..\..\packages\Xamarin.Insights.1.11.4\lib\Xamarin.iOS10\PLCrashReporterUnifiedBinding.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Forms.Platform.iOS">
       <HintPath>..\..\packages\Xamarin.Forms.2.1.0.6526\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
     </Reference>
@@ -182,7 +174,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.0.1.6505\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.0.1.6505\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
-  <Import Project="..\..\packages\Xamarin.Insights.1.11.4\build\Xamarin.iOS10\Xamarin.Insights.targets" Condition="Exists('..\packages\Xamarin.Insights.1.11.4\build\Xamarin.iOS10\Xamarin.Insights.targets')" />
   <Import Project="..\..\packages\Xamarin.Forms.2.1.0.6526\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.1.0.6526\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <ItemGroup>
     <Folder Include="Renderers\" />
