@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acquaint.Data", "Acquaint.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acquaint.Util", "Acquaint.Util\Acquaint.Util.csproj", "{1D18D929-1B53-4AF9-9499-14ABB26D257F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acquaint.XForms.WinPhone81", "Acquaint.XForms.WinPhone81\Acquaint.XForms.WinPhone81.csproj", "{A29CBD10-4D7A-4F6C-A5B0-97D3EDC39A2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acquaint.XForms.WinPhone81", "Acquaint.XForms\Acquaint.XForms.WinPhone81\Acquaint.XForms.WinPhone81.csproj", "{A29CBD10-4D7A-4F6C-A5B0-97D3EDC39A2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
