@@ -47,7 +47,7 @@ namespace Acquaint.XForms
                     ViewModel.DisplayGeocodingError();
 
                     // TODO: Show insights
-                    Insights.Report(ex, Insights.Severity.Error);
+                    //Insights.Report(ex, Insights.Severity.Error);
 
                     return;
                 }

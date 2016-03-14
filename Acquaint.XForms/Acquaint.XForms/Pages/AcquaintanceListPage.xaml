@@ -101,7 +101,7 @@
                         <ContentView Padding="3" WidthRequest="54">
                           <AbsoluteLayout>
                             <ActivityIndicator IsEnabled="{Binding IsLoading, Source={x:Reference ProfilePhoto}}" IsVisible="{Binding IsLoading, Source={x:Reference ProfilePhoto}}" IsRunning="{Binding IsLoading, Source={x:Reference ProfilePhoto}}" HeightRequest="54" WidthRequest="54" VerticalOptions="Center" HorizontalOptions="Center" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0.5,0.5,1,1" />
-                            <ic:CircleImage Source="{Binding SmallPhotoUrl}" x:Name="ProfilePhoto" BorderColor="#547799" BorderThickness="2" HeightRequest="50" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="{Binding IsLoading, Source={x:Reference ProfilePhoto}, Converter={StaticResource BooleanInverter}}" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize" />
+                            <ic:CircleImage Source="{Binding SmallPhotoUrl, StringFormat='Assets/{0}'}" x:Name="ProfilePhoto" BorderColor="#547799" BorderThickness="2" HeightRequest="50" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="{Binding IsLoading, Source={x:Reference ProfilePhoto}, Converter={StaticResource BooleanInverter}}" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize" />
                           </AbsoluteLayout>
                         </ContentView>
                         <ContentView Padding="10,0,0,0">

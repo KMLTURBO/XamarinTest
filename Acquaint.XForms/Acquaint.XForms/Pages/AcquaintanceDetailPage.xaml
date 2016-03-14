@@ -23,7 +23,9 @@
 							<ColumnDefinition Width="62*" />
 						</Grid.ColumnDefinitions>
 						<AbsoluteLayout Grid.Row="0" Grid.Column="0">
-							<ic:CircleImage Source="{Binding Acquaintance.PhotoUrl}" x:Name="ProfilePhoto" BorderColor="#547799" BorderThickness="5" WidthRequest="115" HeightRequest="115" IsVisible="{Binding IsLoading, Source={x:Reference ProfilePhoto}, Converter={StaticResource BooleanInverter}}" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5, AutoSize, AutoSize" />
+							<ic:CircleImage Source="{Binding Acquaintance.PhotoUrl}" x:Name="ProfilePhoto" BorderColor="#547799" BorderThickness="5" WidthRequest="115" HeightRequest="115" IsVisible="{Binding IsLoading, Source={x:Reference ProfilePhoto}, Converter={StaticResource BooleanInverter}}" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5, AutoSize, AutoSize">
+                <ic:CircleImage.Source />
+              </ic:CircleImage>
 						</AbsoluteLayout>
 						<ContentView Padding="5, 0, 0, 0" Grid.Row="0" Grid.Column="1">
 							<StackLayout Spacing="10">
