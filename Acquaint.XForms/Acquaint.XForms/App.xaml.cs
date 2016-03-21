@@ -1,8 +1,7 @@
-﻿using FormsToolkit;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation (XamlCompilationOptions.Compile)]
+//[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
 namespace Acquaint.XForms
 {
@@ -39,25 +38,25 @@ namespace Acquaint.XForms
         /// </summary>
         static void SubscribeToDisplayAlertMessages()
         {
-            MessagingService.Current.Subscribe<MessagingServiceAlert>(MessageKeys.DisplayAlert, async (service, info) =>
-                {
-                    var task = Current?.MainPage?.DisplayAlert(info.Title, info.Message, info.Cancel);
-                    if (task != null)
-                    {
-                        await task;
-                        info?.OnCompleted?.Invoke();
-                    }
-                });
+            //MessagingService.Current.Subscribe<MessagingServiceAlert>(MessageKeys.DisplayAlert, async (service, info) =>
+            //    {
+            //        var task = Current?.MainPage?.DisplayAlert(info.Title, info.Message, info.Cancel);
+            //        if (task != null)
+            //        {
+            //            await task;
+            //            info?.OnCompleted?.Invoke();
+            //        }
+            //    });
 
-            MessagingService.Current.Subscribe<MessagingServiceQuestion>(MessageKeys.DisplayQuestion, async (service, info) =>
-                {
-                    var task = Current?.MainPage?.DisplayAlert(info.Title, info.Question, info.Positive, info.Negative);
-                    if (task != null)
-                    {
-                        var result = await task;
-                        info?.OnCompleted?.Invoke(result);
-                    }
-                });
+            //MessagingService.Current.Subscribe<MessagingServiceQuestion>(MessageKeys.DisplayQuestion, async (service, info) =>
+            //    {
+            //        var task = Current?.MainPage?.DisplayAlert(info.Title, info.Question, info.Positive, info.Negative);
+            //        if (task != null)
+            //        {
+            //            var result = await task;
+            //            info?.OnCompleted?.Invoke(result);
+            //        }
+            //    });
         }
     }
 }

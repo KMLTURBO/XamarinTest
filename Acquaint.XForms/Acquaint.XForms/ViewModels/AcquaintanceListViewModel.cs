@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Acquaint.Data;
 using Acquaint.Util;
-using FormsToolkit;
 using MvvmHelpers;
 using Plugin.Messaging;
 using Xamarin.Forms;
@@ -144,12 +143,12 @@ namespace Acquaint.XForms
             }
             else
             {
-                MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
-                    { 
-                        Title = "Simulator Not Supported",
-                        Message = "Phone calls are not supported in the iOS simulator.",
-                        Cancel = "OK"
-                    });
+                //MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
+                //    { 
+                //        Title = "Simulator Not Supported",
+                //        Message = "Phone calls are not supported in the iOS simulator.",
+                //        Cancel = "OK"
+                //    });
             }
         }
 
@@ -186,12 +185,12 @@ namespace Acquaint.XForms
             }
             else
             {
-                MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
-                    { 
-                        Title = "Simulator Not Supported",
-                        Message = "Messaging is not supported in the iOS simulator.",
-                        Cancel = "OK"
-                    });
+                //MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
+                //    { 
+                //        Title = "Simulator Not Supported",
+                //        Message = "Messaging is not supported in the iOS simulator.",
+                //        Cancel = "OK"
+                //    });
             }
         }
 
@@ -228,12 +227,12 @@ namespace Acquaint.XForms
             }
             else
             {
-                MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
-                    { 
-                        Title = "Simulator Not Supported",
-                        Message = "Email composition is not supported in the iOS simulator.",
-                        Cancel = "OK"
-                    });
+                //MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
+                //    { 
+                //        Title = "Simulator Not Supported",
+                //        Message = "Email composition is not supported in the iOS simulator.",
+                //        Cancel = "OK"
+                //    });
             }
         }
 
@@ -243,16 +242,16 @@ namespace Acquaint.XForms
         void SubscribeToSaveAcquaintanceMessages()
         {
             // This subscribes to the "SaveAcquaintance" message, and then inserts or updates the clisnts accordingly
-            MessagingService.Current.Subscribe<Acquaintance>(MessageKeys.SaveAcquaintance, async (service, acquaintance) =>
-                {
-                    IsBusy = true;
+            //MessagingService.Current.Subscribe<Acquaintance>(MessageKeys.SaveAcquaintance, async (service, acquaintance) =>
+            //    {
+            //        IsBusy = true;
 
-                    await DataSource.SaveItem(acquaintance);
+            //        await DataSource.SaveItem(acquaintance);
 
-                    await FetchAcquaintances();
+            //        await FetchAcquaintances();
 
-                    IsBusy = false;
-                });
+            //        IsBusy = false;
+            //    });
         }
 
         /// <summary>
@@ -261,16 +260,16 @@ namespace Acquaint.XForms
         void SubscribeToDeleteAcquaintanceMessages()
         {
             // This subscribes to the "DeleteAcquaintance" message, and then deletes the acquaintance accordingly
-            MessagingService.Current.Subscribe<Acquaintance>(MessageKeys.DeleteAcquaintance, async (service, acquaintance) =>
-                {
-                    IsBusy = true;
+            //MessagingService.Current.Subscribe<Acquaintance>(MessageKeys.DeleteAcquaintance, async (service, acquaintance) =>
+            //    {
+            //        IsBusy = true;
 
-                    await DataSource.DeleteItem(acquaintance.Id);
+            //        await DataSource.DeleteItem(acquaintance.Id);
 
-                    await FetchAcquaintances();
+            //        await FetchAcquaintances();
 
-                    IsBusy = false;
-                });
+            //        IsBusy = false;
+            //    });
         }
     }
 }

@@ -1,20 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using Windows.Foundation.Metadata;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.ViewManagement;
 
 namespace Acquaint.XForms.UWP
 {
@@ -61,6 +53,8 @@ namespace Acquaint.XForms.UWP
 
                 Xamarin.Forms.Forms.Init(e);
 
+                Xamarin.FormsMaps.Init("UW0peICp3gljJyhqQKFZ~R3XF1I5BvWmWmkD4ujytTA~AoUOqpk2nJB-Wh7wH-9S-zaG-w6sygLitXugNOqm71wx_nc6WHIt6Lb29gyTU04X");
+
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Load state from previously suspended application
@@ -80,11 +74,39 @@ namespace Acquaint.XForms.UWP
             // Ensure the current window is active
             Window.Current.Activate();
 
-            var titleBar = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().TitleBar;
-
-            titleBar.BackgroundColor = Color.FromArgb(255, 0, 120, 0);
-            titleBar.ForegroundColor = Colors.White;
+            SetTitleBarStatusBarColor();
         }
+
+        void SetTitleBarStatusBarColor()
+        {
+            //PC customization
+            if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.ApplicationView"))
+            {
+                var titleBar = ApplicationView.GetForCurrentView().TitleBar;
+                if (titleBar != null)
+                {
+                    titleBar.ButtonBackgroundColor = Color.FromArgb(255, 23, 40, 57);
+                    titleBar.ButtonForegroundColor = Colors.White;
+                    titleBar.BackgroundColor = Color.FromArgb(255, 23, 40, 57);
+                    titleBar.ForegroundColor = Colors.White;
+                }
+            }
+
+            //Mobile customization
+            if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+            {
+
+                var statusBar = StatusBar.GetForCurrentView();
+                if (statusBar != null)
+                {
+                    statusBar.BackgroundOpacity = 1;
+                    statusBar.BackgroundColor = Color.FromArgb(255, 23, 40, 57);
+                    statusBar.ForegroundColor = Colors.White;
+                }
+            }
+        }
+
+
 
         /// <summary>
         /// Invoked when Navigation to a certain page fails

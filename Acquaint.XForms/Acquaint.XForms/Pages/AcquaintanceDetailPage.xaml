@@ -6,109 +6,64 @@
 		</ResourceDictionary>
 	</ContentPage.Resources>
 	<ContentPage.ToolbarItems>
-		<ToolbarItem Text="Edit" Icon="edit" Command="{Binding EditAcquaintanceCommand}" />
+		<ToolbarItem Text="Edit" Icon="edit.png" Command="{Binding EditAcquaintanceCommand}" />
 	</ContentPage.ToolbarItems>
 	<ContentPage.Content>
 		<AbsoluteLayout>
 			<StackLayout Spacing="0" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
-				<ContentView Padding="10,10,10,10">
-					
-					<Grid>
-						<Grid.RowDefinitions>
-							<RowDefinition Height="Auto" />
-						</Grid.RowDefinitions>
-						<!-- The Grid column widths approximate the golden ratio -->
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="38*" />
-							<ColumnDefinition Width="62*" />
-						</Grid.ColumnDefinitions>
-						<AbsoluteLayout Grid.Row="0" Grid.Column="0">
-							<ic:CircleImage Source="{Binding Acquaintance.PhotoUrl}" x:Name="ProfilePhoto" BorderColor="#547799" BorderThickness="5" WidthRequest="115" HeightRequest="115" IsVisible="{Binding IsLoading, Source={x:Reference ProfilePhoto}, Converter={StaticResource BooleanInverter}}" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5, AutoSize, AutoSize">
-                <ic:CircleImage.Source />
-              </ic:CircleImage>
+				<ContentView Padding="10">
+					<StackLayout Orientation="Horizontal" Spacing="10">
+						<AbsoluteLayout>
+							<Image Source="{Binding Acquaintance.PhotoUrl}" x:Name="ProfilePhoto" WidthRequest="115" HeightRequest="115" IsVisible="{Binding IsLoading, Source={x:Reference ProfilePhoto}, Converter={StaticResource BooleanInverter}}" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5, AutoSize, AutoSize" />
 						</AbsoluteLayout>
-						<ContentView Padding="5, 0, 0, 0" Grid.Row="0" Grid.Column="1">
-							<StackLayout Spacing="10">
-								<ContentView>
+						<StackLayout Spacing="10">
+							<ContentView>
+								<StackLayout Spacing="0">
+									<Label Text="{Binding Acquaintance.Company}" />
+									<Label Text="{Binding Acquaintance.JobTitle}" FontSize="Small" TextColor="Silver" />
+								</StackLayout>
+							</ContentView>
+							<ContentView IsEnabled="{Binding HasAddress}" IsVisible="{Binding HasAddress}">
+								<StackLayout Orientation="Horizontal" Spacing="10">
+									<Image Source="directions.png" Aspect="AspectFit" HeightRequest="20" WidthRequest="20">
+										<Image.GestureRecognizers>
+											<TapGestureRecognizer Command="{Binding GetDirectionsCommand}" />
+										</Image.GestureRecognizers>
+									</Image>
 									<StackLayout Spacing="0">
-										<Label Text="{Binding Acquaintance.Company}" />
-										<Label Text="{Binding Acquaintance.JobTitle}" FontSize="Small" TextColor="Silver" />
+										<Label Text="{Binding Acquaintance.Street}" FontSize="Micro" LineBreakMode="TailTruncation" />
+										<Label Text="{Binding Acquaintance.City}" FontSize="Micro" LineBreakMode="TailTruncation" />
+										<Label Text="{Binding Acquaintance.StatePostal}" FontSize="Micro" LineBreakMode="TailTruncation" />
 									</StackLayout>
-								</ContentView>
-								<ContentView IsEnabled="{Binding HasAddress}" IsVisible="{Binding HasAddress}">
-									<Grid>
-										<Grid.RowDefinitions>
-									        <RowDefinition Height="Auto" />
-									    </Grid.RowDefinitions>
-									    <Grid.ColumnDefinitions>
-									        <ColumnDefinition Width="*" />
-									        <ColumnDefinition Width="25" />
-									    </Grid.ColumnDefinitions>
-									    <Grid.Children>
-										    <StackLayout Spacing="0" Grid.Row="0" Grid.Column="0">
-												<Label Text="{Binding Acquaintance.Street}" FontSize="Micro" LineBreakMode="TailTruncation" />
-												<Label Text="{Binding Acquaintance.City}" FontSize="Micro" LineBreakMode="TailTruncation" />
-												<Label Text="{Binding Acquaintance.StatePostal}" FontSize="Micro" LineBreakMode="TailTruncation" />
-											</StackLayout>
-											<Image Source="directions" Aspect="AspectFit" HeightRequest="25" WidthRequest="25" Grid.Row="0" Grid.Column="1">
-												<Image.GestureRecognizers>
-													<TapGestureRecognizer Command="{Binding GetDirectionsCommand}" />
-												</Image.GestureRecognizers>
-											</Image>
-									    </Grid.Children>
-									</Grid>
-								</ContentView>
-								<ContentView HeightRequest="1" BackgroundColor="Silver" IsEnabled="{Binding HasAddress}" IsVisible="{Binding HasAddress}" />
-								<ContentView IsEnabled="{Binding HasPhoneNumber}" IsVisible="{Binding HasPhoneNumber}">
-									<Grid>
-										<Grid.RowDefinitions>
-									        <RowDefinition Height="Auto" />
-									    </Grid.RowDefinitions>
-									    <Grid.ColumnDefinitions>
-									        <ColumnDefinition Width="*" />
-									        <ColumnDefinition Width="20" />
-									        <ColumnDefinition Width="5" />
-									        <ColumnDefinition Width="20" />
-									    </Grid.ColumnDefinitions>
-									    <Grid.Children>
-										    <Label Text="{Binding Acquaintance.Phone}" FontSize="Small" HeightRequest="20" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" Grid.Row="0" Grid.Column="0" />
-											<Image Source="message" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" Grid.Row="0" Grid.Column="1">
-												<Image.GestureRecognizers>
-													<TapGestureRecognizer Command="{Binding MessageNumberCommand}" NumberOfTapsRequired="1" />
-												</Image.GestureRecognizers>
-											</Image>
-											<ContentView WidthRequest="5" Grid.Row="0" Grid.Column="2" />
-											<Image Source="phone" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" Grid.Row="0" Grid.Column="3">
-												<Image.GestureRecognizers>
-													<TapGestureRecognizer Command="{Binding DialNumberCommand}" NumberOfTapsRequired="1" />
-												</Image.GestureRecognizers>
-											</Image>
-									    </Grid.Children>
-									</Grid>
-								</ContentView>
-								<ContentView HeightRequest="1" BackgroundColor="Silver" IsEnabled="{Binding HasPhoneNumber}" IsVisible="{Binding HasPhoneNumber}" />
-								<ContentView IsEnabled="{Binding HasEmailAddress}" IsVisible="{Binding HasEmailAddress}">
-									<Grid>
-										<Grid.RowDefinitions>
-									        <RowDefinition Height="Auto" />
-									    </Grid.RowDefinitions>
-									    <Grid.ColumnDefinitions>
-									        <ColumnDefinition Width="*" />
-									        <ColumnDefinition Width="20" />
-									    </Grid.ColumnDefinitions>
-									    <Grid.Children>
-										    <Label Text="{Binding Acquaintance.Email}" FontSize="Micro" HeightRequest="20" LineBreakMode="TailTruncation" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0" />
-										    <Image Source="email" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" Grid.Row="0" Grid.Column="1">
-												<Image.GestureRecognizers>
-													<TapGestureRecognizer Command="{Binding EmailCommand}" NumberOfTapsRequired="1" />
-												</Image.GestureRecognizers>
-											</Image>
-									    </Grid.Children>
-									</Grid>
-								</ContentView>
-							</StackLayout>
-						</ContentView>
-					</Grid>
+								</StackLayout>
+							</ContentView>
+							<ContentView IsEnabled="{Binding HasPhoneNumber}" IsVisible="{Binding HasPhoneNumber}">
+								<StackLayout Orientation="Horizontal" Spacing="10">
+									<Image Source="message.png" Aspect="AspectFit" HeightRequest="20" WidthRequest="20">
+										<Image.GestureRecognizers>
+											<TapGestureRecognizer Command="{Binding MessageNumberCommand}" NumberOfTapsRequired="1" />
+										</Image.GestureRecognizers>
+									</Image>
+									<Label Text="{Binding Acquaintance.Phone}" FontSize="Small" HeightRequest="20" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" />
+									<Image Source="phone.png" Aspect="AspectFit" HeightRequest="20" WidthRequest="20">
+										<Image.GestureRecognizers>
+											<TapGestureRecognizer Command="{Binding DialNumberCommand}" NumberOfTapsRequired="1" />
+										</Image.GestureRecognizers>
+									</Image>
+								</StackLayout>
+							</ContentView>
+							<ContentView IsEnabled="{Binding HasEmailAddress}" IsVisible="{Binding HasEmailAddress}">
+								<StackLayout Orientation="Horizontal" Spacing="10">
+									<Image Source="email.png" Aspect="AspectFit" HeightRequest="20" WidthRequest="20">
+										<Image.GestureRecognizers>
+											<TapGestureRecognizer Command="{Binding EmailCommand}" NumberOfTapsRequired="1" />
+										</Image.GestureRecognizers>
+									</Image>
+									<Label Text="{Binding Acquaintance.Email}" FontSize="Micro" HeightRequest="20" LineBreakMode="TailTruncation" VerticalTextAlignment="Center" />
+								</StackLayout>
+							</ContentView>
+						</StackLayout>
+					</StackLayout>
 				</ContentView>
 				<ContentView HeightRequest="1" BackgroundColor="Silver" />
 				<AbsoluteLayout VerticalOptions="FillAndExpand">
@@ -120,7 +75,7 @@
 					</ContentView>
 					<AbsoluteLayout IsEnabled="{Binding HasAddress}" IsVisible="{Binding HasAddress}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1.0, 1.0">
 						<ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.2, AutoSize" />
-						<maps:Map x:Name="Map" IsVisible="false" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1.0, 1.0" />
+						<maps:Map x:Name="AcquaintanceMap" IsVisible="false" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1.0, 1.0" />
 					</AbsoluteLayout>
 				</AbsoluteLayout>
 			</StackLayout>

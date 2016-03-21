@@ -2,7 +2,6 @@
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
-using ImageCircle.Forms.Plugin.iOS;
 using Xamarin;
 
 namespace Acquaint.XForms.iOS
@@ -20,7 +19,7 @@ namespace Acquaint.XForms.iOS
 
             ConfigureTheming();
 
-            ImageCircleRenderer.Init();
+            //ImageCircleRenderer.Init();
 
             #if ENABLE_TEST_CLOUD
             Calabash.Start();

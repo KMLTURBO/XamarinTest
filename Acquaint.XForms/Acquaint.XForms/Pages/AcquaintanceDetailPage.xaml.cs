@@ -1,7 +1,6 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using System.Threading.Tasks;
-using Xamarin;
 using System;
 
 namespace Acquaint.XForms
@@ -33,7 +32,7 @@ namespace Acquaint.XForms
         {
             if (ViewModel.HasAddress)
             {
-                Map.IsVisible = false;
+                AcquaintanceMap.IsVisible = false;
 
                 // set to a default position
                 Position position;
@@ -45,9 +44,6 @@ namespace Acquaint.XForms
                 catch (Exception ex)
                 {
                     ViewModel.DisplayGeocodingError();
-
-                    // TODO: Show insights
-                    //Insights.Report(ex, Insights.Severity.Error);
 
                     return;
                 }
@@ -67,13 +63,13 @@ namespace Acquaint.XForms
                     Address = ViewModel.Acquaintance.AddressString 
                 };
 
-                Map.Pins.Clear();
+                AcquaintanceMap.Pins.Clear();
 
-                Map.Pins.Add(pin);
+                AcquaintanceMap.Pins.Add(pin);
 
-                Map.MoveToRegion(MapSpan.FromCenterAndRadius(pin.Position, Distance.FromMiles(10)));
+                AcquaintanceMap.MoveToRegion(MapSpan.FromCenterAndRadius(pin.Position, Distance.FromMiles(10)));
 
-                Map.IsVisible = true;
+                AcquaintanceMap.IsVisible = true;
             }
         }
     }

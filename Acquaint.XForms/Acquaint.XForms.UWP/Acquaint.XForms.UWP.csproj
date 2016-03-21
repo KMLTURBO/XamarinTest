@@ -108,37 +108,44 @@
     <None Include="Acquaint.XForms.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\alvingray.jpg" />
-    <Content Include="Assets\anntemple.jpg" />
-    <Content Include="Assets\benjaminjones.jpg" />
-    <Content Include="Assets\brentmason.jpg" />
-    <Content Include="Assets\danielgranville.jpg" />
-    <Content Include="Assets\danieljones.jpg" />
-    <Content Include="Assets\douglasgreenly.jpg" />
-    <Content Include="Assets\ericgrant.jpg" />
-    <Content Include="Assets\evanarmstead.jpg" />
-    <Content Include="Assets\floydbell.jpg" />
-    <Content Include="Assets\ivandiaz.jpg" />
-    <Content Include="Assets\jamesjones.jpg" />
-    <Content Include="Assets\jennifergillespie.jpg" />
-    <Content Include="Assets\jesuscardell.jpg" />
-    <Content Include="Assets\joanmancum.jpg" />
-    <Content Include="Assets\johnboone.jpg" />
-    <Content Include="Assets\josephgrimes.jpg" />
-    <Content Include="Assets\josephmeeks.jpg" />
-    <Content Include="Assets\leonmuks.jpg" />
-    <Content Include="Assets\leoparson.jpg" />
-    <Content Include="Assets\margaretcargill.jpg" />
-    <Content Include="Assets\margaretkidd.jpg" />
-    <Content Include="Assets\michelleherring.jpg" />
-    <Content Include="Assets\michellewilson.jpg" />
-    <Content Include="Assets\monicagreen.jpg" />
-    <Content Include="Assets\placeholderProfileImage.png" />
-    <Content Include="Assets\richardhogan.jpg" />
-    <Content Include="Assets\staceyvaldovinos.jpg" />
-    <Content Include="Assets\thomaswhite.jpg" />
-    <Content Include="Assets\vanessathornton.jpg" />
-    <Content Include="Assets\wilmawoolley.jpg" />
+    <Content Include="add.png" />
+    <Content Include="alvingray.jpg" />
+    <Content Include="anntemple.jpg" />
+    <Content Include="benjaminjones.jpg" />
+    <Content Include="brentmason.jpg" />
+    <Content Include="danielgranville.jpg" />
+    <Content Include="danieljones.jpg" />
+    <Content Include="directions.png" />
+    <Content Include="douglasgreenly.jpg" />
+    <Content Include="edit.png" />
+    <Content Include="email.png" />
+    <Content Include="ericgrant.jpg" />
+    <Content Include="evanarmstead.jpg" />
+    <Content Include="floydbell.jpg" />
+    <Content Include="ivandiaz.jpg" />
+    <Content Include="jamesjones.jpg" />
+    <Content Include="jennifergillespie.jpg" />
+    <Content Include="jesuscardell.jpg" />
+    <Content Include="joanmancum.jpg" />
+    <Content Include="johnboone.jpg" />
+    <Content Include="josephgrimes.jpg" />
+    <Content Include="josephmeeks.jpg" />
+    <Content Include="leonmuks.jpg" />
+    <Content Include="leoparson.jpg" />
+    <Content Include="margaretcargill.jpg" />
+    <Content Include="margaretkidd.jpg" />
+    <Content Include="message.png" />
+    <Content Include="michelleherring.jpg" />
+    <Content Include="michellewilson.jpg" />
+    <Content Include="monicagreen.jpg" />
+    <Content Include="phone.png" />
+    <Content Include="placeholderProfileImage.png" />
+    <Content Include="richardhogan.jpg" />
+    <Content Include="save.png" />
+    <Content Include="staceyvaldovinos.jpg" />
+    <Content Include="thomaswhite.jpg" />
+    <Content Include="vanessathornton.jpg" />
+    <Content Include="wilmawoolley.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -163,6 +170,14 @@
       <Project>{55cedcd6-e2d6-48eb-b9c6-a0e74016dce0}</Project>
       <Name>Acquaint.XForms</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="WindowsDesktop, Version=10.0.10586.0">
+      <Name>Windows Desktop Extensions for the UWP</Name>
+    </SDKReference>
+    <SDKReference Include="WindowsMobile, Version=10.0.10586.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
+    </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

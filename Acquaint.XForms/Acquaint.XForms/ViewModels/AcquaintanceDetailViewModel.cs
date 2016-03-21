@@ -1,9 +1,7 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Acquaint.Data;
 using Acquaint.Util;
-using FormsToolkit;
 using Plugin.ExternalMaps;
 using Plugin.ExternalMaps.Abstractions;
 using Plugin.Messaging;
@@ -83,25 +81,25 @@ namespace Acquaint.XForms
         {
             if (string.IsNullOrWhiteSpace(Acquaintance.LastName) || string.IsNullOrWhiteSpace(Acquaintance.FirstName))
             {
-                MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
-                    {
-                        Title = "Invalid name!", 
-                        Message = "A acquaintance must have both a first and last name.",
-                        Cancel = "OK"
-                    });
+                //MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
+                //    {
+                //        Title = "Invalid name!", 
+                //        Message = "A acquaintance must have both a first and last name.",
+                //        Cancel = "OK"
+                //    });
             }
             else if (!RequiredAddressFieldCombinationIsFilled)
             {
-                MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
-                    {
-                        Title = "Invalid address!", 
-                        Message = "You must enter either a street, city, and state combination, or a postal code.",
-                        Cancel = "OK"
-                    });
+                //MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
+                //    {
+                //        Title = "Invalid address!", 
+                //        Message = "You must enter either a street, city, and state combination, or a postal code.",
+                //        Cancel = "OK"
+                //    });
             }
             else
             {
-                MessagingService.Current.SendMessage<Acquaintance>(MessageKeys.SaveAcquaintance, Acquaintance);
+                //MessagingService.Current.SendMessage<Acquaintance>(MessageKeys.SaveAcquaintance, Acquaintance);
 
                 await PopAsync();
             }
@@ -152,24 +150,24 @@ namespace Acquaint.XForms
 
         void ExecuteDeleteAcquaintanceCommand()
         {
-            MessagingService.Current.SendMessage<MessagingServiceQuestion>(MessageKeys.DisplayQuestion, new MessagingServiceQuestion()
-                {
-                    Title = string.Format("Delete {0}?", Acquaintance.DisplayName),
-                    Question = null,
-                    Positive = "Delete",
-                    Negative = "Cancel",
-                    OnCompleted = new Action<bool>(async result =>
-                        {
-                            if (!result) return;
+            //MessagingService.Current.SendMessage<MessagingServiceQuestion>(MessageKeys.DisplayQuestion, new MessagingServiceQuestion()
+            //    {
+            //        Title = string.Format("Delete {0}?", Acquaintance.DisplayName),
+            //        Question = null,
+            //        Positive = "Delete",
+            //        Negative = "Cancel",
+            //        OnCompleted = new Action<bool>(async result =>
+            //            {
+            //                if (!result) return;
 
-                            // pop the navigation stack twice so we get back to the list
-                            await PopAsync(false);
-                            await PopAsync();
+            //                // pop the navigation stack twice so we get back to the list
+            //                await PopAsync(false);
+            //                await PopAsync();
 
-                            // send a message that we want the given acquaintance to be deleted
-                            MessagingService.Current.SendMessage<Acquaintance>(MessageKeys.DeleteAcquaintance, Acquaintance);
-                        })
-                });
+            //                // send a message that we want the given acquaintance to be deleted
+            //                MessagingService.Current.SendMessage<Acquaintance>(MessageKeys.DeleteAcquaintance, Acquaintance);
+            //            })
+            //    });
         }
 
         Command _DialNumberCommand;
@@ -190,12 +188,12 @@ namespace Acquaint.XForms
             }
             else
             {
-                MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
-                    {
-                        Title = "Simulator Not Supported", 
-                        Message = "Phone calls are not supported in the iOS simulator.",
-                        Cancel = "OK"
-                    });
+                //MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
+                //    {
+                //        Title = "Simulator Not Supported", 
+                //        Message = "Phone calls are not supported in the iOS simulator.",
+                //        Cancel = "OK"
+                //    });
             }
         }
 
@@ -217,12 +215,12 @@ namespace Acquaint.XForms
             }
             else
             {
-                MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
-                    {
-                        Title = "Simulator Not Supported", 
-                        Message = "Messaging is not supported in the iOS simulator.",
-                        Cancel = "OK"
-                    });
+                //MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
+                //    {
+                //        Title = "Simulator Not Supported", 
+                //        Message = "Messaging is not supported in the iOS simulator.",
+                //        Cancel = "OK"
+                //    });
             }
         }
 
@@ -244,12 +242,12 @@ namespace Acquaint.XForms
             }
             else
             {
-                MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
-                    {
-                        Title = "Simulator Not Supported", 
-                        Message = "Email composition is not supported in the iOS simulator.",
-                        Cancel = "OK"
-                    });
+                //MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
+                //    {
+                //        Title = "Simulator Not Supported", 
+                //        Message = "Email composition is not supported in the iOS simulator.",
+                //        Cancel = "OK"
+                //    });
             }
         }
 
@@ -293,18 +291,18 @@ namespace Acquaint.XForms
         {
             if (HasAddress)
             {
-                MessagingService.Current.SendMessage(MessageKeys.SetupMap);
+                //MessagingService.Current.SendMessage(MessageKeys.SetupMap);
             }
         }
 
         public void DisplayGeocodingError()
         {
-            MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
-                {
-                    Title = "Geocoding Error", 
-                    Message = "Please make sure the address is valid, or that you have a network connection.",
-                    Cancel = "OK"
-                });
+            //MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
+            //    {
+            //        Title = "Geocoding Error", 
+            //        Message = "Please make sure the address is valid, or that you have a network connection.",
+            //        Cancel = "OK"
+            //    });
 
             IsBusy = false;
         }
@@ -322,7 +320,7 @@ namespace Acquaint.XForms
 
             // The Android geocoder (the underlying implementation in Android itself) fails with some addresses unless they're rounded to the hundreds.
             // So, this deals with that edge case.
-            if (p.Latitude == 0 && p.Longitude == 0 && AddressBeginsWithNumber(Acquaintance.AddressString))
+            if (p.Latitude == 0 && p.Longitude == 0 && AddressBeginsWithNumber(Acquaintance.AddressString) && Device.OS == TargetPlatform.Android)
             {
                 var roundedAddress = GetAddressWithRoundedStreetNumber(Acquaintance.AddressString);
 
@@ -337,29 +335,29 @@ namespace Acquaint.XForms
         void SubscribeToSaveAcquaintanceMessages()
         {
             // This subscribes to the "SaveAcquaintance" message
-            MessagingService.Current.Subscribe<Acquaintance>(MessageKeys.SaveAcquaintance, (service, acquaintance) =>
-                {
-                    Acquaintance = acquaintance;
+            //MessagingService.Current.Subscribe<Acquaintance>(MessageKeys.SaveAcquaintance, (service, acquaintance) =>
+            //    {
+            //        Acquaintance = acquaintance;
 
-                    // address has been updated, so we should update the map
-                    if (Acquaintance.AddressString != _AddressString)
-                    {
-                        MessagingService.Current.SendMessage<Acquaintance>(MessageKeys.AcquaintanceLocationUpdated, Acquaintance);
+            //        // address has been updated, so we should update the map
+            //        if (Acquaintance.AddressString != _AddressString)
+            //        {
+            //            MessagingService.Current.SendMessage<Acquaintance>(MessageKeys.AcquaintanceLocationUpdated, Acquaintance);
 
-                        _AddressString = Acquaintance.AddressString;
-                    }
-                });
+            //            _AddressString = Acquaintance.AddressString;
+            //        }
+            //    });
         }
 			
         void SubscribeToAcquaintanceLocationUpdatedMessages()
         {
             // update the map when receiving the AcquaintanceLocationUpdated message
-            MessagingService.Current.Subscribe<Acquaintance>(MessageKeys.AcquaintanceLocationUpdated, (service, acquaintance) =>
-                {
-                    OnPropertyChanged("HasAddress");
+            //MessagingService.Current.Subscribe<Acquaintance>(MessageKeys.AcquaintanceLocationUpdated, (service, acquaintance) =>
+            //    {
+            //        OnPropertyChanged("HasAddress");
 
-                    SetupMap();
-                });
+            //        SetupMap();
+            //    });
         }
 
         static bool AddressBeginsWithNumber(string address)

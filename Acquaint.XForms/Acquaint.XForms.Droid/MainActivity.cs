@@ -3,7 +3,6 @@ using Android.Content.PM;
 using Android.OS;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms;
-using ImageCircle.Forms.Plugin.Droid;
 using Xamarin;
 
 namespace Acquaint.XForms.Droid
@@ -19,7 +18,7 @@ namespace Acquaint.XForms.Droid
 			base.OnCreate (bundle);
 			Forms.Init (this, bundle);
 			FormsMaps.Init (this, bundle);
-			ImageCircleRenderer.Init ();
+			//ImageCircleRenderer.Init ();
 			LoadApplication (new App ());
 		}
 	}
