@@ -33,7 +33,7 @@ namespace Acquaint.XForms
         {
             if (ViewModel.HasAddress)
             {
-                Map.IsVisible = false;
+				AcquaintanceMap.IsVisible = false;
 
                 // set to a default position
                 Position position;
@@ -67,13 +67,13 @@ namespace Acquaint.XForms
                     Address = ViewModel.Acquaintance.AddressString 
                 };
 
-                Map.Pins.Clear();
+				AcquaintanceMap.Pins.Clear();
 
-                Map.Pins.Add(pin);
+				AcquaintanceMap.Pins.Add(pin);
 
-                Map.MoveToRegion(MapSpan.FromCenterAndRadius(pin.Position, Distance.FromMiles(10)));
+				AcquaintanceMap.MoveToRegion(MapSpan.FromCenterAndRadius(pin.Position, Distance.FromMiles(10)));
 
-                Map.IsVisible = true;
+				AcquaintanceMap.IsVisible = true;
             }
         }
     }
