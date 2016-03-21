@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -78,6 +79,11 @@ namespace Acquaint.XForms.UWP
             }
             // Ensure the current window is active
             Window.Current.Activate();
+
+            var titleBar = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().TitleBar;
+
+            titleBar.BackgroundColor = Color.FromArgb(255, 0, 120, 0);
+            titleBar.ForegroundColor = Colors.White;
         }
 
         /// <summary>
