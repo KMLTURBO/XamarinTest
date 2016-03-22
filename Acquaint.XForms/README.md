@@ -3,8 +3,6 @@
 
 A simple Xamarin app called Acquaint. This is the __Xamarin.Forms version__ of Acquaint, known as Acquaint XF.
 
-You may find the __native__ Xamarin version (Acquaint N) here: https://github.com/xamarinhq/app-acquaint-native
-
 The app has three main screens:
 * a list screen
 * a read-only detail screen
