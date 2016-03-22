@@ -16,7 +16,11 @@
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>Acquaint.XForms.UWP_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>Acquaint.XForms.UWP_StoreKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>021AFD26EDC35831A68870E0251B884E99C3ACDD</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -89,6 +93,8 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="Acquaint.XForms.UWP_StoreKey.pfx" />
+    <None Include="Acquaint.XForms.UWP_TemporaryKey.pfx" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -105,12 +111,15 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="Acquaint.XForms.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="add.png" />
     <Content Include="alvingray.jpg" />
     <Content Include="anntemple.jpg" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
     <Content Include="benjaminjones.jpg" />
     <Content Include="brentmason.jpg" />
     <Content Include="danielgranville.jpg" />
@@ -138,6 +147,7 @@
     <Content Include="michelleherring.jpg" />
     <Content Include="michellewilson.jpg" />
     <Content Include="monicagreen.jpg" />
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="phone.png" />
     <Content Include="placeholderProfileImage.png" />
     <Content Include="richardhogan.jpg" />
