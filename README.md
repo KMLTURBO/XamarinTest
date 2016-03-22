@@ -23,6 +23,12 @@ Includes integrations such as:
 * sending text messages
 * email composition
 
+## Native UI Features (in native version only)
+| 3D Touch Previewing (iOS) | Shared View Transitions (Android) |
+| --- | --- |
+| <img src="https://github.com/xamarinhq/app-acquaint/blob/master/Screenshots/Acquaint_N_3DTouch.gif" width="300" /> | <img src="https://github.com/xamarinhq/app-acquaint/blob/master/Screenshots/Acquaint_N_SharedViewTransitions.gif" width="300" /> |
+
+
 ## Screens
 
 The app has three main screens:
