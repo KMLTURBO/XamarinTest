@@ -14,7 +14,7 @@ The app is implemented in to two ways in order to demonstrate the two different 
 The app targets three platforms:
 * iOS
 * Android
-* Universal Windows PLatform (Forms version only)
+* Universal Windows Platform (Forms version only)
 
 ##Integrations
 Includes integrations such as:
