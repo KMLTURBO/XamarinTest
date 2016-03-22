@@ -1,7 +1,7 @@
 # Acquaint
 <img src="https://github.com/xamarinhq/app-acquaint/blob/master/Screenshots/Acquaint_XF_Screens.png" />
 
-A simple Xamarin app called *Acquaint*. The app is a simple list of contacts, each of which can be viewed in a detail screen and modified in an edit screen.
+A simple Xamarin app named *Acquaint*. The app is a simple list of contacts, each of which can be viewed in a detail screen and modified in an edit screen.
 
 ##Cross-platform and native
 The app is implemented in two ways: 
