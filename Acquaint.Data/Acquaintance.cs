@@ -21,8 +21,10 @@ namespace Acquaint.Data
             set
             {
                 SetProperty(ref _FirstName, value);
-                OnPropertyChanged(nameof(DisplayName)); // because DisplayName is dependent on FirstName, we need to manually call OnPropertyChanged() on DisplayName
-                OnPropertyChanged(nameof(DisplayLastNameFirst)); // because DisplayLastNameFirst is dependent on FirstName, we need to manually call OnPropertyChanged() on DisplayLastNameFirst
+				// DisplayName is dependent on FirstName
+                OnPropertyChanged(nameof(DisplayName));
+				// DisplayLastNameFirst is dependent on FirstName
+                OnPropertyChanged(nameof(DisplayLastNameFirst));
             }
         }
 
@@ -33,8 +35,10 @@ namespace Acquaint.Data
             set
             {
                 SetProperty(ref _LastName, value);
-                OnPropertyChanged(nameof(DisplayName)); // because DisplayName is dependent on LastName, we need to manually call OnPropertyChanged() on DisplayName
-                OnPropertyChanged(nameof(DisplayLastNameFirst)); // because DisplayLastNameFirst is dependent on LastName, we need to manually call OnPropertyChanged() on DisplayLastNameFirst
+				// DisplayName is dependent on LastName
+                OnPropertyChanged(nameof(DisplayName));
+				// DisplayLastNameFirst is dependent on LastName
+                OnPropertyChanged(nameof(DisplayLastNameFirst));
             }
         }
 
@@ -73,7 +77,8 @@ namespace Acquaint.Data
             set
             {
                 SetProperty(ref _Street, value);
-                OnPropertyChanged(nameof(AddressString)); // because AddressString is dependent on Street, we need to manually call OnPropertyChanged() on AddressString
+				// AddressString is dependent on Street
+                OnPropertyChanged(nameof(AddressString));
             }
         }
 
@@ -84,7 +89,8 @@ namespace Acquaint.Data
             set
             {
                 SetProperty(ref _City, value);
-                OnPropertyChanged(nameof(AddressString)); // because AddressString is dependent on City, we need to manually call OnPropertyChanged() on AddressString
+				// AddressString is dependent on City
+                OnPropertyChanged(nameof(AddressString));
             }
         }
 
@@ -95,8 +101,10 @@ namespace Acquaint.Data
             set
             {
                 SetProperty(ref _PostalCode, value);
-                OnPropertyChanged(nameof(AddressString)); // because AddressString is dependent on PostalCode, we need to manually call OnPropertyChanged() on AddressString
-                OnPropertyChanged(nameof(StatePostal)); // because StatePostal is dependent on PostalCode, we need to manually call OnPropertyChanged() on StatePostal
+				// AddressString is dependent on PostalCode
+                OnPropertyChanged(nameof(AddressString));
+				// StatePostal is dependent on PostalCode
+                OnPropertyChanged(nameof(StatePostal));
             }
         }
 
@@ -108,8 +116,10 @@ namespace Acquaint.Data
             set
             {
                 SetProperty(ref _State, value);
-                OnPropertyChanged(nameof(AddressString)); // because AddressString is dependent on State, we need to manually call OnPropertyChanged() on AddressString
-                OnPropertyChanged(nameof(StatePostal)); // because StatePostal is dependent on State, we need to manually call OnPropertyChanged() on StatePostal
+				// AddressString is dependent on State
+                OnPropertyChanged(nameof(AddressString));
+				// StatePostal is dependent on State
+                OnPropertyChanged(nameof(StatePostal));
             }
         }
 
@@ -120,7 +130,8 @@ namespace Acquaint.Data
             set
             {
                 SetProperty(ref _PhotoUrl, value);
-                OnPropertyChanged(nameof(SmallPhotoUrl)); // because SmallPhotoUrl is dependent on PhotoUrl, we need to manually call OnPropertyChanged() on SmallPhotoUrl
+				// SmallPhotoUrl is dependent on PhotoUrl
+                OnPropertyChanged(nameof(SmallPhotoUrl));
             }
         }
 
