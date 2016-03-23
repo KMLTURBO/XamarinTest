@@ -58,7 +58,7 @@ namespace Acquaint.Data
 
 			await Latency;
 
-			var items = CustomerDataSourceHelper
+			var items = AcquaintanceDataSourceHelper
 				.BasicQueryFilter(_Acquaintances, query)
 				.Skip(start)
 				.Take(count)
@@ -187,7 +187,7 @@ namespace Acquaint.Data
 		}
 	}
 
-	public static class CustomerDataSourceHelper
+	public static class AcquaintanceDataSourceHelper
 	{
 		static int MatchScore(Acquaintance c, string query)
 		{
