@@ -6,8 +6,8 @@
     "Refractored.MvvmHelpers": "1.0.1",
     "Xam.Plugin.ExternalMaps": "3.0.0",
     "Xam.Plugins.Messaging": "3.0.0",
-    "Xamarin.Forms": "9.9.0.19241-pre1",
-    "Xamarin.Forms.Maps": "9.9.0.19241-pre1"
+    "Xamarin.Forms": "9.9.0.20-pre1",
+    "Xamarin.Forms.Maps": "9.9.0.20-pre1"
   },
   "frameworks": {
     "uap10.0": {}

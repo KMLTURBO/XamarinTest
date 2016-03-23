@@ -1582,7 +1582,7 @@
           "lib/UAP10/Lotz.Xam.Messaging.dll": {}
         }
       },
-      "Xamarin.Forms/9.9.0.19241-pre1": {
+      "Xamarin.Forms/9.9.0.20-pre1": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -1596,9 +1596,9 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         }
       },
-      "Xamarin.Forms.Maps/9.9.0.19241-pre1": {
+      "Xamarin.Forms.Maps/9.9.0.20-pre1": {
         "dependencies": {
-          "Xamarin.Forms": "[9.9.0.19241-pre1, )"
+          "Xamarin.Forms": "[9.9.0.20-pre1, )"
         },
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Maps.dll": {},
@@ -3280,7 +3280,7 @@
           "lib/UAP10/Lotz.Xam.Messaging.dll": {}
         }
       },
-      "Xamarin.Forms/9.9.0.19241-pre1": {
+      "Xamarin.Forms/9.9.0.20-pre1": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -3294,9 +3294,9 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         }
       },
-      "Xamarin.Forms.Maps/9.9.0.19241-pre1": {
+      "Xamarin.Forms.Maps/9.9.0.20-pre1": {
         "dependencies": {
-          "Xamarin.Forms": "[9.9.0.19241-pre1, )"
+          "Xamarin.Forms": "[9.9.0.20-pre1, )"
         },
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Maps.dll": {},
@@ -4950,7 +4950,7 @@
           "lib/UAP10/Lotz.Xam.Messaging.dll": {}
         }
       },
-      "Xamarin.Forms/9.9.0.19241-pre1": {
+      "Xamarin.Forms/9.9.0.20-pre1": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -4964,9 +4964,9 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         }
       },
-      "Xamarin.Forms.Maps/9.9.0.19241-pre1": {
+      "Xamarin.Forms.Maps/9.9.0.20-pre1": {
         "dependencies": {
-          "Xamarin.Forms": "[9.9.0.19241-pre1, )"
+          "Xamarin.Forms": "[9.9.0.20-pre1, )"
         },
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Maps.dll": {},
@@ -6653,7 +6653,7 @@
           "lib/UAP10/Lotz.Xam.Messaging.dll": {}
         }
       },
-      "Xamarin.Forms/9.9.0.19241-pre1": {
+      "Xamarin.Forms/9.9.0.20-pre1": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -6667,9 +6667,9 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         }
       },
-      "Xamarin.Forms.Maps/9.9.0.19241-pre1": {
+      "Xamarin.Forms.Maps/9.9.0.20-pre1": {
         "dependencies": {
-          "Xamarin.Forms": "[9.9.0.19241-pre1, )"
+          "Xamarin.Forms": "[9.9.0.20-pre1, )"
         },
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Maps.dll": {},
@@ -8323,7 +8323,7 @@
           "lib/UAP10/Lotz.Xam.Messaging.dll": {}
         }
       },
-      "Xamarin.Forms/9.9.0.19241-pre1": {
+      "Xamarin.Forms/9.9.0.20-pre1": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -8337,9 +8337,9 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         }
       },
-      "Xamarin.Forms.Maps/9.9.0.19241-pre1": {
+      "Xamarin.Forms.Maps/9.9.0.20-pre1": {
         "dependencies": {
-          "Xamarin.Forms": "[9.9.0.19241-pre1, )"
+          "Xamarin.Forms": "[9.9.0.20-pre1, )"
         },
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Maps.dll": {},
@@ -10026,7 +10026,7 @@
           "lib/UAP10/Lotz.Xam.Messaging.dll": {}
         }
       },
-      "Xamarin.Forms/9.9.0.19241-pre1": {
+      "Xamarin.Forms/9.9.0.20-pre1": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -10040,9 +10040,9 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         }
       },
-      "Xamarin.Forms.Maps/9.9.0.19241-pre1": {
+      "Xamarin.Forms.Maps/9.9.0.20-pre1": {
         "dependencies": {
-          "Xamarin.Forms": "[9.9.0.19241-pre1, )"
+          "Xamarin.Forms": "[9.9.0.20-pre1, )"
         },
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Maps.dll": {},
@@ -11696,7 +11696,7 @@
           "lib/UAP10/Lotz.Xam.Messaging.dll": {}
         }
       },
-      "Xamarin.Forms/9.9.0.19241-pre1": {
+      "Xamarin.Forms/9.9.0.20-pre1": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -11710,9 +11710,9 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         }
       },
-      "Xamarin.Forms.Maps/9.9.0.19241-pre1": {
+      "Xamarin.Forms.Maps/9.9.0.20-pre1": {
         "dependencies": {
-          "Xamarin.Forms": "[9.9.0.19241-pre1, )"
+          "Xamarin.Forms": "[9.9.0.20-pre1, )"
         },
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Maps.dll": {},
@@ -15264,8 +15264,8 @@
         "Xam.Plugins.Messaging.nuspec"
       ]
     },
-    "Xamarin.Forms/9.9.0.19241-pre1": {
-      "sha512": "ld1a2wFXfm2yOaqM040Eu3CoTjjaUBG6+oCnvy5kdsFBTRu7UszKOFFgtZ2kOBAmC2fyaR6ZoanO4GHw+82u0Q==",
+    "Xamarin.Forms/9.9.0.20-pre1": {
+      "sha512": "LD5pfDD+NANTi3afYYaY+dGxfsdEn0/piLjZumVXUQQRbcgPx/eDR2axR5Ia8moYkqyvrAjk2A44RNYi7yD3cw==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -15390,12 +15390,12 @@
         "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll",
         "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.pdb",
         "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.xml",
-        "package/services/metadata/core-properties/15277566ca744acbbaf157dddd6adda9.psmdcp",
+        "package/services/metadata/core-properties/d0da4404d011477081bf3e16c6e15b47.psmdcp",
         "Xamarin.Forms.nuspec"
       ]
     },
-    "Xamarin.Forms.Maps/9.9.0.19241-pre1": {
-      "sha512": "70UigLH/t4UTr6qMZuf4hVUxtf9Jrdb3GlLcAduXXNk3KPxGA5IRURmQaCGBXgkuIa6KixtPR/u8mXfcwRNNUQ==",
+    "Xamarin.Forms.Maps/9.9.0.20-pre1": {
+      "sha512": "Y1T9A3Ta4pRXjAqWWtsLTFJrZqeFJxHeMuOP1ObTK2UN6FNJLyxDnsv/e7dTOE8Q9lOLRzcyIwzmY0RVjukZ9Q==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -15456,7 +15456,7 @@
         "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll",
         "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll",
         "lib/Xamarin.iOS10/Xamarin.Forms.Maps.xml",
-        "package/services/metadata/core-properties/a95eab3ed97a49c9b09cde6aa1905d44.psmdcp",
+        "package/services/metadata/core-properties/640fb743203e4c62b8060fb8098f98f8.psmdcp",
         "Xamarin.Forms.Maps.nuspec"
       ]
     }
@@ -15469,8 +15469,8 @@
       "Refractored.MvvmHelpers >= 1.0.1",
       "Xam.Plugin.ExternalMaps >= 3.0.0",
       "Xam.Plugins.Messaging >= 3.0.0",
-      "Xamarin.Forms >= 9.9.0.19241-pre1",
-      "Xamarin.Forms.Maps >= 9.9.0.19241-pre1"
+      "Xamarin.Forms >= 9.9.0.20-pre1",
+      "Xamarin.Forms.Maps >= 9.9.0.20-pre1"
     ],
     "UAP,Version=v10.0": []
   }
