@@ -23,6 +23,19 @@ Includes integrations such as:
 * sending text messages
 * email composition
 
+## Google Maps API key (Android)
+For Android, you'll need to obtain a Google Maps API key:
+https://developer.xamarin.com/guides/android/platform_features/maps_and_location/maps/obtaining_a_google_maps_api_key/
+
+Insert it in the Android project: `~/Properties/AndroidManifest.xml`:
+
+    <application ...>
+      ...
+      <meta-data android:name="com.google.android.geo.API_KEY" android:value="GOOGLE_MAPS_API_KEY" />
+      ...
+    </application>
+
+
 ## Native UI Features (in native version only)
 | 3D Touch Previewing (iOS) | Shared View Transitions (Android) |
 | --- | --- |
