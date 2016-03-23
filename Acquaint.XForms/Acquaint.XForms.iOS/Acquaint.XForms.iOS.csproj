@@ -10,7 +10,6 @@
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <AssemblyName>AcquaintXFormsiOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,7 +48,7 @@
     <MtouchI18n>other</MtouchI18n>
     <BuildIpa>true</BuildIpa>
     <IpaPackageName>Acquaint-Forms</IpaPackageName>
-    <AssemblyName>CustomersiOS</AssemblyName>
+    <AssemblyName>AcquaintXFormsiOS</AssemblyName>
     <IntermediateOutputPath>C:\Users\josephs\AppData\Local\Temp\vs3813.tmp\iPhone\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
@@ -64,7 +63,7 @@
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchUseSGen>true</MtouchUseSGen>
-    <AssemblyName>CustomersXFormsiOS</AssemblyName>
+    <AssemblyName>AcquaintXFormsiOS</AssemblyName>
     <IntermediateOutputPath>C:\Users\josephs\AppData\Local\Temp\vs3813.tmp\iPhoneSimulator\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
@@ -85,10 +84,10 @@
     <MtouchUseSGen>true</MtouchUseSGen>
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchProfiling>true</MtouchProfiling>
-    <IpaPackageName>Acquaint-Forms</IpaPackageName>
+    <IpaPackageName>AcquaintXFormsiOS</IpaPackageName>
     <MtouchI18n>other</MtouchI18n>
     <BuildIpa>true</BuildIpa>
-    <AssemblyName>CustomersiOS</AssemblyName>
+    <AssemblyName>AcquaintXFormsiOS</AssemblyName>
     <IntermediateOutputPath>C:\Users\josephs\AppData\Local\Temp\vs3813.tmp\iPhone\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AppStore|iPhoneSimulator'">
