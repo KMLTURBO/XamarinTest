@@ -167,16 +167,23 @@ namespace Acquaint.Native.Droid
 			// get a referecne to the profileImageView
 			var profileImageView = v.FindViewById(Resource.Id.profilePhotoImageView);
 
-			// define transitions 
-			var transitions = new List<Android.Util.Pair>() {
-				Android.Util.Pair.Create(profileImageView, v.Context.Resources.GetString(Resource.String.profilePhotoTransition)),
-			};
+			if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
+			{
+				// define transitions 
+				var transitions = new List<Android.Util.Pair>() {
+					Android.Util.Pair.Create(profileImageView, v.Context.Resources.GetString(Resource.String.profilePhotoTransition)),
+				};
 
-			// create an activity options instance and bind the above-defined transitions to the current activity
-			var transistionOptions = ActivityOptions.MakeSceneTransitionAnimation(v.Context as AcquaintanceListActivity, transitions.ToArray());
+				// create an activity options instance and bind the above-defined transitions to the current activity
+				var transistionOptions = ActivityOptions.MakeSceneTransitionAnimation(v.Context as Activity, transitions.ToArray());
 
-			// start (navigate to) the detail activity, passing in the activity transition options we just created
-			v.Context.StartActivity(detailIntent, transistionOptions.ToBundle());
+				// start (navigate to) the detail activity, passing in the activity transition options we just created
+				v.Context.StartActivity(detailIntent, transistionOptions.ToBundle());
+			}
+			else
+			{
+				v.Context.StartActivity(detailIntent);
+			}
 		}
 
 		// Return the number of items
