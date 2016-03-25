@@ -151,9 +151,13 @@ namespace Acquaint.Native.Droid
 
 		void SetupAnimations()
 		{
-			var enterTransition = TransitionInflater.From(this).InflateTransition(Resource.Transition.acquaintanceDetailActivityEnter);
+			
+			if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
+			{
+				var enterTransition = TransitionInflater.From(this).InflateTransition(Resource.Transition.acquaintanceDetailActivityEnter);
 
-			Window.SharedElementEnterTransition = enterTransition;
+				Window.SharedElementEnterTransition = enterTransition;
+			}
 		}
 
 		#region Implementations IOnMapReadyCallback
