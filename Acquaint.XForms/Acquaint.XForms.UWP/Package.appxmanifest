@@ -16,9 +16,15 @@
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Acquaint.XForms.UWP.App">
       <uap:VisualElements DisplayName="Acquaint.XForms" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="A simple Xamarin app called Acquaint. This is the Xamarin.Forms version of Acquaint. It's a simple list of contacts, with detail and edit screens." BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="Acquaint XF">
+        <uap:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\BadgeLogo.png" />
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="Acquaint XF" Square310x310Logo="Assets\Square310x310Logo.png" Square71x71Logo="Assets\Square71x71Logo.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
         </uap:DefaultTile>
-        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#9cc1d4" />
         <uap:InitialRotationPreference>
           <uap:Rotation Preference="portrait" />
         </uap:InitialRotationPreference>
