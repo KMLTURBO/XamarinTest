@@ -43,3 +43,7 @@ Also pictured is the external maps application providing navigation that has bee
 <img src="https://github.com/xamarinhq/app-acquaint/blob/master/Screenshots/Acquaint_N_ListPage.png" width="600" />
 <img src="https://github.com/xamarinhq/app-acquaint/blob/master/Screenshots/Acquaint_N_DetailPage.png" width="600" />
 <img src="https://github.com/xamarinhq/app-acquaint/blob/master/Screenshots/Acquaint_N_GetDirections.png" width="600" />
+
+##People
+
+All images of people in the app come from [UIFaces.com](http://uifaces.com/authorized). In accordance with the guidelines, fictitious names have been provided.
