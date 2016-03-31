@@ -4,11 +4,9 @@
 A simple Xamarin app named *Acquaint*. The app is a simple list of contacts, each of which can be viewed in a detail screen and modified in an edit screen.
 
 ##Cross-platform and native
-The app is implemented in two ways: 
+The app is implemented in two ways in order to demonstrate the two different approaches to Xamarin app development:
 * Xamarin.Forms cross-platform UI
 * Xamarin native, with platform-specific UI implementations
-
-The app is implemented in to two ways in order to demonstrate the two different approaches to Xamarin app development.
 
 ##Three platforms
 The app targets three platforms:
