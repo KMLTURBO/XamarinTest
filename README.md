@@ -12,7 +12,7 @@ The app is implemented in two ways in order to demonstrate the two different app
 The app targets three platforms:
 * iOS
 * Android
-* Universal Windows Platform (Forms version only, coming soon)
+* Universal Windows Platform (coming soon, after 2.2 release of Forms and Forms.Maps)
 
 ##Integrations
 Includes integrations such as:
