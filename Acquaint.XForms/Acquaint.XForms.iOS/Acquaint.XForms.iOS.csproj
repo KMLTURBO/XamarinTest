@@ -31,7 +31,7 @@
     <MtouchProfiling>true</MtouchProfiling>
     <MtouchI18n>other</MtouchI18n>
     <AssemblyName>AcquaintXFormsiOS</AssemblyName>
-    <IntermediateOutputPath>C:\Users\josephs\AppData\Local\Temp\vs3813.tmp\iPhoneSimulator\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\JoeSauve\AppData\Local\Temp\vsC556.tmp\iPhoneSimulator\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <Optimize>true</Optimize>
@@ -50,7 +50,7 @@
     <BuildIpa>true</BuildIpa>
     <IpaPackageName>Acquaint-Forms</IpaPackageName>
     <AssemblyName>AcquaintXFormsiOS</AssemblyName>
-    <IntermediateOutputPath>C:\Users\josephs\AppData\Local\Temp\vs3813.tmp\iPhone\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\JoeSauve\AppData\Local\Temp\vsC556.tmp\iPhone\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>full</DebugType>
@@ -65,7 +65,7 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchUseSGen>true</MtouchUseSGen>
     <AssemblyName>AcquaintXFormsiOS</AssemblyName>
-    <IntermediateOutputPath>C:\Users\josephs\AppData\Local\Temp\vs3813.tmp\iPhoneSimulator\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\JoeSauve\AppData\Local\Temp\vsC556.tmp\iPhoneSimulator\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -89,17 +89,17 @@
     <MtouchI18n>other</MtouchI18n>
     <BuildIpa>true</BuildIpa>
     <AssemblyName>AcquaintXFormsiOS</AssemblyName>
-    <IntermediateOutputPath>C:\Users\josephs\AppData\Local\Temp\vs3813.tmp\iPhone\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\JoeSauve\AppData\Local\Temp\vsC556.tmp\iPhone\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AppStore|iPhoneSimulator'">
-    <IntermediateOutputPath>C:\Users\josephs\AppData\Local\Temp\vs3813.tmp\iPhoneSimulator\AppStore\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\JoeSauve\AppData\Local\Temp\vsC556.tmp\iPhoneSimulator\AppStore\</IntermediateOutputPath>
     <OutputPath>bin\AppStore</OutputPath>
     <AssemblyName>AcquaintXFormsiOS</AssemblyName>
     <WarningLevel>4</WarningLevel>
     <Optimize>false</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AppStore|iPhone'">
-    <IntermediateOutputPath>C:\Users\josephs\AppData\Local\Temp\vs3813.tmp\iPhone\AppStore\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\JoeSauve\AppData\Local\Temp\vsC556.tmp\iPhone\AppStore\</IntermediateOutputPath>
     <OutputPath>bin\AppStore</OutputPath>
     <AssemblyName>AcquaintXFormsiOS</AssemblyName>
     <WarningLevel>4</WarningLevel>
