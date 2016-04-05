@@ -1,14 +1,14 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Acquaint.Data;
 using Acquaint.Util;
-using FormsToolkit;
 using Plugin.ExternalMaps;
 using Plugin.ExternalMaps.Abstractions;
 using Plugin.Messaging;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
+using System;
+using FormsToolkit;
 
 namespace Acquaint.XForms
 {
@@ -322,7 +322,7 @@ namespace Acquaint.XForms
 
             // The Android geocoder (the underlying implementation in Android itself) fails with some addresses unless they're rounded to the hundreds.
             // So, this deals with that edge case.
-            if (p.Latitude == 0 && p.Longitude == 0 && AddressBeginsWithNumber(Acquaintance.AddressString))
+            if (p.Latitude == 0 && p.Longitude == 0 && AddressBeginsWithNumber(Acquaintance.AddressString) && Device.OS == TargetPlatform.Android)
             {
                 var roundedAddress = GetAddressWithRoundedStreetNumber(Acquaintance.AddressString);
 

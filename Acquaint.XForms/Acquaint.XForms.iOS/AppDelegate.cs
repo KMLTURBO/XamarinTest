@@ -2,8 +2,8 @@
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
-using ImageCircle.Forms.Plugin.iOS;
 using Xamarin;
+using ImageCircle.Forms.Plugin.iOS;
 
 namespace Acquaint.XForms.iOS
 {

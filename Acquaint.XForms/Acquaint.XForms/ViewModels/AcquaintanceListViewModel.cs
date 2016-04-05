@@ -2,10 +2,10 @@
 using System.Threading.Tasks;
 using Acquaint.Data;
 using Acquaint.Util;
-using FormsToolkit;
 using MvvmHelpers;
 using Plugin.Messaging;
 using Xamarin.Forms;
+using FormsToolkit;
 
 namespace Acquaint.XForms
 {

@@ -3,7 +3,6 @@ using Android.Content.PM;
 using Android.OS;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms;
-using ImageCircle.Forms.Plugin.Droid;
 using Xamarin;
 
 namespace Acquaint.XForms.Droid
