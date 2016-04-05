@@ -18,7 +18,6 @@ namespace Acquaint.XForms.Droid
 			base.OnCreate (bundle);
 			Forms.Init (this, bundle);
 			FormsMaps.Init (this, bundle);
-			ImageCircleRenderer.Init ();
 			LoadApplication (new App ());
 		}
 	}
