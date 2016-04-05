@@ -8,6 +8,7 @@ using Plugin.Messaging;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using System;
+using FormsToolkit;
 
 namespace Acquaint.XForms
 {

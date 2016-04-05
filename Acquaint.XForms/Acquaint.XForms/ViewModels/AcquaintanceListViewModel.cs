@@ -5,6 +5,7 @@ using Acquaint.Util;
 using MvvmHelpers;
 using Plugin.Messaging;
 using Xamarin.Forms;
+using FormsToolkit;
 
 namespace Acquaint.XForms
 {

@@ -9,6 +9,9 @@ namespace Acquaint.XForms
         Mini
     }
 
+    /// <summary>
+    /// Used only in Android, to present the floating button in the list view. See the accompanying custom renderer in the Android platform project.
+    /// </summary>
     public class FloatingActionButtonView : View
     {
         public static readonly BindableProperty ImageNameProperty = BindableProperty.Create<FloatingActionButtonView,string>( p => p.ImageName, string.Empty);

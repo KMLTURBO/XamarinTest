@@ -1,8 +1,8 @@
-﻿using Xamarin.Forms;
+﻿using FormsToolkit;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 //[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-using Acquaint.Util;
 
 namespace Acquaint.XForms
 {
