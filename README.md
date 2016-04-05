@@ -12,7 +12,7 @@ The app is implemented in two ways in order to demonstrate the two different app
 The app targets three platforms:
 * iOS
 * Android
-* Universal Windows Platform (coming soon, after 2.2 release of Forms and Forms.Maps)
+* Universal Windows Platform
 
 ##Integrations
 Includes integrations such as:
@@ -37,7 +37,7 @@ Insert it in the Android project: `~/Properties/AndroidManifest.xml`:
 ## Platform-specific UI Features (in native version only)
 | 3D Touch Previewing (iOS) | Shared View Transitions (Android) |
 | --- | --- |
-| <img src="https://github.com/xamarinhq/app-acquaint/blob/master/Screenshots/Acquaint_N_3DTouch.gif" width="300" /> <br /> *** Physical device required for 3D Touch *** | <img src="https://github.com/xamarinhq/app-acquaint/blob/master/Screenshots/Acquaint_N_SharedViewTransitions.gif" width="300" /> |
+| <img src="https://github.com/xamarinhq/app-acquaint/blob/master/Screenshots/Acquaint_N_3DTouch.gif" width="300" /> | <img src="https://github.com/xamarinhq/app-acquaint/blob/master/Screenshots/Acquaint_N_SharedViewTransitions.gif" width="300" /> |
 
 
 ## Screens
