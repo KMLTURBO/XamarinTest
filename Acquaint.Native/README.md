@@ -1,5 +1,4 @@
 # Acquaint (N)
-<img src="https://github.com/xamarinhq/app-acquaint/blob/master/Screenshots/Acquaint_N_Screens.png" />
 
 A simple Xamarin app called Acquaint. This is the __native Xamarin__ version of Acquaint, known as Acquaint N.
 
@@ -38,11 +37,6 @@ The app has three main screens:
 * a list screen
 * a read-only detail screen
 * an editable detail screen (currently in Forms version only)
-
-Also pictured is the external maps application providing navigation that has been initiated from within the app.
-<img src="https://github.com/xamarinhq/app-acquaint/blob/master/Screenshots/Acquaint_N_ListPage.png" width="600" />
-<img src="https://github.com/xamarinhq/app-acquaint/blob/master/Screenshots/Acquaint_N_DetailPage.png" width="600" />
-<img src="https://github.com/xamarinhq/app-acquaint/blob/master/Screenshots/Acquaint_N_GetDirections.png" width="600" />
 
 ##People
 
