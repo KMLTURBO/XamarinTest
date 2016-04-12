@@ -23,7 +23,7 @@ Includes integrations such as:
 * email composition
 
 ## Requirements
-* Visual Studio __2015__ (14.0 or higher) to compile C# 6 langage features (or Xamarin Studio OS X (but will not support UWP))
+* Visual Studio __2015__ (14.0 or higher) to compile C# 6 langage features (or Xamarin Studio OS X)
 * Xamarin add-ons for Visual Studio (available via the Visual Studio installer)
 
 ## Google Maps API key (Android)
