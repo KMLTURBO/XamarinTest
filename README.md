@@ -25,6 +25,7 @@ Includes integrations such as:
 ## Requirements
 * [Visual Studio __2015__](https://www.visualstudio.com/en-us/products/vs-2015-product-editions.aspx) (14.0 or higher) to compile C# 6 langage features (or Xamarin Studio OS X)
 * Xamarin add-ons for Visual Studio (available via the Visual Studio installer)
+* __Visual Studio Community Edition is fully supported!__
 
 ## Google Maps API key (Android)
 For Android, you'll need to obtain a Google Maps API key:
