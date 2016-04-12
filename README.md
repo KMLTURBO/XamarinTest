@@ -13,7 +13,7 @@ The app is implemented in two ways in order to demonstrate the two different app
 The app targets three platforms:
 * iOS
 * Android
-* Universal Windows Platform
+* Universal Windows Platform (supported only in Visual Studio, not Xamarin Studio)
 
 ##Integrations
 Includes integrations such as:
@@ -21,6 +21,10 @@ Includes integrations such as:
 * making calls
 * sending text messages
 * email composition
+
+## Requirements
+* Visual Studio 2015 to compile C# 6 langage features (or Xamarin Studio OS X (but will not support UWP))
+* Xamarin add-ons for Visual Studio (available via the Visual Studio installer)
 
 ## Google Maps API key (Android)
 For Android, you'll need to obtain a Google Maps API key:
