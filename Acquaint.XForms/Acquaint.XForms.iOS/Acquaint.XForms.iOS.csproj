@@ -86,6 +86,7 @@
     <MtouchI18n>other</MtouchI18n>
     <BuildIpa>true</BuildIpa>
     <IntermediateOutputPath>C:\Users\JoeSauve\AppData\Local\Temp\vsC556.tmp\iPhone\Debug\</IntermediateOutputPath>
+    <MtouchLink>None</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AppStore|iPhoneSimulator'">
     <IntermediateOutputPath>C:\Users\JoeSauve\AppData\Local\Temp\vsC556.tmp\iPhoneSimulator\AppStore\</IntermediateOutputPath>
