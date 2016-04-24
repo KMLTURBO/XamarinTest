@@ -22,10 +22,6 @@ namespace Acquaint.XForms.iOS
 
             ImageCircleRenderer.Init();
 
-            #if ENABLE_TEST_CLOUD
-            Calabash.Start();
-            #endif
-
             return base.FinishedLaunching(app, options);
         }
 
