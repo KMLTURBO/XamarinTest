@@ -159,9 +159,6 @@
     <Reference Include="Plugin.Messaging">
       <HintPath>..\..\packages\Xam.Plugins.Messaging.3.2.1\lib\Xamarin.iOS10\Plugin.Messaging.dll</HintPath>
     </Reference>
-    <Reference Include="Calabash">
-      <HintPath>..\..\packages\Xamarin.TestCloud.Agent.0.19.0\lib\Xamarin.iOS10\Calabash.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json">
