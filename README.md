@@ -1,5 +1,7 @@
 # Acquaint
 
+<img src="https://www.bitrise.io/app/145321b913e657bf.svg?token=ApQAGexu8QZYPP4VGGllUA&branch=master" />
+
 A simple Xamarin app named *Acquaint*. The app is a simple list of contacts, each of which can be viewed in a detail screen and modified in an edit screen.
 
 <img src="https://github.com/xamarinhq/app-acquaint/blob/master/Screenshots/AllScreens_AllPlatforms.jpg" />
