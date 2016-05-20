@@ -42,13 +42,13 @@ namespace Acquaint.Native.Droid
 			return imageView;
 		}
 
-		public static ImageViewAsync InflateAndBindLocalImageViewByResource(this View parentView, int imageViewResourceId, int resourceId)
+		public static ImageView InflateAndBindLocalImageViewByResource(this View parentView, int imageViewResourceId, int resourceId)
 		{
-			ImageViewAsync imageView = null;
+			ImageView imageView = null;
 
 			if (parentView != null)
 			{
-				imageView = parentView.FindViewById<ImageViewAsync>(imageViewResourceId);
+				imageView = parentView.FindViewById<ImageView>(imageViewResourceId);
 
 				imageView.SetImageResource(resourceId);
 			}
