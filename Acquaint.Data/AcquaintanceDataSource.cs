@@ -23,14 +23,15 @@ namespace Acquaint.Data
 		{
 			await EnsureInitialized().ConfigureAwait(false);
 
-			if (_Acquaintances.Any(c => c.Id == item.Id))
+			int i = _Acquaintances.FindIndex(a => a.Id == item.Id);
+
+			if (i < 0)
 			{
-				int i = _Acquaintances.IndexOf(item);
-				_Acquaintances[i] = item;
+				_Acquaintances.Add(item);
 			}
 			else
 			{
-				_Acquaintances.Add(item);
+				_Acquaintances[i] = item;
 			}
 
 			await WriteFile(_RootFolder, _FileName, JsonConvert.SerializeObject(_Acquaintances)).ConfigureAwait(false);

@@ -40,7 +40,7 @@ namespace Acquaint.XForms
         /// <param name="e">The EventArgs</param>
         void AndroidAddButtonClicked (object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AcquaintanceEditPage() { BindingContext = new AcquaintanceDetailViewModel(new Acquaintance()) });
+			Navigation.PushAsync(new AcquaintanceEditPage() { BindingContext = new AcquaintanceEditViewModel() });
         }
 
         protected override void OnAppearing()

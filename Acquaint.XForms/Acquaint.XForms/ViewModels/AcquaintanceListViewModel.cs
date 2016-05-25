@@ -2,10 +2,10 @@
 using System.Threading.Tasks;
 using Acquaint.Data;
 using Acquaint.Util;
+using FormsToolkit;
 using MvvmHelpers;
 using Plugin.Messaging;
 using Xamarin.Forms;
-using FormsToolkit;
 
 namespace Acquaint.XForms
 {
@@ -109,7 +109,7 @@ namespace Acquaint.XForms
 
         async Task ExecuteNewAcquaintanceCommand()
         {
-            await PushAsync(new AcquaintanceEditPage() { BindingContext = new AcquaintanceDetailViewModel(new Acquaintance()) });
+            await PushAsync(new AcquaintanceEditPage() { BindingContext = new AcquaintanceEditViewModel() });
         }
 
         Command _DialNumberCommand;
@@ -253,6 +253,8 @@ namespace Acquaint.XForms
                     await FetchAcquaintances();
 
                     IsBusy = false;
+
+					OnPropertyChanged("Acquaintances");
                 });
         }
 

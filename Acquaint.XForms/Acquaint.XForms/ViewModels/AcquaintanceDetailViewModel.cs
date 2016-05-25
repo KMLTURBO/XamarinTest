@@ -1,132 +1,43 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Acquaint.Data;
 using Acquaint.Util;
+using FormsToolkit;
 using Plugin.ExternalMaps;
 using Plugin.ExternalMaps.Abstractions;
 using Plugin.Messaging;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
-using System;
-using FormsToolkit;
 
 namespace Acquaint.XForms
 {
     public class AcquaintanceDetailViewModel : BaseNavigationViewModel
     {
-        bool _IsNewAcquaintance;
+		public AcquaintanceDetailViewModel(Acquaintance acquaintance)
+		{
+			_CapabilityService = DependencyService.Get<ICapabilityService>();
+
+			_Geocoder = new Geocoder();
+
+			Acquaintance = acquaintance;
+
+			SubscribeToSaveAcquaintanceMessages();
+		}
+
+
+		public Acquaintance Acquaintance { private set; get; }
+
+		public bool HasEmailAddress => !string.IsNullOrWhiteSpace(Acquaintance?.Email);
+
+		public bool HasPhoneNumber => !string.IsNullOrWhiteSpace(Acquaintance?.Phone);
+
+		public bool HasAddress => !string.IsNullOrWhiteSpace(Acquaintance?.AddressString);
 
         // this is just a utility service that we're using in this demo app to mitigate some limitations of the iOS simulator
         readonly ICapabilityService _CapabilityService;
 
         readonly Geocoder _Geocoder;
-
-        public AcquaintanceDetailViewModel(Acquaintance acquaintance = null)
-        {
-            _CapabilityService = DependencyService.Get<ICapabilityService>();
-
-            _Geocoder = new Geocoder();
-
-            if (acquaintance == null)
-            {
-                _IsNewAcquaintance = true;
-                Acquaintance = new Acquaintance();
-            }
-            else
-            {
-                _IsNewAcquaintance = false;
-                Acquaintance = acquaintance;
-            }
-
-			Title = _IsNewAcquaintance ? "New Acquaintance" : _Acquaintance.DisplayLastNameFirst;
-
-            _AddressString = Acquaintance.AddressString;
-
-            SubscribeToSaveAcquaintanceMessages();
-
-            SubscribeToAcquaintanceLocationUpdatedMessages();
-        }
-
-        public bool IsExistingAcquaintance => !_IsNewAcquaintance;
-
-        public bool HasEmailAddress => !string.IsNullOrWhiteSpace(Acquaintance?.Email);
-
-        public bool HasPhoneNumber => !string.IsNullOrWhiteSpace(Acquaintance?.Phone);
-
-        public bool HasAddress => !string.IsNullOrWhiteSpace(Acquaintance?.AddressString);
-
-        private string _AddressString;
-
-        Acquaintance _Acquaintance;
-
-        public Acquaintance Acquaintance
-        {
-            get { return _Acquaintance; }
-            set
-            {
-                _Acquaintance = value;
-				OnPropertyChanged("Acquaintance");
-            }
-        }
-
-        Command _SaveAcquaintanceCommand;
-
-        public Command SaveAcquaintanceCommand
-        {
-            get
-            {
-                return _SaveAcquaintanceCommand ?? (_SaveAcquaintanceCommand = new Command(() => ExecuteSaveAcquaintanceCommand()));
-            }
-        }
-
-        async Task ExecuteSaveAcquaintanceCommand()
-        {
-            if (string.IsNullOrWhiteSpace(Acquaintance.LastName) || string.IsNullOrWhiteSpace(Acquaintance.FirstName))
-            {
-                MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
-                    {
-                        Title = "Invalid name!", 
-                        Message = "A acquaintance must have both a first and last name.",
-                        Cancel = "OK"
-                    });
-            }
-            else if (!RequiredAddressFieldCombinationIsFilled)
-            {
-                MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.DisplayAlert, new MessagingServiceAlert()
-                    {
-                        Title = "Invalid address!", 
-                        Message = "You must enter either a street, city, and state combination, or a postal code.",
-                        Cancel = "OK"
-                    });
-            }
-            else
-            {
-                MessagingService.Current.SendMessage<Acquaintance>(MessageKeys.SaveAcquaintance, Acquaintance);
-
-                await PopAsync();
-            }
-        }
-
-        bool RequiredAddressFieldCombinationIsFilled
-        {
-            get
-            {
-                if (Acquaintance.AddressString.IsNullOrWhiteSpace())
-                {
-                    return true;
-                }
-                if (!Acquaintance.Street.IsNullOrWhiteSpace() && !Acquaintance.City.IsNullOrWhiteSpace() && !Acquaintance.State.IsNullOrWhiteSpace())
-                {
-                    return true;
-                }
-                if (!Acquaintance.PostalCode.IsNullOrWhiteSpace() && (Acquaintance.Street.IsNullOrWhiteSpace() || Acquaintance.City.IsNullOrWhiteSpace() || Acquaintance.State.IsNullOrWhiteSpace()))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-        }
 
         Command _EditAcquaintanceCommand;
 
@@ -141,35 +52,7 @@ namespace Acquaint.XForms
 
         async Task ExecuteEditAcquaintanceCommand()
         {
-            await PushAsync(new AcquaintanceEditPage() { BindingContext = this });
-        }
-
-
-        Command _DeleteAcquaintanceCommand;
-
-        public Command DeleteAcquaintanceCommand => _DeleteAcquaintanceCommand ??
-                                                    (_DeleteAcquaintanceCommand = new Command(ExecuteDeleteAcquaintanceCommand));
-
-        void ExecuteDeleteAcquaintanceCommand()
-        {
-            MessagingService.Current.SendMessage<MessagingServiceQuestion>(MessageKeys.DisplayQuestion, new MessagingServiceQuestion()
-                {
-                    Title = string.Format("Delete {0}?", Acquaintance.DisplayName),
-                    Question = null,
-                    Positive = "Delete",
-                    Negative = "Cancel",
-                    OnCompleted = new Action<bool>(async result =>
-                        {
-                            if (!result) return;
-
-                            // pop the navigation stack twice so we get back to the list
-                            await PopAsync(false);
-                            await PopAsync();
-
-                            // send a message that we want the given acquaintance to be deleted
-                            MessagingService.Current.SendMessage<Acquaintance>(MessageKeys.DeleteAcquaintance, Acquaintance);
-                        })
-                });
+			await PushAsync(new AcquaintanceEditPage() { BindingContext = new AcquaintanceEditViewModel(Acquaintance) });
         }
 
         Command _DialNumberCommand;
@@ -265,19 +148,6 @@ namespace Acquaint.XForms
             }
         }
 
-        public bool IsNewAcquaintance
-        {
-            get
-            {
-                return _IsNewAcquaintance;
-            }
-
-            set
-            {
-                _IsNewAcquaintance = value;
-            }
-        }
-
         public ICapabilityService CapabilityService => _CapabilityService;
 
         async Task ExecuteGetDirectionsCommand()
@@ -339,26 +209,10 @@ namespace Acquaint.XForms
             // This subscribes to the "SaveAcquaintance" message
             MessagingService.Current.Subscribe<Acquaintance>(MessageKeys.SaveAcquaintance, (service, acquaintance) =>
                 {
-                    Acquaintance = acquaintance;
+					Acquaintance = acquaintance;
+					OnPropertyChanged("Acquaintance");
 
-                    // address has been updated, so we should update the map
-                    if (Acquaintance.AddressString != _AddressString)
-                    {
-                        MessagingService.Current.SendMessage<Acquaintance>(MessageKeys.AcquaintanceLocationUpdated, Acquaintance);
-
-                        _AddressString = Acquaintance.AddressString;
-                    }
-                });
-        }
-			
-        void SubscribeToAcquaintanceLocationUpdatedMessages()
-        {
-            // update the map when receiving the AcquaintanceLocationUpdated message
-            MessagingService.Current.Subscribe<Acquaintance>(MessageKeys.AcquaintanceLocationUpdated, (service, acquaintance) =>
-                {
-                    OnPropertyChanged("HasAddress");
-
-                    SetupMap();
+                	MessagingService.Current.SendMessage<Acquaintance>(MessageKeys.AcquaintanceLocationUpdated, Acquaintance);
                 });
         }
 

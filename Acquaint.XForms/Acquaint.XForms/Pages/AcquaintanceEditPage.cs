@@ -5,7 +5,7 @@ namespace Acquaint.XForms
 {
     public partial class AcquaintanceEditPage : ContentPage
     {
-        protected AcquaintanceDetailViewModel ViewModel => BindingContext as AcquaintanceDetailViewModel;
+		protected AcquaintanceEditViewModel ViewModel => BindingContext as AcquaintanceEditViewModel;
 
         public AcquaintanceEditPage()
         {
@@ -28,12 +28,16 @@ namespace Acquaint.XForms
 
                 string val = entryCell.Text;
 
-                if (val.Length > 2)
-                {
-                    val = val.Remove(val.Length - 1);
-                }
+				if (val != null)
+				{
 
-                entryCell.Text = val.ToUpperInvariant();
+					if (val.Length > 2)
+					{
+						val = val.Remove(val.Length - 1);
+					}
+
+					entryCell.Text = val.ToUpperInvariant();
+				}
             }
         }
 
@@ -50,7 +54,7 @@ namespace Acquaint.XForms
 
                 string val = entryCell.Text;
 
-                if (val.Length > 5)
+				if (val != null && val.Length > 5)
                 {
                     val = val.Remove(val.Length - 1);
                     entryCell.Text = val;

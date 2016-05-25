@@ -6,12 +6,6 @@ namespace Acquaint.Data
 {
     public class Acquaintance : ObservableObject
     {
-        public Acquaintance()
-        {
-            Id = Guid.NewGuid().ToString();
-            PhotoUrl = "placeholderProfileImage.png";
-        }
-
         public string Id { get; set; }
 
         string _FirstName;
@@ -154,10 +148,7 @@ namespace Acquaint.Data
         [JsonIgnore]
         public string StatePostal => State + " " + PostalCode;
 
-        public override string ToString()
-        {
-            return FirstName + " " + LastName;
-        }
+		public override string ToString() => $"{FirstName} {LastName}";
     }
 }
 
