@@ -87,9 +87,10 @@ namespace Acquaint.XForms
 
 			var acquaintances = await DataSource.GetItems (0, 1000);
 
-			Acquaintances.Clear ();
+			Acquaintances.Clear();
 
-			Acquaintances.AddRange (acquaintances);
+			if (acquaintances.Count != 0)
+				Acquaintances.AddRange(acquaintances);
 
             IsBusy = false;
         }
