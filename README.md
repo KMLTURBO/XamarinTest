@@ -15,7 +15,9 @@ The app is implemented in two ways in order to demonstrate the two different app
 The app targets three platforms:
 * iOS
 * Android
-* Universal Windows Platform (supported only in Visual Studio, not Xamarin Studio)
+* Universal Windows Platform
+    * Currently only in Forms version of app
+    * Supported only in Visual Studio, not Xamarin Studio
 
 ##Integrations
 Includes integrations such as:
