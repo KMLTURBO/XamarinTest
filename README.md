@@ -1,8 +1,8 @@
 # Acquaint
 
-Status: <img src="https://josau.visualstudio.com/_apis/public/build/definitions/ff9dfce3-f143-428a-9694-2fa649920fc5/1/badge" /> (Visual Studio Team Services)
-
 A simple Xamarin app named *Acquaint*. The app is a simple list of contacts, each of which can be viewed in a detail screen and modified in an edit screen.
+
+Build status: <img src="https://josau.visualstudio.com/_apis/public/build/definitions/ff9dfce3-f143-428a-9694-2fa649920fc5/1/badge" /> (Visual Studio Team Services)
 
 <img src="https://github.com/xamarinhq/app-acquaint/blob/master/Screenshots/AllScreens_AllPlatforms.jpg" />
 
