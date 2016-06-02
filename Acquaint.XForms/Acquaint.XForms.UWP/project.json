@@ -8,8 +8,8 @@
     "Xam.Plugin.ExternalMaps": "3.0.0",
     "Xam.Plugins.Forms.ImageCircle": "1.4.1",
     "Xam.Plugins.Messaging": "3.2.1",
-    "Xamarin.Forms": "2.2.0.31",
-    "Xamarin.Forms.Maps": "2.2.0.31"
+    "Xamarin.Forms": "2.2.0.45",
+    "Xamarin.Forms.Maps": "2.2.0.45"
   },
   "frameworks": {
     "uap10.0": {}
