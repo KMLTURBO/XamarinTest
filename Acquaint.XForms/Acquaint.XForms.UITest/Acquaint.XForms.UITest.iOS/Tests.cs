@@ -36,6 +36,45 @@ namespace Acquaint.XForms.UITest.iOS
 		}
 
 		[Test]
+		public void UpdateFirstName() {
+			app.Screenshot("App start, display list");
+			app.ScrollTo("Green, Monica");
+			app.Screenshot("Scrolled to Monica Green");
+			app.Tap(x => x.Marked("Green, Monica"));
+			app.Screenshot("Detail screen");
+			app.Tap(x => x.Id("edit.png"));
+			app.Screenshot("Edit screen");
+			app.Tap(x => x.Marked("Monica"));
+			app.ClearText(x => x.Text("Monica"));
+			app.Screenshot("Cleared first name field");
+			app.EnterText(x => x.Class("UITextField"), "Erica");
+			app.Screenshot("Altered value first name field");
+			app.Tap(x => x.Id("save.png"));
+			app.Screenshot("Saved changes, navigated to detail screen");
+			app.Tap(x => x.Marked("List"));
+			app.ScrollTo("Green, Erica");
+			app.Screenshot("First name updated on list screen");
+		}
+
+		[Test]
+		public void UpdateLastName() {
+			app.Screenshot("App start, display list");
+			app.ScrollTo("Green, Monica");
+			app.Screenshot("Scrolled to Monica Green");
+			app.Tap(x => x.Marked("Green, Monica"));
+			app.Screenshot("Detail screen");
+			app.Tap(x => x.Id("edit.png"));
+			app.Screenshot("Edit screen");
+			app.Tap(x => x.Marked("Green"));
+			app.ClearText(x => x.Text("Green"));
+			app.Screenshot("Cleared last name field");
+			app.EnterText(x => x.Class("UITextField"), "Johnson");
+			app.Screenshot("Altered value last name field");
+			app.Tap(x => x.Id("save.png"));
+			app.Screenshot("Saved changes, navigated to detail screen");
+			app.Tap(x => x.Marked("List"));
+			app.ScrollTo("Johnson, Erica");
+			app.Screenshot("First name updated on list screen");
 		}
 	}
 }
