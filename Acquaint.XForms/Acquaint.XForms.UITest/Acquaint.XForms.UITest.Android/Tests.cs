@@ -26,12 +26,6 @@ namespace Acquaint.XForms.UITest.Android
 			//.ApkFile ("../../../Android/bin/Debug/UITestsAndroid.apk")
 				.StartApp();
 		}
-
-		[Test]
-		public void AppLaunches()
-		{
-			app.Screenshot("First screen.");
-		}
 	}
 }
 

@@ -43,4 +43,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Acquaint.XForms.Droid\Acquaint.XForms.Droid.csproj">
+      <Project>{186E2C95-63F1-44B9-AE99-0F436E3DADFE}</Project>
+      <Name>Acquaint.XForms.Droid</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

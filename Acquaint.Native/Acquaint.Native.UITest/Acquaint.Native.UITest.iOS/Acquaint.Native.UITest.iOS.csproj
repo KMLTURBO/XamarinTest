@@ -43,4 +43,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Acquaint.Native.iOS\Acquaint.Native.iOS.csproj">
+      <Project>{8B9A9EFD-5B43-434F-8FD5-AD040CD5201B}</Project>
+      <Name>Acquaint.Native.iOS</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

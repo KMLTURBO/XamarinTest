@@ -12,6 +12,10 @@ namespace Acquaint.XForms.iOS
     {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+			#if ENABLE_TEST_CLOUD
+			Xamarin.Calabash.Start();
+			#endif
+
             Forms.Init();
 
             FormsMaps.Init();

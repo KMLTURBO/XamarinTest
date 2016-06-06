@@ -36,9 +36,6 @@ namespace Acquaint.XForms.UITest.iOS
 		}
 
 		[Test]
-		public void AppLaunches()
-		{
-			app.Screenshot("First screen.");
 		}
 	}
 }

@@ -16,7 +16,7 @@ namespace Acquaint.Native.UITest.iOS
 		[SetUp]
 		public void BeforeEachTest()
 		{
-			// TODO: If the iOS app being tested is included in the solution then open
+			// TODO: If the iOS app being tested is included in the solution, then open
 			// the Unit Tests window, right click Test Apps, select Add App Project
 			// and select the app projects that should be tested.
 			//
@@ -27,18 +27,13 @@ namespace Acquaint.Native.UITest.iOS
 			//    #if ENABLE_TEST_CLOUD
 			//    Xamarin.Calabash.Start();
 			//    #endif
+
 			app = ConfigureApp
 				.iOS
-			// TODO: Update this path to point to your iOS app and uncomment the
-			// code if the app is not included in the solution.
-			//.AppBundle ("../../../iOS/bin/iPhoneSimulator/Debug/Acquaint.Native.UITest.iOS.iOS.app")
-				.StartApp();
-		}
-
-		[Test]
-		public void AppLaunches()
-		{
-			app.Screenshot("First screen.");
+				// TODO: If the iOS app being tested is NOT included in the solution, then
+				// uncomment this code and update this path to point to your iOS app.
+				// .AppBundle ("../../../iOS/bin/iPhoneSimulator/Debug/Acquaint.Native.UITest.iOS.iOS.app")
+			.StartApp();
 		}
 	}
 }

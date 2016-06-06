@@ -43,4 +43,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Acquaint.XForms.iOS\Acquaint.XForms.iOS.csproj">
+      <Project>{38CAF316-C475-4099-9723-A4002F76FCD2}</Project>
+      <Name>Acquaint.XForms.iOS</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
