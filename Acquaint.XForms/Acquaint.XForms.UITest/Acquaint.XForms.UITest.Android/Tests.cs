@@ -26,6 +26,31 @@ namespace Acquaint.XForms.UITest.Android
 			//.ApkFile ("../../../Android/bin/Debug/UITestsAndroid.apk")
 				.StartApp();
 		}
+
+		[Test]
+		public void UpdateFirstName() {
+			app.Screenshot("App start, display list");
+			app.ScrollDownTo("Green, Monica");
+			app.Screenshot("Scrolled to Monica Green");
+			app.Tap(x => x.Text("Green, Monica"));
+			app.Screenshot("Detail screen");
+			app.Tap(x => x.Marked("Edit"));
+			app.Screenshot("Edit screen");
+			app.ScrollDownTo("First");
+			app.Tap(x => x.Text("Monica"));
+			app.Screenshot("Tapped on view with class: EntryCellEditText");
+			app.ClearText();
+			app.Screenshot("Cleared first name field");
+			app.EnterText("Erica");
+			app.DismissKeyboard();
+			app.Screenshot("Altered value of company name field");
+			app.Tap(x => x.Marked("Save"));
+			app.Screenshot("Saved changes, navigated to detail screen");
+			app.Tap(x => x.Class("ImageButton"));
+			app.ScrollTo("Green, Erica");
+			app.Screenshot("First name updated on list screen");
+		}
+
 	}
 }
 
