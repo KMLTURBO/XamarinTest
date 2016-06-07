@@ -33,7 +33,7 @@ namespace Acquaint.XForms.UITest.iOS
 			// code if the app is not included in the solution.
 			//.AppBundle ("../../../iOS/bin/iPhoneSimulator/Debug/Acquaint.XForms.UITest.iOS.iOS.app")
 				.StartApp();
-		}
+		} 
 
 		[Test]
 		public void UpdateFirstName() {
@@ -98,7 +98,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.DismissKeyboard();
 			app.Screenshot("Altered value of company name field");
 			app.Tap(x => x.Id("save.png"));
-			app.Query(x => x.Marked("Green, Monica")).Single();
+			app.Query(x => x.Marked("Green, Monica"));
 			app.Screenshot("Saved changes, navigated to detail screen");
 			app.Tap(x => x.Marked("List"));
 			app.ScrollTo("Green, Monica");
