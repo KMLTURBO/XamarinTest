@@ -57,6 +57,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.ScrollDownTo("First");
 			app.Tap(x => x.Marked("Monica"));
 			app.ClearText();
+			app.DismissKeyboard();
 			app.Screenshot("Cleared first name field");
 			app.EnterText("Erica");
 			app.DismissKeyboard();
@@ -85,6 +86,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.ScrollDownTo("Last");
 			app.Tap(x => x.Marked("Green"));
 			app.ClearText();
+			app.DismissKeyboard();
 			app.Screenshot("Cleared last name field");
 			app.EnterText("Johnson");
 			app.DismissKeyboard();
@@ -113,6 +115,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.ScrollDownTo("Company");
 			app.Tap(x => x.Marked("Calcom Logistics"));
 			app.ClearText();
+			app.DismissKeyboard();
 			app.Screenshot("Cleared company name field");
 			app.EnterText("Bay Shipping Inc");
 			app.DismissKeyboard();
@@ -141,6 +144,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.ScrollDownTo("Title");
 			app.Tap(x => x.Marked("Director"));
 			app.ClearText();
+			app.DismissKeyboard();
 			app.Screenshot("Cleared title field");
 			app.EnterText("COO");
 			app.DismissKeyboard();
@@ -166,6 +170,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.ScrollDownTo("Phone");
 			app.Tap(x => x.Marked("925-353-8029"));
 			app.ClearText();
+			app.DismissKeyboard();
 			app.Screenshot("Cleared phone number field");
 			app.EnterText("9257878888");
 			app.DismissKeyboard();
@@ -191,6 +196,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.ScrollDownTo("Email");
 			app.Tap(x => x.Marked("mgreen@calcomlogistics.com"));
 			app.ClearText();
+			app.DismissKeyboard();
 			app.Screenshot("Cleared email field");
 			app.EnterText("mgreen@bayshipping.com");
 			app.DismissKeyboard();
@@ -217,6 +223,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.ScrollDownTo("Street");
 			app.Tap(x => x.Marked("230 3rd Ave"));
 			app.ClearText();
+			app.DismissKeyboard();
 			app.Screenshot("Cleared street field");
 			app.EnterText("1395 Middle Harbor Rd");
 			app.DismissKeyboard();
@@ -225,6 +232,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.ScrollDownTo("City");
 			app.Tap(x => x.Marked("San Francisco"));
 			app.ClearText();
+			app.DismissKeyboard();
 			app.Screenshot("Cleared city field");
 			app.EnterText("Oakland");
 			app.DismissKeyboard();
@@ -232,7 +240,8 @@ namespace Acquaint.XForms.UITest.iOS
 
 			app.ScrollDownTo("ZIP");
 			app.Tap(x => x.Marked("94118"));
-			app.ClearText(x => x.Text("94118"));
+			app.ClearText();
+			app.DismissKeyboard();
 			app.Screenshot("Cleared ZIP field");
 			app.EnterText("94612");
 			app.DismissKeyboard();
