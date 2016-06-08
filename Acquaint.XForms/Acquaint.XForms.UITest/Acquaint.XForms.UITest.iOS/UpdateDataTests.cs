@@ -5,6 +5,7 @@ using NUnit.Framework;
 using Xamarin.UITest;
 using Xamarin.UITest.iOS;
 using Xamarin.UITest.Queries;
+using System.Threading;
 
 namespace Acquaint.XForms.UITest.iOS
 {
@@ -49,6 +50,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.Screenshot("Scrolled to Monica Green");
 			app.Tap(x => x.Marked("Green, Monica"));
 			app.WaitForElement(x => x.Class("MKNewAnnotationContainerView")); // wait for the map to appear
+			Thread.Sleep(2000); // wait 2 seconds to give map time to fully render
 			app.Screenshot("Detail screen");
 			app.Tap(x => x.Id("edit.png"));
 			app.Screenshot("Edit screen");
@@ -61,6 +63,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.Screenshot("Altered value of company name field");
 			app.Tap(x => x.Id("save.png"));
 			app.WaitForElement(x => x.Class("MKNewAnnotationContainerView")); // wait for the map to appear
+			Thread.Sleep(2000); // wait 2 seconds to give map time to fully render
 			app.Screenshot("Saved changes, navigated to detail screen, first name updated");
 			app.Tap(x => x.Marked("List"));
 			app.ScrollDownTo("Green, Erica");
@@ -75,6 +78,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.Screenshot("Scrolled to Monica Green");
 			app.Tap(x => x.Marked("Green, Monica"));
 			app.WaitForElement(x => x.Class("MKNewAnnotationContainerView")); // wait for the map to appear
+			Thread.Sleep(2000); // wait 2 seconds to give map time to fully render
 			app.Screenshot("Detail screen");
 			app.Tap(x => x.Id("edit.png"));
 			app.Screenshot("Edit screen");
@@ -87,6 +91,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.Screenshot("Altered value of last name field");
 			app.Tap(x => x.Id("save.png"));
 			app.WaitForElement(x => x.Class("MKNewAnnotationContainerView")); // wait for the map to appear
+			Thread.Sleep(2000); // wait 2 seconds to give map time to fully render
 			app.Screenshot("Saved changes, navigated to detail screen, last name updated");
 			app.Tap(x => x.Marked("List"));
 			app.ScrollDownTo("Johnson, Monica");
@@ -101,6 +106,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.Screenshot("Scrolled to Monica Green");
 			app.Tap(x => x.Marked("Green, Monica"));
 			app.WaitForElement(x => x.Class("MKNewAnnotationContainerView")); // wait for the map to appear
+			Thread.Sleep(2000); // wait 2 seconds to give map time to fully render
 			app.Screenshot("Detail screen");
 			app.Tap(x => x.Id("edit.png"));
 			app.Screenshot("Edit screen");
@@ -113,6 +119,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.Screenshot("Altered value of company name field");
 			app.Tap(x => x.Id("save.png"));
 			app.WaitForElement(x => x.Class("MKNewAnnotationContainerView")); // wait for the map to appear
+			Thread.Sleep(2000); // wait 2 seconds to give map time to fully render
 			app.Screenshot("Saved changes, navigated to detail screen, company updated");
 			app.Tap(x => x.Marked("List"));
 			app.ScrollDownTo("Green, Monica");
@@ -127,6 +134,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.Screenshot("Scrolled to Monica Green");
 			app.Tap(x => x.Marked("Green, Monica"));
 			app.WaitForElement(x => x.Class("MKNewAnnotationContainerView")); // wait for the map to appear
+			Thread.Sleep(2000); // wait 2 seconds to give map time to fully render
 			app.Screenshot("Detail screen");
 			app.Tap(x => x.Id("edit.png"));
 			app.Screenshot("Edit screen");
@@ -139,6 +147,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.Screenshot("Altered value of title field");
 			app.Tap(x => x.Id("save.png"));
 			app.WaitForElement(x => x.Class("MKNewAnnotationContainerView")); // wait for the map to appear
+			Thread.Sleep(2000); // wait 2 seconds to give map time to fully render
 			app.Screenshot("Saved changes, navigated to detail screen, title updated");
 		}
 
@@ -150,6 +159,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.Screenshot("Scrolled to Monica Green");
 			app.Tap(x => x.Marked("Green, Monica"));
 			app.WaitForElement(x => x.Class("MKNewAnnotationContainerView")); // wait for the map to appear
+			Thread.Sleep(2000); // wait 2 seconds to give map time to fully render
 			app.Screenshot("Detail screen");
 			app.Tap(x => x.Id("edit.png"));
 			app.Screenshot("Edit screen");
@@ -162,6 +172,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.Screenshot("Altered value of phone number field");
 			app.Tap(x => x.Id("save.png"));
 			app.WaitForElement(x => x.Class("MKNewAnnotationContainerView")); // wait for the map to appear
+			Thread.Sleep(2000); // wait 2 seconds to give map time to fully render
 			app.Screenshot("Saved changes, navigated to detail screen, phone updated");
 		}
 
@@ -173,6 +184,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.Screenshot("Scrolled to Monica Green");
 			app.Tap(x => x.Marked("Green, Monica"));
 			app.WaitForElement(x => x.Class("MKNewAnnotationContainerView")); // wait for the map to appear
+			Thread.Sleep(2000); // wait 2 seconds to give map time to fully render
 			app.Screenshot("Detail screen");
 			app.Tap(x => x.Id("edit.png"));
 			app.Screenshot("Edit screen");
@@ -185,6 +197,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.Screenshot("Altered value of email field");
 			app.Tap(x => x.Id("save.png"));
 			app.WaitForElement(x => x.Class("MKNewAnnotationContainerView")); // wait for the map to appear
+			Thread.Sleep(2000); // wait 2 seconds to give map time to fully render
 			app.Screenshot("Saved changes, navigated to detail screen, email updated");
 		}
 
@@ -196,6 +209,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.Screenshot("Scrolled to Monica Green");
 			app.Tap(x => x.Marked("Green, Monica"));
 			app.WaitForElement(x => x.Class("MKNewAnnotationContainerView")); // wait for the map to appear
+			Thread.Sleep(2000); // wait 2 seconds to give map time to fully render
 			app.Screenshot("Detail screen");
 			app.Tap(x => x.Id("edit.png"));
 			app.Screenshot("Edit screen");
@@ -226,6 +240,7 @@ namespace Acquaint.XForms.UITest.iOS
 
 			app.Tap(x => x.Id("save.png"));
 			app.WaitForElement(x => x.Class("MKNewAnnotationContainerView")); // wait for the map to appear
+			Thread.Sleep(2000); // wait 2 seconds to give map time to fully render
 			app.Screenshot("Saved changes, navigated to detail screen, address updated");
 		}
 	}
