@@ -9,7 +9,7 @@ using Xamarin.UITest.Queries;
 namespace Acquaint.Native.UITest.iOS
 {
 	[TestFixture]
-	public class Tests
+	public class AcquaintanceUpdatingTests
 	{
 		iOSApp app;
 
@@ -27,12 +27,18 @@ namespace Acquaint.Native.UITest.iOS
 			//    #if ENABLE_TEST_CLOUD
 			//    Xamarin.Calabash.Start();
 			//    #endif
+			//
+			// ^^^ THIS IS THE WAY THE ACQUAINT APP IS SETUP FOR UITESTS ^^^
+
 
 			app = ConfigureApp
 				.iOS
-				// TODO: If the iOS app being tested is NOT included in the solution, then
-				// uncomment this code and update this path to point to your iOS app.
-				// .AppBundle ("../../../iOS/bin/iPhoneSimulator/Debug/Acquaint.Native.UITest.iOS.iOS.app")
+			// TODO: If the iOS app being tested is NOT included in the solution, then
+			// uncomment this code and update this path to point to your iOS app.
+			// .AppBundle ("../../../iOS/bin/iPhoneSimulator/Debug/Acquaint.Native.UITest.iOS.iOS.app")
+			//
+			// ^^^ THIS IS *NOT* THE WAY THE ACQUAINT APP IS SETUP FOR UITESTS ^^^
+
 			.StartApp();
 		}
 

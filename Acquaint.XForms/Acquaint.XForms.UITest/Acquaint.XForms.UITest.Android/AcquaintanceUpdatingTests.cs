@@ -3,69 +3,71 @@ using System.IO;
 using System.Linq;
 using NUnit.Framework;
 using Xamarin.UITest;
-using Xamarin.UITest.iOS;
+using Xamarin.UITest.Android;
 using Xamarin.UITest.Queries;
 
-namespace Acquaint.XForms.UITest.iOS
+namespace Acquaint.XForms.UITest.Android
 {
 	[TestFixture]
-	public class Tests
+	public class AcquaintanceUpdatingTests
 	{
-		iOSApp app;
+		AndroidApp app;
 
 		[SetUp]
 		public void BeforeEachTest()
 		{
-			// TODO: If the iOS app being tested is included in the solution then open
+			// TODO: If the Android app being tested is included in the solution then open
 			// the Unit Tests window, right click Test Apps, select Add App Project
 			// and select the app projects that should be tested.
 			//
-			// The iOS project should have the Xamarin.TestCloud.Agent NuGet package
-			// installed. To start the Test Cloud Agent the following code should be
-			// added to the FinishedLaunching method of the AppDelegate:
-			//
-			//    #if ENABLE_TEST_CLOUD
-			//    Xamarin.Calabash.Start();
-			//    #endif
+			// ^^^ THIS IS THE WAY THE ACQUAINT APP IS SETUP FOR UITESTS ^^^
+
 			app = ConfigureApp
-				.iOS
-			// TODO: Update this path to point to your iOS app and uncomment the
+				.Android
+
+			// TODO: Update this path to point to your Android app and uncomment the
 			// code if the app is not included in the solution.
-			//.AppBundle ("../../../iOS/bin/iPhoneSimulator/Debug/Acquaint.XForms.UITest.iOS.iOS.app")
+			//.ApkFile ("../../../Android/bin/Debug/UITestsAndroid.apk")
+			//
+			// ^^^ THIS IS *NOT* THE WAY THE ACQUAINT APP IS SETUP FOR UITESTS ^^^
 				.StartApp();
-		} 
+		}
 
 		[Test]
 		public void UpdateFirstName() {
+			app.WaitForElement(x => x.Marked("Armstead, Evan"), "Timed out waiting for list to appear", new TimeSpan(0,0,10));
 			app.Screenshot("App start, display list");
-			app.ScrollTo("Green, Monica");
+			app.ScrollDownTo("Green, Monica");
 			app.Screenshot("Scrolled to Monica Green");
-			app.Tap(x => x.Marked("Green, Monica"));
+			app.Tap(x => x.Text("Green, Monica"));
+			app.WaitForElement(x => x.Marked("Zoom out"), "Timed out waiting for map to appear", new TimeSpan(0,0,10));
 			app.Screenshot("Detail screen");
-			app.Tap(x => x.Id("edit.png"));
+			app.Tap(x => x.Marked("Edit"));
 			app.Screenshot("Edit screen");
 			app.ScrollDownTo("First");
-			app.Tap(x => x.Marked("Monica"));
+			app.Tap(x => x.Text("Monica"));
 			app.ClearText();
 			app.Screenshot("Cleared first name field");
 			app.EnterText("Erica");
 			app.DismissKeyboard();
 			app.Screenshot("Altered value of company name field");
-			app.Tap(x => x.Id("save.png"));
-			app.Screenshot("Saved changes, navigated to detail screen");
-			app.Tap(x => x.Marked("List"));
-			app.ScrollTo("Green, Erica");
-			app.Screenshot("First name updated on list screen");
+			app.Tap(x => x.Marked("Save"));
+			app.Screenshot("Saved changes, navigated to detail screen, first name updated");
+			app.Tap(x => x.Class("ImageButton"));
+			app.ScrollDownTo("Green, Erica");
+			app.Screenshot("First name updated on list screen, first name updated");
 		}
 
 		[Test]
 		public void UpdateLastName() {
+			app.WaitForElement(x => x.Marked("Armstead, Evan"), "Timed out waiting for list to appear", new TimeSpan(0,0,10));
 			app.Screenshot("App start, display list");
-			app.ScrollTo("Green, Monica");
+			app.ScrollDownTo("Green, Monica");
 			app.Screenshot("Scrolled to Monica Green");
 			app.Tap(x => x.Marked("Green, Monica"));
+			app.WaitForElement(x => x.Marked("Zoom out"), "Timed out waiting for map to appear", new TimeSpan(0,0,10));
 			app.Screenshot("Detail screen");
-			app.Tap(x => x.Id("edit.png"));
+			app.Tap(x => x.Marked("Edit"));
 			app.Screenshot("Edit screen");
 			app.ScrollDownTo("Last");
 			app.Tap(x => x.Marked("Green"));
@@ -74,21 +76,23 @@ namespace Acquaint.XForms.UITest.iOS
 			app.EnterText("Johnson");
 			app.DismissKeyboard();
 			app.Screenshot("Altered value of last name field");
-			app.Tap(x => x.Id("save.png"));
-			app.Screenshot("Saved changes, navigated to detail screen");
-			app.Tap(x => x.Marked("List"));
-			app.ScrollTo("Johnson, Monica");
-			app.Screenshot("First name updated on list screen");
+			app.Tap(x => x.Marked("Save"));
+			app.Screenshot("Saved changes, navigated to detail screen, last name updated");
+			app.Tap(x => x.Class("ImageButton"));
+			app.ScrollDownTo("Johnson, Monica");
+			app.Screenshot("First name updated on list screen, last name updated");
 		}
 
 		[Test]
 		public void UpdateCompanyName() {
+			app.WaitForElement(x => x.Marked("Armstead, Evan"), "Timed out waiting for list to appear", new TimeSpan(0,0,10));
 			app.Screenshot("App start, display list");
-			app.ScrollTo("Green, Monica");
+			app.ScrollDownTo("Green, Monica");
 			app.Screenshot("Scrolled to Monica Green");
 			app.Tap(x => x.Marked("Green, Monica"));
+			app.WaitForElement(x => x.Marked("Zoom out"), "Timed out waiting for map to appear", new TimeSpan(0,0,10));
 			app.Screenshot("Detail screen");
-			app.Tap(x => x.Id("edit.png"));
+			app.Tap(x => x.Marked("Edit"));
 			app.Screenshot("Edit screen");
 			app.ScrollDownTo("Company");
 			app.Tap(x => x.Marked("Calcom Logistics"));
@@ -97,22 +101,24 @@ namespace Acquaint.XForms.UITest.iOS
 			app.EnterText("Bay Shipping Inc");
 			app.DismissKeyboard();
 			app.Screenshot("Altered value of company name field");
-			app.Tap(x => x.Id("save.png"));
+			app.Tap(x => x.Marked("Save"));
 			app.Query(x => x.Marked("Green, Monica"));
-			app.Screenshot("Saved changes, navigated to detail screen");
-			app.Tap(x => x.Marked("List"));
-			app.ScrollTo("Green, Monica");
-			app.Screenshot("Company name updated on list screen");
+			app.Screenshot("Saved changes, navigated to detail screen, company updated");
+			app.Tap(x => x.Class("ImageButton"));
+			app.ScrollDownTo("Green, Monica");
+			app.Screenshot("Company name updated on list screen, company updated");
 		}
 
 		[Test]
 		public void UpdateTitle() {
+			app.WaitForElement(x => x.Marked("Armstead, Evan"), "Timed out waiting for list to appear", new TimeSpan(0,0,10));
 			app.Screenshot("App start, display list");
-			app.ScrollTo("Green, Monica");
+			app.ScrollDownTo("Green, Monica");
 			app.Screenshot("Scrolled to Monica Green");
 			app.Tap(x => x.Marked("Green, Monica"));
+			app.WaitForElement(x => x.Marked("Zoom out"), "Timed out waiting for map to appear", new TimeSpan(0,0,10));
 			app.Screenshot("Detail screen");
-			app.Tap(x => x.Id("edit.png"));
+			app.Tap(x => x.Marked("Edit"));
 			app.Screenshot("Edit screen");
 			app.ScrollDownTo("Title");
 			app.Tap(x => x.Marked("Director"));
@@ -121,21 +127,20 @@ namespace Acquaint.XForms.UITest.iOS
 			app.EnterText("COO");
 			app.DismissKeyboard();
 			app.Screenshot("Altered value of title field");
-			app.Tap(x => x.Id("save.png"));
-			app.Screenshot("Saved changes, navigated to detail screen");
-			app.Tap(x => x.Marked("List"));
-			app.ScrollTo("Green, Monica");
-			app.Screenshot("Title updated on list screen");
+			app.Tap(x => x.Marked("Save"));
+			app.Screenshot("Saved changes, navigated to detail screen, title updated");
 		}
 
 		[Test]
 		public void UpdatePhoneNumber() {
+			app.WaitForElement(x => x.Marked("Armstead, Evan"), "Timed out waiting for list to appear", new TimeSpan(0,0,10));
 			app.Screenshot("App start, display list");
-			app.ScrollTo("Green, Monica");
+			app.ScrollDownTo("Green, Monica");
 			app.Screenshot("Scrolled to Monica Green");
 			app.Tap(x => x.Marked("Green, Monica"));
+			app.WaitForElement(x => x.Marked("Zoom out"), "Timed out waiting for map to appear", new TimeSpan(0,0,10));
 			app.Screenshot("Detail screen");
-			app.Tap(x => x.Id("edit.png"));
+			app.Tap(x => x.Marked("Edit"));
 			app.Screenshot("Edit screen");
 			app.ScrollDownTo("Phone");
 			app.Tap(x => x.Marked("925-353-8029"));
@@ -144,21 +149,20 @@ namespace Acquaint.XForms.UITest.iOS
 			app.EnterText("9257878888");
 			app.DismissKeyboard();
 			app.Screenshot("Altered value of phone number field");
-			app.Tap(x => x.Id("save.png"));
-			app.Screenshot("Saved changes, navigated to detail screen");
-			app.Tap(x => x.Marked("List"));
-			app.ScrollTo("Green, Monica");
-			app.Screenshot("Phone number updated on list screen");
+			app.Tap(x => x.Marked("Save"));
+			app.Screenshot("Saved changes, navigated to detail screen, phone updated");
 		}
 
 		[Test]
 		public void UpdateEmailAddress() {
+			app.WaitForElement(x => x.Marked("Armstead, Evan"), "Timed out waiting for list to appear", new TimeSpan(0,0,10));
 			app.Screenshot("App start, display list");
-			app.ScrollTo("Green, Monica");
+			app.ScrollDownTo("Green, Monica");
 			app.Screenshot("Scrolled to Monica Green");
 			app.Tap(x => x.Marked("Green, Monica"));
+			app.WaitForElement(x => x.Marked("Zoom out"), "Timed out waiting for map to appear", new TimeSpan(0,0,10));
 			app.Screenshot("Detail screen");
-			app.Tap(x => x.Id("edit.png"));
+			app.Tap(x => x.Marked("Edit"));
 			app.Screenshot("Edit screen");
 			app.ScrollDownTo("Email");
 			app.Tap(x => x.Marked("mgreen@calcomlogistics.com"));
@@ -167,21 +171,20 @@ namespace Acquaint.XForms.UITest.iOS
 			app.EnterText("mgreen@bayshipping.com");
 			app.DismissKeyboard();
 			app.Screenshot("Altered value of email field");
-			app.Tap(x => x.Id("save.png"));
-			app.Screenshot("Saved changes, navigated to detail screen");
-			app.Tap(x => x.Marked("List"));
-			app.ScrollTo("Green, Monica");
-			app.Screenshot("Email updated on list screen");
+			app.Tap(x => x.Marked("Save"));
+			app.Screenshot("Saved changes, navigated to detail screen, email updated");
 		}
 
 		[Test]
 		public void UpdateMailingAddress() {
+			app.WaitForElement(x => x.Marked("Armstead, Evan"), "Timed out waiting for list to appear", new TimeSpan(0,0,10));
 			app.Screenshot("App start, display list");
-			app.ScrollTo("Green, Monica");
+			app.ScrollDownTo("Green, Monica");
 			app.Screenshot("Scrolled to Monica Green");
 			app.Tap(x => x.Marked("Green, Monica"));
+			app.WaitForElement(x => x.Marked("Zoom out"), "Timed out waiting for map to appear", new TimeSpan(0,0,10));
 			app.Screenshot("Detail screen");
-			app.Tap(x => x.Id("edit.png"));
+			app.Tap(x => x.Marked("Edit"));
 			app.Screenshot("Edit screen");
 
 			app.ScrollDownTo("Street");
@@ -208,8 +211,9 @@ namespace Acquaint.XForms.UITest.iOS
 			app.DismissKeyboard();
 			app.Screenshot("Altered value of ZIP field");
 
-			app.Tap(x => x.Id("save.png"));
-			app.Screenshot("Saved changes, navigated to detail screen");
+			app.Tap(x => x.Marked("Save"));
+			app.WaitForElement(x => x.Marked("Zoom out"), "Timed out waiting for map to appear", new TimeSpan(0,0,10));
+			app.Screenshot("Saved changes, navigated to detail screen, address updated");
 		}
 	}
 }
