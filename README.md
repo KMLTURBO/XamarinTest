@@ -26,6 +26,13 @@ The app targets three platforms:
     * UWP currently only in Forms version of app
     * UWP supported only in Visual Studio, not Xamarin Studio
 
+##Code sharing
+#####~90% code shared across platforms in Acquaint.XForms
+![](https://github.com/xamarinhq/app-acquaint/blob/master/Screenshots/Acquaint.XForms_CodeSharing.png)
+
+#####~40% code shared across platforms in Acquaint.Native
+![](https://github.com/xamarinhq/app-acquaint/blob/master/Screenshots/Acquaint.Native_CodeSharing.png)
+
 ##Integrations
 Includes integrations such as:
 * getting directions
