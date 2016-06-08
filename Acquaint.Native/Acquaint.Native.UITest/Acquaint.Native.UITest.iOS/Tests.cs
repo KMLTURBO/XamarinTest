@@ -35,6 +35,8 @@ namespace Acquaint.Native.UITest.iOS
 				// .AppBundle ("../../../iOS/bin/iPhoneSimulator/Debug/Acquaint.Native.UITest.iOS.iOS.app")
 			.StartApp();
 		}
+
+		// tests coming soon
 	}
 }
 

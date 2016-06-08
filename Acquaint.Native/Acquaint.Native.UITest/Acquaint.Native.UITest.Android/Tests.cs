@@ -26,6 +26,8 @@ namespace Acquaint.Native.UITest.Android
 			//.ApkFile ("../../../Android/bin/Debug/UITestsAndroid.apk")
 				.StartApp();
 		}
+
+		// tests coming soon
 	}
 }
 

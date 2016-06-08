@@ -33,6 +33,7 @@ namespace Acquaint.XForms.UITest.Android
 			app.ScrollDownTo("Green, Monica");
 			app.Screenshot("Scrolled to Monica Green");
 			app.Tap(x => x.Text("Green, Monica"));
+			app.WaitForNoElement(timeout: new TimeSpan(0, 0, 2));
 			app.Screenshot("Detail screen");
 			app.Tap(x => x.Marked("Edit"));
 			app.Screenshot("Edit screen");
