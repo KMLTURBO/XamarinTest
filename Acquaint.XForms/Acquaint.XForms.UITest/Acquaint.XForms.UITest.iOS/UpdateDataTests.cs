@@ -9,7 +9,7 @@ using Xamarin.UITest.Queries;
 namespace Acquaint.XForms.UITest.iOS
 {
 	[TestFixture]
-	public class AcquaintanceUpdatingTests
+	public class UpdateDataTests
 	{
 		iOSApp app;
 
