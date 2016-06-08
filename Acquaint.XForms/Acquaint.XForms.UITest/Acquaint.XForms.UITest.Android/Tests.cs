@@ -38,7 +38,6 @@ namespace Acquaint.XForms.UITest.Android
 			app.Screenshot("Edit screen");
 			app.ScrollDownTo("First");
 			app.Tap(x => x.Text("Monica"));
-			app.Screenshot("Tapped on view with class: EntryCellEditText");
 			app.ClearText();
 			app.Screenshot("Cleared first name field");
 			app.EnterText("Erica");
