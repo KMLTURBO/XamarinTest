@@ -185,7 +185,7 @@ namespace Acquaint.XForms.UITest.iOS
 			app.Screenshot("Edit screen");
 
 			app.ScrollDownTo("Street");
-			app.Tap(x => x.Marked("231 3rd Ave"));
+			app.Tap(x => x.Marked("230 3rd Ave"));
 			app.ClearText();
 			app.Screenshot("Cleared street field");
 			app.EnterText("1395 Middle Harbor Rd");
