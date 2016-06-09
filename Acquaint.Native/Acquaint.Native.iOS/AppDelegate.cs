@@ -17,8 +17,9 @@ namespace Acquaint.Native.iOS
 		// Method invoked after the application has launched to configure the main window and view controller.
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
 		{
-			// Override point for customization after application launch.
-			// If not required for your application you can safely delete this method
+		    #if ENABLE_TEST_CLOUD
+		    Xamarin.Calabash.Start();
+		    #endif
 
 			// intantiate a new instance of Window with the device's screen bounds
 			Window = new UIWindow(UIScreen.MainScreen.Bounds);
