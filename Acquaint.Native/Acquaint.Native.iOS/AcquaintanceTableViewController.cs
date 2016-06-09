@@ -30,6 +30,9 @@ namespace Acquaint.Native.iOS
 			await _AcquaintanceTableViewSource.LoadAcquaintances();
 
 			SetTableViewProperties();
+
+			// override the back button text for AcquaintanceDetailViewController (the navigated-to view controller)
+			NavigationItem.BackBarButtonItem = new UIBarButtonItem ("List", UIBarButtonItemStyle.Plain, null);
 		}
 
 		// The ViewDidAppear() override is called after the view has appeared on the screen.
