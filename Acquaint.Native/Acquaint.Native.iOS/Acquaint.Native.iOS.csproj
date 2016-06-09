@@ -156,6 +156,10 @@
     <Compile Include="AcquaintanceCell.designer.cs">
       <DependentUpon>AcquaintanceCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="AcquaintanceEditViewController.cs" />
+    <Compile Include="AcquaintanceEditViewController.designer.cs">
+      <DependentUpon>AcquaintanceEditViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

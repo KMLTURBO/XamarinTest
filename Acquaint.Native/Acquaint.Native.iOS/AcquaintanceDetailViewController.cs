@@ -123,6 +123,24 @@ namespace Acquaint.Native.iOS
 			}
 		}
 
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
+
+			// override the back button text for AcquaintanceEditViewController (the navigated-to view controller)
+			NavigationItem.BackBarButtonItem = new UIBarButtonItem ("Details", UIBarButtonItemStyle.Plain, null);
+		}
+
+		public override void PrepareForSegue (UIStoryboardSegue segue, Foundation.NSObject sender)
+		{
+			//base.PrepareForSegue (segue, sender);
+
+			// get the destination viewcontroller from the segue
+			var acquaintanceDetailEditController = segue.DestinationViewController as AcquaintanceEditViewController;
+
+			acquaintanceDetailEditController.Acquaintance = this.Acquaintance;
+		}
+
 		void SetupGetDirectionsAction(double lat, double lon)
 		{
 			GetDirectionsImageView.Image = UIImage.FromBundle("directions");
