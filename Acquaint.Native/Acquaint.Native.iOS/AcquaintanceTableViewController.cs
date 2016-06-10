@@ -1,4 +1,6 @@
 using System;
+using System.Threading.Tasks;
+using Acquaint.Data;
 using Foundation;
 using UIKit;
 
@@ -58,20 +60,28 @@ namespace Acquaint.Native.iOS
 		// The PrepareForSegue() override is called when a segue has been activated, but before it executes.
 		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
 		{
-			// the selected index path
-			var indexPath = TableView.IndexPathForSelectedRow;
-
-			// the index of the item in the collection that corresponds to the selected cell
-			var itemIndex = indexPath.Row;
-
-			// get the destination viewcontroller from the segue
-			var acquaintanceDetailViewController = segue.DestinationViewController as AcquaintanceDetailViewController;
-
-			// if the detaination viewcontrolller is not null
-			if (acquaintanceDetailViewController != null && TableView.Source != null)
+			// determine segue action by segue identifier
+			switch (segue.Identifier) 
 			{
-				// set the acquaintance on the view controller
-				acquaintanceDetailViewController.Acquaintance = ((AcquaintanceTableViewSource)TableView.Source).Acquaintances[itemIndex];
+			case "NewAcquaintanceSegue":
+				// get the destination viewcontroller from the segue
+				var acquaintanceEditViewController = segue.DestinationViewController as AcquaintanceEditViewController;
+				// instantiate new Acquaintance and assign to viewcontroller
+				acquaintanceEditViewController.SetAcquaintance(new Acquaintance () { Id = Guid.NewGuid ().ToString (), PhotoUrl = "placeholderProfileImage.png" }, null, this);
+				break;
+			case "AcquaintanceDetailSegue":
+				// the selected index path
+				var indexPath = TableView.IndexPathForSelectedRow;
+				// the index of the item in the collection that corresponds to the selected cell
+				var itemIndex = indexPath.Row;
+				// get the destination viewcontroller from the segue
+				var acquaintanceDetailViewController = segue.DestinationViewController as AcquaintanceDetailViewController;
+				// if the detaination viewcontrolller is not null
+				if (acquaintanceDetailViewController != null && TableView.Source != null) {
+					// set the acquaintance on the view controller
+					acquaintanceDetailViewController.SetAcquaintance (((AcquaintanceTableViewSource)TableView.Source).Acquaintances [itemIndex], this);
+				}
+				break;
 			}
 		}
 
@@ -118,7 +128,7 @@ namespace Acquaint.Native.iOS
 				return null;
 
 			// set the acquaintance on the view controller
-			detailViewController.Acquaintance = _AcquaintanceTableViewSource.Acquaintances[indexPath.Row];
+			detailViewController.SetAcquaintance (_AcquaintanceTableViewSource.Acquaintances [indexPath.Row], this);
 
 			// set the frame on the screen that will NOT be blurred out during the preview "peek"
 			previewingContext.SourceRect = cell.Frame;
@@ -136,6 +146,20 @@ namespace Acquaint.Native.iOS
 			// Show the view controller that is being preview "peeked".
 			// Instead, you could do whatever you want here, such as commit some other view controller than the one that is being "peeked".
 			ShowViewController(viewControllerToCommit, this);
+		}
+
+		public void SaveAcquaintance (Acquaintance acquaintance)
+		{
+			_AcquaintanceTableViewSource.SaveAcquaintance (acquaintance);
+
+			_AcquaintanceTableViewSource.LoadAcquaintances ();
+		}
+
+		public void DeleteAcquaintance (Acquaintance acquaintance)
+		{
+			_AcquaintanceTableViewSource.DeleteAcquaintance (acquaintance);
+
+			_AcquaintanceTableViewSource.LoadAcquaintances ();
 		}
 	}
 }

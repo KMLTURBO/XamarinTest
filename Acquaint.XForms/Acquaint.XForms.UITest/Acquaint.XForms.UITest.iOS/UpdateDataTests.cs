@@ -44,7 +44,7 @@ namespace Acquaint.XForms.UITest.iOS
 
 		[Test]
 		public void UpdateFirstName() {
-			app.WaitForElement(x => x.Marked("Armstead, Evan")); // wait for the list to appear
+			app.WaitForElement (x => x.Marked ("Armstead, Evan"), "timed out waiting for list to load", new TimeSpan (0, 0, 10)); // wait for the list to appear
 			app.Screenshot("App start, display list");
 			app.ScrollDownTo("Green, Monica");
 			app.Screenshot("Scrolled to Monica Green");
@@ -72,7 +72,7 @@ namespace Acquaint.XForms.UITest.iOS
 
 		[Test]
 		public void UpdateLastName() {
-			app.WaitForElement(x => x.Marked("Armstead, Evan")); // wait for the list to appear
+			app.WaitForElement (x => x.Marked ("Armstead, Evan"), "timed out waiting for list to load", new TimeSpan (0, 0, 10)); // wait for the list to appear
 			app.Screenshot("App start, display list");
 			app.ScrollDownTo("Green, Monica");
 			app.Screenshot("Scrolled to Monica Green");
@@ -100,7 +100,7 @@ namespace Acquaint.XForms.UITest.iOS
 
 		[Test]
 		public void UpdateCompanyName() {
-			app.WaitForElement(x => x.Marked("Armstead, Evan")); // wait for the list to appear
+			app.WaitForElement (x => x.Marked ("Armstead, Evan"), "timed out waiting for list to load", new TimeSpan (0, 0, 10)); // wait for the list to appear
 			app.Screenshot("App start, display list");
 			app.ScrollDownTo("Green, Monica");
 			app.Screenshot("Scrolled to Monica Green");
@@ -128,7 +128,7 @@ namespace Acquaint.XForms.UITest.iOS
 
 		[Test]
 		public void UpdateTitle() {
-			app.WaitForElement(x => x.Marked("Armstead, Evan")); // wait for the list to appear
+			app.WaitForElement (x => x.Marked ("Armstead, Evan"), "timed out waiting for list to load", new TimeSpan (0, 0, 10)); // wait for the list to appear
 			app.Screenshot("App start, display list");
 			app.ScrollDownTo("Green, Monica");
 			app.Screenshot("Scrolled to Monica Green");
@@ -153,7 +153,7 @@ namespace Acquaint.XForms.UITest.iOS
 
 		[Test]
 		public void UpdatePhoneNumber() {
-			app.WaitForElement(x => x.Marked("Armstead, Evan")); // wait for the list to appear
+			app.WaitForElement (x => x.Marked ("Armstead, Evan"), "timed out waiting for list to load", new TimeSpan (0, 0, 10)); // wait for the list to appear
 			app.Screenshot("App start, display list");
 			app.ScrollDownTo("Green, Monica");
 			app.Screenshot("Scrolled to Monica Green");
@@ -178,7 +178,7 @@ namespace Acquaint.XForms.UITest.iOS
 
 		[Test]
 		public void UpdateEmailAddress() {
-			app.WaitForElement(x => x.Marked("Armstead, Evan")); // wait for the list to appear
+			app.WaitForElement (x => x.Marked ("Armstead, Evan"), "timed out waiting for list to load", new TimeSpan (0, 0, 10)); // wait for the list to appear
 			app.Screenshot("App start, display list");
 			app.ScrollDownTo("Green, Monica");
 			app.Screenshot("Scrolled to Monica Green");
@@ -203,7 +203,7 @@ namespace Acquaint.XForms.UITest.iOS
 
 		[Test]
 		public void UpdateMailingAddress() {
-			app.WaitForElement(x => x.Marked("Armstead, Evan")); // wait for the list to appear
+			app.WaitForElement (x => x.Marked ("Armstead, Evan"), "timed out waiting for list to load", new TimeSpan (0, 0, 10)); // wait for the list to appear
 			app.Screenshot("App start, display list");
 			app.ScrollDownTo("Green, Monica");
 			app.Screenshot("Scrolled to Monica Green");

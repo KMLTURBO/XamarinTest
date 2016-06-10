@@ -35,6 +35,16 @@ namespace Acquaint.Native.iOS
 			Acquaintances = (await _AcquaintanceDataSource.GetItems()).ToList();
 		}
 
+		public async Task SaveAcquaintance (Acquaintance acquaintance)
+		{
+			await _AcquaintanceDataSource.SaveItem (acquaintance);
+		}
+
+		public async Task DeleteAcquaintance (Acquaintance acquaintance)
+		{
+			await _AcquaintanceDataSource.DeleteItem (acquaintance.Id);
+		}
+
 		#region implemented abstract members of UITableViewSource
 
 		/// <summary>

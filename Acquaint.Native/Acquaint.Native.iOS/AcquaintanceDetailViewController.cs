@@ -5,6 +5,7 @@ using CoreGraphics;
 using CoreLocation;
 using FFImageLoading;
 using FFImageLoading.Transformations;
+using Foundation;
 using MapKit;
 using ObjCRuntime;
 using Plugin.ExternalMaps;
@@ -17,13 +18,23 @@ namespace Acquaint.Native.iOS
 	/// <summary>
 	/// Acquaintance detail view controller. The layout for this view controller is defined almost entirely in Main.storyboard.
 	/// </summary>
-	partial class AcquaintanceDetailViewController : UIViewController
+	public partial class AcquaintanceDetailViewController : UIViewController
 	{
 		/// <summary>
 		/// Gets or sets the acquaintance.
 		/// </summary>
 		/// <value>The acquaintance.</value>
-		public Acquaintance Acquaintance { get; set; }
+		public Acquaintance Acquaintance { get; private set; }
+
+		AcquaintanceTableViewController _ListViewController;
+
+		public void SetAcquaintance (Acquaintance acquaintance, AcquaintanceTableViewController listViewController = null)
+		{
+			Acquaintance = acquaintance;
+
+			if (listViewController != null)
+				_ListViewController = listViewController;
+		}
 
 	    readonly CLGeocoder _Geocoder;
 
@@ -116,9 +127,9 @@ namespace Acquaint.Native.iOS
 						// setup fhe action for getting navigation directions
 						SetupGetDirectionsAction(coord.Latitude, coord.Longitude);
 					}
-				} catch (Exception ex)
+				} catch
 				{
-					DisplayErrorAlertView("Geocoding Error", "Please make sure the address is valid and that you have a network connection.");
+					//DisplayErrorAlertView("Geocoding Error", "Please make sure the address is valid and that you have a network connection.");
 				}
 			}
 		}
@@ -133,12 +144,10 @@ namespace Acquaint.Native.iOS
 
 		public override void PrepareForSegue (UIStoryboardSegue segue, Foundation.NSObject sender)
 		{
-			//base.PrepareForSegue (segue, sender);
-
 			// get the destination viewcontroller from the segue
-			var acquaintanceDetailEditController = segue.DestinationViewController as AcquaintanceEditViewController;
+			var acquaintanceEditViewController = segue.DestinationViewController as AcquaintanceEditViewController;
 
-			acquaintanceDetailEditController.Acquaintance = this.Acquaintance;
+			acquaintanceEditViewController.SetAcquaintance (this.Acquaintance, this, _ListViewController);
 		}
 
 		void SetupGetDirectionsAction(double lat, double lon)
@@ -251,5 +260,15 @@ namespace Acquaint.Native.iOS
 		}
 
 		bool IsRealDevice => Runtime.Arch == Arch.DEVICE;
+
+		public void SaveAcquaintance (Acquaintance acquaintance)
+		{
+			Acquaintance = acquaintance;
+		}
+
+		public void DeleteAcquaintance ()
+		{
+			NavigationController.PopViewController (true);
+		}
 	}
 }
