@@ -75,7 +75,7 @@
     <MtouchUseSGen>true</MtouchUseSGen>
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchProfiling>true</MtouchProfiling>
-    <AssemblyName>ClientsNativeiOS</AssemblyName>
+    <AssemblyName>AcquaintNativeiOS</AssemblyName>
     <BuildIpa>true</BuildIpa>
     <IpaPackageName>
     </IpaPackageName>
