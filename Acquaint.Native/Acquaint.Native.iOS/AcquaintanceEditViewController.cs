@@ -54,7 +54,7 @@ namespace Acquaint.Native.iOS
 				alert.AddAction (UIAlertAction.Create ("Delete", UIAlertActionStyle.Destructive, (action) => {
 					if (action != null) {
 						if (_DetailViewController != null) {
-							NavigationController.PopViewController (false);
+							NavigationController.PopViewController (false); // skipping animation in order to not show the detail screen for the acquaintance we just deleted
 							_DetailViewController.DeleteAcquaintance ();
 						}
 						if (_ListViewController != null) {
