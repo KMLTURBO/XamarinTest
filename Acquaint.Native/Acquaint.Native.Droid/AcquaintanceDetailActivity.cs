@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Acquaint.Data;
 using Acquaint.Util;
 using Android.App;
+using Android.Content;
 using Android.Gms.Maps;
 using Android.Gms.Maps.Model;
 using Android.Locations;
@@ -26,7 +27,7 @@ namespace Acquaint.Native.Droid
 	/// <summary>
 	/// Acquaintance detail activity.
 	/// </summary>
-	[Activity]			
+	[Activity]
 	public class AcquaintanceDetailActivity : AppCompatActivity, IOnMapReadyCallback
 	{
 		readonly IDataSource<Acquaintance> _AcquaintanceDataSource;
@@ -151,7 +152,7 @@ namespace Acquaint.Native.Droid
 
 		void SetupAnimations()
 		{
-			
+
 			if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
 			{
 				var enterTransition = TransitionInflater.From(this).InflateTransition(Resource.Transition.acquaintanceDetailActivityEnter);
@@ -216,7 +217,8 @@ namespace Acquaint.Native.Droid
 			{
 				// asynchronously retrieve a geocoded location for the acqaintance's address
 				addresses = await new Geocoder(this).GetFromLocationNameAsync(_Acquaintance.AddressString, 1);
-			} catch (Exception ex)
+			}
+			catch (Exception ex)
 			{
 				if (ex.Message == errorMessage)
 				{
@@ -237,7 +239,8 @@ namespace Acquaint.Native.Droid
 				try
 				{
 					addresses = await new Geocoder(this).GetFromLocationNameAsync(GetAddressWithRoundedStreetNumber(_Acquaintance.AddressString), 1);
-				} catch (Exception ex)
+				}
+				catch (Exception ex)
 				{
 					if (ex.Message == errorMessage)
 					{
@@ -277,13 +280,42 @@ namespace Acquaint.Native.Droid
 			}
 		}
 
+		public override bool OnCreateOptionsMenu(IMenu menu)
+		{
+			MenuInflater.Inflate(Resource.Menu.AcquaintanceDetailMenu, menu);
+
+			return base.OnCreateOptionsMenu(menu);
+		}
+
 		// this override is called when the back button is tapped
 		public override bool OnOptionsItemSelected(IMenuItem item)
 		{
-			// execute a back navigation
-			OnBackPressed();
+			if (item != null)
+			{
+				switch (item.ItemId)
+				{
+				case Android.Resource.Id.Home:
+					// execute a back navigation
+					OnBackPressed();
+					break;
+				case Resource.Id.acquaintanceEditButton:
+					StartActivity(GetEditIntent());
+					break;
+				}
+			}
 
-			return true;
+			return base.OnOptionsItemSelected(item);
+		}
+
+		Intent GetEditIntent()
+		{
+			// setup an intent
+			var editIntent = new Intent(this, typeof(AquaintanceEditActivity));
+
+			// Add some identifying item data to the intent. In this case, the id of the acquaintance for which we're about to display the detail screen.
+			editIntent.PutExtra(Resources.GetString(Resource.String.acquaintanceDetailIntentKey), _Acquaintance.Id);
+
+			return editIntent;
 		}
 
 		// determines if the address begins with a number
@@ -302,7 +334,7 @@ namespace Acquaint.Native.Droid
 
 			int originalNumber;
 
-		    Int32.TryParse(address.Substring(0, endingIndex + 1), out originalNumber);
+			Int32.TryParse(address.Substring(0, endingIndex + 1), out originalNumber);
 
 			if (originalNumber == 0)
 				return address;

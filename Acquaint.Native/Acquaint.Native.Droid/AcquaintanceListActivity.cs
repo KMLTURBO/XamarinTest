@@ -20,7 +20,7 @@ namespace Acquaint.Native.Droid
 	/// Acquaintance list activity.
 	/// </summary>
 	[Activity]
-	public class AcquaintanceListActivity : AppCompatActivity //, Transition.ITransitionListener
+	public class AcquaintanceListActivity : AppCompatActivity
 	{
 		// This override is called only once during the activity's lifecycle, when it is created.
 		protected override async void OnCreate(Bundle savedInstanceState)
