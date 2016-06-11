@@ -75,7 +75,7 @@ namespace Acquaint.Native.Droid
 		void SetupViews(View layout, Bundle savedInstanceState)
 		{
 			// inflate the content layout
-			_ContentLayout = layout.FindViewById<LinearLayout>(Resource.Id.contentLayout);
+			_ContentLayout = layout.FindViewById<LinearLayout>(Resource.Id.acquaintanceDetailContentLayout);
 
 			// inflate and set the profile image view
 			var profilePhotoImageView = _ContentLayout.FindViewById<ImageViewAsync>(Resource.Id.profilePhotoImageView);
