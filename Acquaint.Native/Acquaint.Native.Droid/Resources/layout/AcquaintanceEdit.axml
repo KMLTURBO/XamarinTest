@@ -184,46 +184,99 @@
                         android:layout_gravity="center_vertical" />
                 </LinearLayout>
             <!-- address section -->
-            <!--<TextView
-                    android:id="@+id/nameSectionTitleTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:textColor="@color/tableSectionHeaderText"
-                    android:textSize="16dp"
-                    android:paddingBottom="5dp" />
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp">
+                    android:layout_height="44dp">
                     <TextView
-                        android:id="@+id/firstNameLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:textSize="16dp"
-                        android:paddingBottom="5dp"/>
-                    <EditText
-                        android:id="@+id/firstNameField"
-                        android:layout_width="fill_parent"
+                        android:id="@+id/addressSectionTitleTextView"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="text" />
+                        android:textColor="@color/tableSectionHeaderText"
+                        android:textSize="14dp"
+                        android:paddingLeft="15dp"
+                        android:layout_gravity="center_vertical" />
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp">
+                    android:layout_height="60dp">
                     <TextView
-                        android:id="@+id/lastNameLabel"
+                        android:id="@+id/streetLabel"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:textSize="16dp"
-                        android:paddingBottom="5dp" />
+                        android:paddingLeft="15dp"
+                        android:layout_gravity="center_vertical" />
                     <EditText
-                        android:id="@+id/lastNameField"
+                        android:id="@+id/streetField"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
-                        android:inputType="text" />
-                </LinearLayout>-->
+                        android:layout_marginRight="10dp"
+                        android:inputType="textPostalAddress"
+                        android:layout_gravity="center_vertical" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+                    <TextView
+                        android:id="@+id/cityLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:paddingLeft="15dp"
+                        android:layout_gravity="center_vertical" />
+                    <EditText
+                        android:id="@+id/cityField"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:layout_marginRight="10dp"
+                        android:inputType="text"
+                        android:layout_gravity="center_vertical" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+                    <TextView
+                        android:id="@+id/stateLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:paddingLeft="15dp"
+                        android:layout_gravity="center_vertical" />
+                    <EditText
+                        android:id="@+id/stateField"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:layout_marginRight="10dp"
+                        android:inputType="textCapCharacters"
+                        android:layout_gravity="center_vertical" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+                    <TextView
+                        android:id="@+id/zipLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:paddingLeft="15dp"
+                        android:layout_gravity="center_vertical" />
+                    <EditText
+                        android:id="@+id/zipField"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:layout_marginRight="10dp"
+                        android:inputType="number"
+                        android:layout_gravity="center_vertical" />
+                </LinearLayout>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

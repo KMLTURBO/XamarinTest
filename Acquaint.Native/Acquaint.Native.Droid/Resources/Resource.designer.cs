@@ -2041,20 +2041,23 @@ namespace Acquaint.Native.Droid
 			// aapt resource value: 0x7f0c0075
 			public const int acquaintanceDetailContentLayout = 2131492981;
 			
-			// aapt resource value: 0x7f0c00ae
-			public const int acquaintanceEditButton = 2131493038;
+			// aapt resource value: 0x7f0c00b7
+			public const int acquaintanceEditButton = 2131493047;
 			
 			// aapt resource value: 0x7f0c0088
 			public const int acquaintanceEditContentLayout = 2131493000;
 			
-			// aapt resource value: 0x7f0c00a0
-			public const int acquaintanceRecyclerView = 2131493024;
-			
-			// aapt resource value: 0x7f0c0098
-			public const int acquaintanceRow = 2131493016;
+			// aapt resource value: 0x7f0c00a9
+			public const int acquaintanceRecyclerView = 2131493033;
 			
 			// aapt resource value: 0x7f0c00a1
-			public const int action0 = 2131493025;
+			public const int acquaintanceRow = 2131493025;
+			
+			// aapt resource value: 0x7f0c00b8
+			public const int acquaintanceSaveButton = 2131493048;
+			
+			// aapt resource value: 0x7f0c00aa
+			public const int action0 = 2131493034;
 			
 			// aapt resource value: 0x7f0c0065
 			public const int action_bar = 2131492965;
@@ -2080,8 +2083,8 @@ namespace Acquaint.Native.Droid
 			// aapt resource value: 0x7f0c0066
 			public const int action_context_bar = 2131492966;
 			
-			// aapt resource value: 0x7f0c00a5
-			public const int action_divider = 2131493029;
+			// aapt resource value: 0x7f0c00ae
+			public const int action_divider = 2131493038;
 			
 			// aapt resource value: 0x7f0c0004
 			public const int action_menu_divider = 2131492868;
@@ -2103,6 +2106,9 @@ namespace Acquaint.Native.Droid
 			
 			// aapt resource value: 0x7f0c007a
 			public const int addressHorizontalLayout = 2131492986;
+			
+			// aapt resource value: 0x7f0c0098
+			public const int addressSectionTitleTextView = 2131493016;
 			
 			// aapt resource value: 0x7f0c007c
 			public const int addressVerticalLayout = 2131492988;
@@ -2131,8 +2137,8 @@ namespace Acquaint.Native.Droid
 			// aapt resource value: 0x7f0c004f
 			public const int buttonPanel = 2131492943;
 			
-			// aapt resource value: 0x7f0c00a2
-			public const int cancel_action = 2131493026;
+			// aapt resource value: 0x7f0c00ab
+			public const int cancel_action = 2131493035;
 			
 			// aapt resource value: 0x7f0c0020
 			public const int center = 2131492896;
@@ -2146,8 +2152,14 @@ namespace Acquaint.Native.Droid
 			// aapt resource value: 0x7f0c005d
 			public const int checkbox = 2131492957;
 			
-			// aapt resource value: 0x7f0c00a8
-			public const int chronometer = 2131493032;
+			// aapt resource value: 0x7f0c00b1
+			public const int chronometer = 2131493041;
+			
+			// aapt resource value: 0x7f0c009c
+			public const int cityField = 2131493020;
+			
+			// aapt resource value: 0x7f0c009b
+			public const int cityLabel = 2131493019;
 			
 			// aapt resource value: 0x7f0c007e
 			public const int cityTextView = 2131492990;
@@ -2191,17 +2203,17 @@ namespace Acquaint.Native.Droid
 			// aapt resource value: 0x7f0c004b
 			public const int default_activity_button = 2131492939;
 			
-			// aapt resource value: 0x7f0c009f
-			public const int design_menu_item_action_area = 2131493023;
+			// aapt resource value: 0x7f0c00a8
+			public const int design_menu_item_action_area = 2131493032;
 			
-			// aapt resource value: 0x7f0c009e
-			public const int design_menu_item_action_area_stub = 2131493022;
+			// aapt resource value: 0x7f0c00a7
+			public const int design_menu_item_action_area_stub = 2131493031;
 			
-			// aapt resource value: 0x7f0c009d
-			public const int design_menu_item_text = 2131493021;
+			// aapt resource value: 0x7f0c00a6
+			public const int design_menu_item_text = 2131493030;
 			
-			// aapt resource value: 0x7f0c009c
-			public const int design_navigation_view = 2131493020;
+			// aapt resource value: 0x7f0c00a5
+			public const int design_navigation_view = 2131493029;
 			
 			// aapt resource value: 0x7f0c0032
 			public const int disableHome = 2131492914;
@@ -2230,8 +2242,8 @@ namespace Acquaint.Native.Droid
 			// aapt resource value: 0x7f0c0023
 			public const int end = 2131492899;
 			
-			// aapt resource value: 0x7f0c00ad
-			public const int end_padder = 2131493037;
+			// aapt resource value: 0x7f0c00b6
+			public const int end_padder = 2131493046;
 			
 			// aapt resource value: 0x7f0c0018
 			public const int enterAlways = 2131492888;
@@ -2290,8 +2302,8 @@ namespace Acquaint.Native.Droid
 			// aapt resource value: 0x7f0c004a
 			public const int image = 2131492938;
 			
-			// aapt resource value: 0x7f0c00ac
-			public const int info = 2131493036;
+			// aapt resource value: 0x7f0c00b5
+			public const int info = 2131493045;
 			
 			// aapt resource value: 0x7f0c0001
 			public const int item_touch_helper_previous_elevation = 2131492865;
@@ -2317,11 +2329,11 @@ namespace Acquaint.Native.Droid
 			// aapt resource value: 0x7f0c0015
 			public const int light = 2131492885;
 			
-			// aapt resource value: 0x7f0c00a6
-			public const int line1 = 2131493030;
+			// aapt resource value: 0x7f0c00af
+			public const int line1 = 2131493039;
 			
-			// aapt resource value: 0x7f0c00aa
-			public const int line3 = 2131493034;
+			// aapt resource value: 0x7f0c00b3
+			public const int line3 = 2131493043;
 			
 			// aapt resource value: 0x7f0c0030
 			public const int listMode = 2131492912;
@@ -2332,8 +2344,8 @@ namespace Acquaint.Native.Droid
 			// aapt resource value: 0x7f0c0087
 			public const int map = 2131492999;
 			
-			// aapt resource value: 0x7f0c00a4
-			public const int media_actions = 2131493028;
+			// aapt resource value: 0x7f0c00ad
+			public const int media_actions = 2131493037;
 			
 			// aapt resource value: 0x7f0c0081
 			public const int messageActionImageView = 2131492993;
@@ -2353,8 +2365,8 @@ namespace Acquaint.Native.Droid
 			// aapt resource value: 0x7f0c0077
 			public const int nameTextView = 2131492983;
 			
-			// aapt resource value: 0x7f0c009b
-			public const int navigation_header_container = 2131493019;
+			// aapt resource value: 0x7f0c00a4
+			public const int navigation_header_container = 2131493028;
 			
 			// aapt resource value: 0x7f0c0042
 			public const int never = 2131492930;
@@ -2470,11 +2482,11 @@ namespace Acquaint.Native.Droid
 			// aapt resource value: 0x7f0c0036
 			public const int showTitle = 2131492918;
 			
-			// aapt resource value: 0x7f0c009a
-			public const int snackbar_action = 2131493018;
+			// aapt resource value: 0x7f0c00a3
+			public const int snackbar_action = 2131493027;
 			
-			// aapt resource value: 0x7f0c0099
-			public const int snackbar_text = 2131493017;
+			// aapt resource value: 0x7f0c00a2
+			public const int snackbar_text = 2131493026;
 			
 			// aapt resource value: 0x7f0c001c
 			public const int snap = 2131492892;
@@ -2500,14 +2512,26 @@ namespace Acquaint.Native.Droid
 			// aapt resource value: 0x7f0c0027
 			public const int start = 2131492903;
 			
+			// aapt resource value: 0x7f0c009e
+			public const int stateField = 2131493022;
+			
+			// aapt resource value: 0x7f0c009d
+			public const int stateLabel = 2131493021;
+			
 			// aapt resource value: 0x7f0c007f
 			public const int statePostalTextView = 2131492991;
 			
-			// aapt resource value: 0x7f0c00a3
-			public const int status_bar_latest_event_content = 2131493027;
+			// aapt resource value: 0x7f0c00ac
+			public const int status_bar_latest_event_content = 2131493036;
 			
 			// aapt resource value: 0x7f0c007d
 			public const int streetAddressTextView = 2131492989;
+			
+			// aapt resource value: 0x7f0c009a
+			public const int streetField = 2131493018;
+			
+			// aapt resource value: 0x7f0c0099
+			public const int streetLabel = 2131493017;
 			
 			// aapt resource value: 0x7f0c0070
 			public const int submit_area = 2131492976;
@@ -2518,17 +2542,17 @@ namespace Acquaint.Native.Droid
 			// aapt resource value: 0x7f0c000f
 			public const int terrain = 2131492879;
 			
-			// aapt resource value: 0x7f0c00ab
-			public const int text = 2131493035;
+			// aapt resource value: 0x7f0c00b4
+			public const int text = 2131493044;
 			
-			// aapt resource value: 0x7f0c00a9
-			public const int text2 = 2131493033;
+			// aapt resource value: 0x7f0c00b2
+			public const int text2 = 2131493042;
 			
 			// aapt resource value: 0x7f0c0058
 			public const int textSpacerNoButtons = 2131492952;
 			
-			// aapt resource value: 0x7f0c00a7
-			public const int time = 2131493031;
+			// aapt resource value: 0x7f0c00b0
+			public const int time = 2131493040;
 			
 			// aapt resource value: 0x7f0c004e
 			public const int title = 2131492942;
@@ -2562,6 +2586,12 @@ namespace Acquaint.Native.Droid
 			
 			// aapt resource value: 0x7f0c0044
 			public const int wrap_content = 2131492932;
+			
+			// aapt resource value: 0x7f0c00a0
+			public const int zipField = 2131493024;
+			
+			// aapt resource value: 0x7f0c009f
+			public const int zipLabel = 2131493023;
 			
 			static Id()
 			{
@@ -2784,6 +2814,9 @@ namespace Acquaint.Native.Droid
 			
 			// aapt resource value: 0x7f0e0000
 			public const int AcquaintanceDetailMenu = 2131623936;
+			
+			// aapt resource value: 0x7f0e0001
+			public const int AcquaintanceEditMenu = 2131623937;
 			
 			static Menu()
 			{

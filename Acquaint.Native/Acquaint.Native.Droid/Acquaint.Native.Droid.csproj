@@ -214,6 +214,7 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\edit.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\fab_add.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\save.png" />
+    <AndroidResource Include="Resources\menu\AcquaintanceEditMenu.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>

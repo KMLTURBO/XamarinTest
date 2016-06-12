@@ -37,7 +37,7 @@ namespace Acquaint.Native.Droid
 			SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 			SupportActionBar.SetHomeButtonEnabled(true);
 
-			// extract the acquaintance id fomr the intent
+			// extract the acquaintance id from the intent
 			var acquaintanceId = Intent.GetStringExtra(GetString(Resource.String.acquaintanceEditIntentKey));
 
 			// fetch the acquaintance based on the id
@@ -77,6 +77,28 @@ namespace Acquaint.Native.Droid
 
 			_ContentLayout.InflateAndBindTextView(Resource.Id.emailLabel, "Email");
 			_ContentLayout.InflateAndBindTextView(Resource.Id.emailField, _Acquaintance.Email);
+
+
+			_ContentLayout.InflateAndBindTextView(Resource.Id.addressSectionTitleTextView, "Address");
+
+			_ContentLayout.InflateAndBindTextView(Resource.Id.streetLabel, "Street");
+			_ContentLayout.InflateAndBindTextView(Resource.Id.streetField, _Acquaintance.Street);
+
+			_ContentLayout.InflateAndBindTextView(Resource.Id.cityLabel, "City");
+			_ContentLayout.InflateAndBindTextView(Resource.Id.cityField, _Acquaintance.City);
+
+			_ContentLayout.InflateAndBindTextView(Resource.Id.stateLabel, "State");
+			_ContentLayout.InflateAndBindTextView(Resource.Id.stateField, _Acquaintance.State);
+
+			_ContentLayout.InflateAndBindTextView(Resource.Id.zipLabel, "Zip");
+			_ContentLayout.InflateAndBindTextView(Resource.Id.zipField, _Acquaintance.PostalCode);
+		}
+
+		public override bool OnCreateOptionsMenu(IMenu menu)
+		{
+			MenuInflater.Inflate(Resource.Menu.AcquaintanceEditMenu, menu);
+
+			return base.OnCreateOptionsMenu(menu);
 		}
 
 		// this override is called when the back button is tapped
@@ -88,6 +110,10 @@ namespace Acquaint.Native.Droid
 				{
 				case Android.Resource.Id.Home:
 					// execute a back navigation
+					OnBackPressed();
+					break;
+				case Resource.Id.acquaintanceSaveButton:
+					// TODO: implement save actions and navigate back
 					OnBackPressed();
 					break;
 				}

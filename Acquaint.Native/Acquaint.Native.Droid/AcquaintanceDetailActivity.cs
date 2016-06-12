@@ -58,7 +58,7 @@ namespace Acquaint.Native.Droid
 			SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 			SupportActionBar.SetHomeButtonEnabled(true);
 
-			// extract the acquaintance id fomr the intent
+			// extract the acquaintance id from the intent
 			var acquaintanceId = Intent.GetStringExtra(GetString(Resource.String.acquaintanceDetailIntentKey));
 
 			// fetch the acquaintance based on the id
