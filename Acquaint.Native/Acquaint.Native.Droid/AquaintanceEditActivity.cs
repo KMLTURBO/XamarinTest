@@ -98,7 +98,7 @@ namespace Acquaint.Native.Droid
 			_ContentLayout.InflateAndBindTextView(Resource.Id.stateLabel, "State");
 			_StateField = _ContentLayout.InflateAndBindEditText(Resource.Id.stateField, _Acquaintance.State);
 
-			_ContentLayout.InflateAndBindTextView(Resource.Id.zipLabel, "Zip");
+			_ContentLayout.InflateAndBindTextView(Resource.Id.zipLabel, "ZIP");
 			_ZipField = _ContentLayout.InflateAndBindEditText(Resource.Id.zipField, _Acquaintance.PostalCode);
 		}
 
