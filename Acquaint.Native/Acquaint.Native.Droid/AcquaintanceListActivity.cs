@@ -39,7 +39,7 @@ namespace Acquaint.Native.Droid
 			var layoutManager = new LinearLayoutManager(this);
 
 			// set the content view
-			SetContentView(Resource.Layout.Main);
+			SetContentView(Resource.Layout.AcquaintanceList);
 
 			// setup the action bar
 			SetSupportActionBar(FindViewById<Toolbar>(Resource.Id.toolbar));
@@ -148,7 +148,7 @@ namespace Acquaint.Native.Droid
 			// assign values to the views' text properties
 		    if (viewHolder == null) return;
 
-		    viewHolder.NameTextView.Text = acquaintance.DisplayName;
+			viewHolder.NameTextView.Text = acquaintance.DisplayLastNameFirst;
 		    viewHolder.CompanyTextView.Text = acquaintance.Company;
 		    viewHolder.JobTitleTextView.Text = acquaintance.JobTitle;
 

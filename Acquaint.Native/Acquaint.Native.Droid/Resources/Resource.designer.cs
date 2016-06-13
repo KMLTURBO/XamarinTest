@@ -2047,11 +2047,11 @@ namespace Acquaint.Native.Droid
 			// aapt resource value: 0x7f0c0087
 			public const int acquaintanceEditContentLayout = 2131492999;
 			
-			// aapt resource value: 0x7f0c00a9
-			public const int acquaintanceRecyclerView = 2131493033;
-			
 			// aapt resource value: 0x7f0c00a0
-			public const int acquaintanceRow = 2131493024;
+			public const int acquaintanceRecyclerView = 2131493024;
+			
+			// aapt resource value: 0x7f0c00a1
+			public const int acquaintanceRow = 2131493025;
 			
 			// aapt resource value: 0x7f0c00b8
 			public const int acquaintanceSaveButton = 2131493048;
@@ -2203,17 +2203,17 @@ namespace Acquaint.Native.Droid
 			// aapt resource value: 0x7f0c004b
 			public const int default_activity_button = 2131492939;
 			
+			// aapt resource value: 0x7f0c00a9
+			public const int design_menu_item_action_area = 2131493033;
+			
 			// aapt resource value: 0x7f0c00a8
-			public const int design_menu_item_action_area = 2131493032;
+			public const int design_menu_item_action_area_stub = 2131493032;
 			
 			// aapt resource value: 0x7f0c00a7
-			public const int design_menu_item_action_area_stub = 2131493031;
+			public const int design_menu_item_text = 2131493031;
 			
 			// aapt resource value: 0x7f0c00a6
-			public const int design_menu_item_text = 2131493030;
-			
-			// aapt resource value: 0x7f0c00a5
-			public const int design_navigation_view = 2131493029;
+			public const int design_navigation_view = 2131493030;
 			
 			// aapt resource value: 0x7f0c0032
 			public const int disableHome = 2131492914;
@@ -2362,11 +2362,11 @@ namespace Acquaint.Native.Droid
 			// aapt resource value: 0x7f0c0088
 			public const int nameSectionTitleTextView = 2131493000;
 			
-			// aapt resource value: 0x7f0c00a1
-			public const int nameTextView = 2131493025;
+			// aapt resource value: 0x7f0c00a2
+			public const int nameTextView = 2131493026;
 			
-			// aapt resource value: 0x7f0c00a4
-			public const int navigation_header_container = 2131493028;
+			// aapt resource value: 0x7f0c00a5
+			public const int navigation_header_container = 2131493029;
 			
 			// aapt resource value: 0x7f0c0042
 			public const int never = 2131492930;
@@ -2482,11 +2482,11 @@ namespace Acquaint.Native.Droid
 			// aapt resource value: 0x7f0c0036
 			public const int showTitle = 2131492918;
 			
-			// aapt resource value: 0x7f0c00a3
-			public const int snackbar_action = 2131493027;
+			// aapt resource value: 0x7f0c00a4
+			public const int snackbar_action = 2131493028;
 			
-			// aapt resource value: 0x7f0c00a2
-			public const int snackbar_text = 2131493026;
+			// aapt resource value: 0x7f0c00a3
+			public const int snackbar_text = 2131493027;
 			
 			// aapt resource value: 0x7f0c001c
 			public const int snap = 2131492892;
@@ -2722,43 +2722,43 @@ namespace Acquaint.Native.Droid
 			public const int AcquaintanceEdit = 2130968602;
 			
 			// aapt resource value: 0x7f04001b
-			public const int AcquaintanceRow = 2130968603;
+			public const int AcquaintanceList = 2130968603;
 			
 			// aapt resource value: 0x7f04001c
-			public const int design_layout_snackbar = 2130968604;
+			public const int AcquaintanceRow = 2130968604;
 			
 			// aapt resource value: 0x7f04001d
-			public const int design_layout_snackbar_include = 2130968605;
+			public const int design_layout_snackbar = 2130968605;
 			
 			// aapt resource value: 0x7f04001e
-			public const int design_layout_tab_icon = 2130968606;
+			public const int design_layout_snackbar_include = 2130968606;
 			
 			// aapt resource value: 0x7f04001f
-			public const int design_layout_tab_text = 2130968607;
+			public const int design_layout_tab_icon = 2130968607;
 			
 			// aapt resource value: 0x7f040020
-			public const int design_menu_item_action_area = 2130968608;
+			public const int design_layout_tab_text = 2130968608;
 			
 			// aapt resource value: 0x7f040021
-			public const int design_navigation_item = 2130968609;
+			public const int design_menu_item_action_area = 2130968609;
 			
 			// aapt resource value: 0x7f040022
-			public const int design_navigation_item_header = 2130968610;
+			public const int design_navigation_item = 2130968610;
 			
 			// aapt resource value: 0x7f040023
-			public const int design_navigation_item_separator = 2130968611;
+			public const int design_navigation_item_header = 2130968611;
 			
 			// aapt resource value: 0x7f040024
-			public const int design_navigation_item_subheader = 2130968612;
+			public const int design_navigation_item_separator = 2130968612;
 			
 			// aapt resource value: 0x7f040025
-			public const int design_navigation_menu = 2130968613;
+			public const int design_navigation_item_subheader = 2130968613;
 			
 			// aapt resource value: 0x7f040026
-			public const int design_navigation_menu_item = 2130968614;
+			public const int design_navigation_menu = 2130968614;
 			
 			// aapt resource value: 0x7f040027
-			public const int Main = 2130968615;
+			public const int design_navigation_menu_item = 2130968615;
 			
 			// aapt resource value: 0x7f040028
 			public const int notification_media_action = 2130968616;
