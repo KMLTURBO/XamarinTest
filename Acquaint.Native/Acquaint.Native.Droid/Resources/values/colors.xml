@@ -5,4 +5,5 @@
 	<color name="accent">#91a2b7</color>
 	<color name="launchStatusBar">#3967d1</color>
 	<color name="window_background">#F5F5F5</color>
+	<color name="tableSectionHeaderText">#50bfe9</color>
 </resources>

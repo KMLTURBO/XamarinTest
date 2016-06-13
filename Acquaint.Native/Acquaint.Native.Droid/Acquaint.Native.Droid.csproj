@@ -122,6 +122,7 @@
     <Compile Include="MainApplication.cs" />
     <Compile Include="AcquaintanceListActivity.cs" />
     <Compile Include="SplashActivity.cs" />
+    <Compile Include="AquaintanceEditActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -185,6 +186,35 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\splash.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\splash.png" />
+    <AndroidResource Include="Resources\layout\AcquaintanceEdit.axml" />
+    <AndroidResource Include="Resources\menu\AcquaintanceDetailMenu.axml" />
+    <AndroidResource Include="Resources\mipmap\directions.png" />
+    <AndroidResource Include="Resources\mipmap\edit.png" />
+    <AndroidResource Include="Resources\mipmap\email.png" />
+    <AndroidResource Include="Resources\mipmap\fab_add.png" />
+    <AndroidResource Include="Resources\mipmap\message.png" />
+    <AndroidResource Include="Resources\mipmap\phone.png" />
+    <AndroidResource Include="Resources\mipmap\placeholderProfileImage.png" />
+    <AndroidResource Include="Resources\mipmap\save.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\edit.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\fab_add.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\save.png" />
+    <AndroidResource Include="Resources\mipmap-ldpi\edit.png" />
+    <AndroidResource Include="Resources\mipmap-ldpi\fab_add.png" />
+    <AndroidResource Include="Resources\mipmap-ldpi\save.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\edit.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\fab_add.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\save.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\edit.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\fab_add.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\save.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\edit.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\fab_add.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\save.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\edit.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\fab_add.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\save.png" />
+    <AndroidResource Include="Resources\menu\AcquaintanceEditMenu.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
@@ -193,6 +223,7 @@
     <Folder Include="Resources\drawable\" />
     <Folder Include="Resources\transition\" />
     <Folder Include="Resources\mipmap\" />
+    <Folder Include="Resources\menu\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\alvingray.jpg" />

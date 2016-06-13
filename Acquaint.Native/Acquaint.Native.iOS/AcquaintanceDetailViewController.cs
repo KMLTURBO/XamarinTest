@@ -5,7 +5,6 @@ using CoreGraphics;
 using CoreLocation;
 using FFImageLoading;
 using FFImageLoading.Transformations;
-using Foundation;
 using MapKit;
 using ObjCRuntime;
 using Plugin.ExternalMaps;
