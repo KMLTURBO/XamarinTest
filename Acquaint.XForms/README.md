@@ -37,7 +37,7 @@ Insert it in the Android project: `~/Properties/AndroidManifest.xml`:
 The app has three main screens:
 * a list screen
 * a read-only detail screen
-* an editable detail screen (currently in Forms version only)
+* an editable detail screen
 
 ##People
 
