@@ -25,6 +25,23 @@ namespace Acquaint.Native.Droid
 			return textView;
 		}
 
+		public static EditText InflateAndBindEditText(this View parentView, int textViewResourceId, string text)
+		{
+			EditText editText = null;
+
+			if (parentView != null)
+			{
+				editText = parentView.FindViewById<EditText>(textViewResourceId);
+
+				if (editText != null)
+				{
+					editText.Text = text;
+				}
+			}
+
+			return editText;
+		}
+
 		public static ImageViewAsync InflateAndBindRemoteImageView(this View parentView, int imageViewResourceId, string imageUrl)
 		{
 			ImageViewAsync imageView = null;

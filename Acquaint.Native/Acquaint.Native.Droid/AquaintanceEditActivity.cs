@@ -1,4 +1,6 @@
-﻿using Acquaint.Data;
+﻿using System;
+using System.Threading.Tasks;
+using Acquaint.Data;
 using Android.App;
 using Android.OS;
 using Android.Support.V7.App;
@@ -11,14 +13,19 @@ namespace Acquaint.Native.Droid
 	[Activity]
 	public class AquaintanceEditActivity : AppCompatActivity
 	{
-		readonly IDataSource<Acquaintance> _AcquaintanceDataSource;
 		Acquaintance _Acquaintance;
 		View _ContentLayout;
 
-		public AquaintanceEditActivity()
-		{
-			_AcquaintanceDataSource = new AcquaintanceDataSource();
-		}
+		EditText _FirstNameField;
+		EditText _LastNameField;
+		EditText _CompanyField;
+		EditText _JobTitleField;
+		EditText _PhoneField;
+		EditText _EmailField;
+		EditText _StreetField;
+		EditText _CityField;
+		EditText _StateField;
+		EditText _ZipField;
 
 		protected override async void OnCreate(Bundle savedInstanceState)
 		{
@@ -41,57 +48,58 @@ namespace Acquaint.Native.Droid
 			var acquaintanceId = Intent.GetStringExtra(GetString(Resource.String.acquaintanceEditIntentKey));
 
 			// fetch the acquaintance based on the id
-			_Acquaintance = await _AcquaintanceDataSource.GetItem(acquaintanceId);
+			_Acquaintance = await MainApplication.AcquaintanceDataSource.GetItem(acquaintanceId);
+
+			Title = SupportActionBar.Title = "";
 
 			SetupViews(acquaintanceEditLayout, savedInstanceState);
 		}
 
 		void SetupViews(View layout, Bundle savedInstanceState)
 		{
-			// inflate the content layout
 			_ContentLayout = layout.FindViewById<LinearLayout>(Resource.Id.acquaintanceEditContentLayout);
 
 
 			_ContentLayout.InflateAndBindTextView(Resource.Id.nameSectionTitleTextView, "Name");
 
 			_ContentLayout.InflateAndBindTextView(Resource.Id.firstNameLabel, "First");
-			_ContentLayout.InflateAndBindTextView(Resource.Id.firstNameField, _Acquaintance.FirstName);
+			_FirstNameField = _ContentLayout.InflateAndBindEditText(Resource.Id.firstNameField, _Acquaintance.FirstName);
 
 			_ContentLayout.InflateAndBindTextView(Resource.Id.lastNameLabel, "Last");
-			_ContentLayout.InflateAndBindTextView(Resource.Id.lastNameField, _Acquaintance.LastName);
+			_LastNameField = _ContentLayout.InflateAndBindEditText(Resource.Id.lastNameField, _Acquaintance.LastName);
 
 
 			_ContentLayout.InflateAndBindTextView(Resource.Id.employmentSectionTitleTextView, "Employment");
 
 			_ContentLayout.InflateAndBindTextView(Resource.Id.companyLabel, "Company");
-			_ContentLayout.InflateAndBindTextView(Resource.Id.companyField, _Acquaintance.Company);
+			_CompanyField = _ContentLayout.InflateAndBindEditText(Resource.Id.companyField, _Acquaintance.Company);
 
 			_ContentLayout.InflateAndBindTextView(Resource.Id.jobTitleLabel, "Title");
-			_ContentLayout.InflateAndBindTextView(Resource.Id.jobTitleField, _Acquaintance.JobTitle);
+			_JobTitleField = _ContentLayout.InflateAndBindEditText(Resource.Id.jobTitleField, _Acquaintance.JobTitle);
 
 
 			_ContentLayout.InflateAndBindTextView(Resource.Id.contactSectionTitleTextView, "Contact");
 
 			_ContentLayout.InflateAndBindTextView(Resource.Id.phoneNumberLabel, "Phone");
-			_ContentLayout.InflateAndBindTextView(Resource.Id.phoneNumberField, _Acquaintance.Phone);
+			_PhoneField = _ContentLayout.InflateAndBindEditText(Resource.Id.phoneNumberField, _Acquaintance.Phone);
 
 			_ContentLayout.InflateAndBindTextView(Resource.Id.emailLabel, "Email");
-			_ContentLayout.InflateAndBindTextView(Resource.Id.emailField, _Acquaintance.Email);
+			_EmailField = _ContentLayout.InflateAndBindEditText(Resource.Id.emailField, _Acquaintance.Email);
 
 
 			_ContentLayout.InflateAndBindTextView(Resource.Id.addressSectionTitleTextView, "Address");
 
 			_ContentLayout.InflateAndBindTextView(Resource.Id.streetLabel, "Street");
-			_ContentLayout.InflateAndBindTextView(Resource.Id.streetField, _Acquaintance.Street);
+			_StreetField = _ContentLayout.InflateAndBindEditText(Resource.Id.streetField, _Acquaintance.Street);
 
 			_ContentLayout.InflateAndBindTextView(Resource.Id.cityLabel, "City");
-			_ContentLayout.InflateAndBindTextView(Resource.Id.cityField, _Acquaintance.City);
+			_CityField = _ContentLayout.InflateAndBindEditText(Resource.Id.cityField, _Acquaintance.City);
 
 			_ContentLayout.InflateAndBindTextView(Resource.Id.stateLabel, "State");
-			_ContentLayout.InflateAndBindTextView(Resource.Id.stateField, _Acquaintance.State);
+			_StateField = _ContentLayout.InflateAndBindEditText(Resource.Id.stateField, _Acquaintance.State);
 
 			_ContentLayout.InflateAndBindTextView(Resource.Id.zipLabel, "Zip");
-			_ContentLayout.InflateAndBindTextView(Resource.Id.zipField, _Acquaintance.PostalCode);
+			_ZipField = _ContentLayout.InflateAndBindEditText(Resource.Id.zipField, _Acquaintance.PostalCode);
 		}
 
 		public override bool OnCreateOptionsMenu(IMenu menu)
@@ -101,25 +109,36 @@ namespace Acquaint.Native.Droid
 			return base.OnCreateOptionsMenu(menu);
 		}
 
-		// this override is called when the back button is tapped
 		public override bool OnOptionsItemSelected(IMenuItem item)
 		{
-			if (item != null)
+			switch (item.ItemId)
 			{
-				switch (item.ItemId)
-				{
-				case Android.Resource.Id.Home:
-					// execute a back navigation
-					OnBackPressed();
-					break;
-				case Resource.Id.acquaintanceSaveButton:
-					// TODO: implement save actions and navigate back
-					OnBackPressed();
-					break;
-				}
+			case Android.Resource.Id.Home:
+				OnBackPressed();
+				break;
+			case Resource.Id.acquaintanceSaveButton:
+				Save();
+				OnBackPressed();
+				break;
 			}
 
 			return base.OnOptionsItemSelected(item);
+		}
+
+		void Save() 
+		{
+			_Acquaintance.FirstName = _FirstNameField.Text;
+			_Acquaintance.LastName = _LastNameField.Text;
+			_Acquaintance.Company = _CompanyField.Text;
+			_Acquaintance.JobTitle = _JobTitleField.Text;
+			_Acquaintance.Phone = _PhoneField.Text;
+			_Acquaintance.Email = _EmailField.Text;
+			_Acquaintance.Street = _StreetField.Text;
+			_Acquaintance.City = _CityField.Text;
+			_Acquaintance.State = _StateField.Text;
+			_Acquaintance.PostalCode = _ZipField.Text;
+
+			MainApplication.AcquaintanceDataSource.SaveItem(_Acquaintance);
 		}
 	}
 }

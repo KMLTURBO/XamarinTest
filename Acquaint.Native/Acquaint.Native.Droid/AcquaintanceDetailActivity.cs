@@ -30,24 +30,23 @@ namespace Acquaint.Native.Droid
 	[Activity]
 	public class AcquaintanceDetailActivity : AppCompatActivity, IOnMapReadyCallback
 	{
-		readonly IDataSource<Acquaintance> _AcquaintanceDataSource;
 		Acquaintance _Acquaintance;
-		View _ContentLayout;
+		string _AcquaintanceId;
 		ImageView _GetDirectionsActionImageView;
 		LatLng _GeocodedLocation;
 
-		public AcquaintanceDetailActivity()
-		{
-			_AcquaintanceDataSource = new AcquaintanceDataSource();
-		}
+		View _MainLayout;
+		Bundle _SavedInstanceState;
 
-		protected override async void OnCreate(Bundle savedInstanceState)
+		protected override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
 
-			var acquaintanceDetailLayout = LayoutInflater.Inflate(Resource.Layout.AcquaintanceDetail, null);
+			_SavedInstanceState = savedInstanceState;
 
-			SetContentView(acquaintanceDetailLayout);
+			_MainLayout = LayoutInflater.Inflate(Resource.Layout.AcquaintanceDetail, null);
+
+			SetContentView(_MainLayout);
 
 			SetSupportActionBar(FindViewById<Toolbar>(Resource.Id.toolbar));
 
@@ -59,26 +58,34 @@ namespace Acquaint.Native.Droid
 			SupportActionBar.SetHomeButtonEnabled(true);
 
 			// extract the acquaintance id from the intent
-			var acquaintanceId = Intent.GetStringExtra(GetString(Resource.String.acquaintanceDetailIntentKey));
+			_AcquaintanceId = Intent.GetStringExtra(GetString(Resource.String.acquaintanceDetailIntentKey));
+		}
+
+		async protected override void OnResume()
+		{
+			base.OnResume();
 
 			// fetch the acquaintance based on the id
-			_Acquaintance = await _AcquaintanceDataSource.GetItem(acquaintanceId);
+			_Acquaintance = await MainApplication.AcquaintanceDataSource.GetItem(_AcquaintanceId);
 
 			// set the activity title and action bar title
 			Title = SupportActionBar.Title = _Acquaintance.DisplayName;
 
-			SetupViews(acquaintanceDetailLayout, savedInstanceState);
+			SetupViews(_MainLayout, _SavedInstanceState);
 
 			SetupAnimations();
 		}
 
+
 		void SetupViews(View layout, Bundle savedInstanceState)
 		{
+			_SavedInstanceState = savedInstanceState;
+
 			// inflate the content layout
-			_ContentLayout = layout.FindViewById<LinearLayout>(Resource.Id.acquaintanceDetailContentLayout);
+			var contentLayout = layout.FindViewById<LinearLayout>(Resource.Id.acquaintanceDetailContentLayout);
 
 			// inflate and set the profile image view
-			var profilePhotoImageView = _ContentLayout.FindViewById<ImageViewAsync>(Resource.Id.profilePhotoImageView);
+			var profilePhotoImageView = contentLayout.FindViewById<ImageViewAsync>(Resource.Id.profilePhotoImageView);
 
 			if (profilePhotoImageView != null)
 			{
@@ -89,26 +96,26 @@ namespace Acquaint.Native.Droid
 				// ImageService.LoadUrl(_Acquaintance.PhotoUrl).Transform(new CircleTransformation()).Into(profilePhotoImageView);
 			}
 
-			// infliate and set the name text view
-			_ContentLayout.InflateAndBindTextView(Resource.Id.nameTextView, _Acquaintance.DisplayName);
+			// inflate and set the name text view
+			contentLayout.InflateAndBindTextView(Resource.Id.nameTextView, _Acquaintance.DisplayName);
 
 			// inflate and set the company name text view
-			_ContentLayout.InflateAndBindTextView(Resource.Id.companyTextView, _Acquaintance.Company);
+			contentLayout.InflateAndBindTextView(Resource.Id.companyTextView, _Acquaintance.Company);
 
 			// inflate and set the job title text view
-			_ContentLayout.InflateAndBindTextView(Resource.Id.jobTitleTextView, _Acquaintance.JobTitle);
+			contentLayout.InflateAndBindTextView(Resource.Id.jobTitleTextView, _Acquaintance.JobTitle);
 
-			_ContentLayout.InflateAndBindTextView(Resource.Id.streetAddressTextView, _Acquaintance.Street);
+			contentLayout.InflateAndBindTextView(Resource.Id.streetAddressTextView, _Acquaintance.Street);
 
-			_ContentLayout.InflateAndBindTextView(Resource.Id.cityTextView, _Acquaintance.City);
+			contentLayout.InflateAndBindTextView(Resource.Id.cityTextView, _Acquaintance.City);
 
-			_ContentLayout.InflateAndBindTextView(Resource.Id.statePostalTextView, _Acquaintance.StatePostal);
+			contentLayout.InflateAndBindTextView(Resource.Id.statePostalTextView, _Acquaintance.StatePostal);
 
-			_ContentLayout.InflateAndBindTextView(Resource.Id.phoneTextView, _Acquaintance.Phone);
+			contentLayout.InflateAndBindTextView(Resource.Id.phoneTextView, _Acquaintance.Phone);
 
-			_ContentLayout.InflateAndBindTextView(Resource.Id.emailTextView, _Acquaintance.Email);
+			contentLayout.InflateAndBindTextView(Resource.Id.emailTextView, _Acquaintance.Email);
 
-			_GetDirectionsActionImageView = _ContentLayout.InflateAndBindLocalImageViewByResource(Resource.Id.getDirectionsActionImageView, Resource.Mipmap.directions);
+			_GetDirectionsActionImageView = contentLayout.InflateAndBindLocalImageViewByResource(Resource.Id.getDirectionsActionImageView, Resource.Mipmap.directions);
 			_GetDirectionsActionImageView.Visibility = ViewStates.Invisible;
 			_GetDirectionsActionImageView.Click += async (sender, e) => {
 				if (_GeocodedLocation != null)
@@ -116,7 +123,7 @@ namespace Acquaint.Native.Droid
 					await CrossExternalMaps.Current.NavigateTo(_Acquaintance.DisplayName, _GeocodedLocation.Latitude, _GeocodedLocation.Longitude, NavigationType.Driving);
 			};
 
-			var messageActionImageView = _ContentLayout.InflateAndBindLocalImageViewByResource(Resource.Id.messageActionImageView, Resource.Mipmap.message);
+			var messageActionImageView = contentLayout.InflateAndBindLocalImageViewByResource(Resource.Id.messageActionImageView, Resource.Mipmap.message);
 			messageActionImageView.Click += (sender, e) => {
 				// we're using the Messaging plugin from Carel Lotz here (included as a NuGet)
 				var smsTask = MessagingPlugin.SmsMessenger;
@@ -124,7 +131,7 @@ namespace Acquaint.Native.Droid
 					smsTask.SendSms(_Acquaintance.Phone.SanitizePhoneNumber(), "");
 			};
 
-			var phoneActionImageView = _ContentLayout.InflateAndBindLocalImageViewByResource(Resource.Id.phoneActionImageView, Resource.Mipmap.phone);
+			var phoneActionImageView = contentLayout.InflateAndBindLocalImageViewByResource(Resource.Id.phoneActionImageView, Resource.Mipmap.phone);
 			phoneActionImageView.Click += (sender, e) => {
 				// we're using the Messaging plugin from Carel Lotz here (included as a NuGet)
 				var phoneCallTask = MessagingPlugin.PhoneDialer;
@@ -132,7 +139,7 @@ namespace Acquaint.Native.Droid
 					phoneCallTask.MakePhoneCall(_Acquaintance.Phone.SanitizePhoneNumber());
 			};
 
-			var emailActionImageView = _ContentLayout.InflateAndBindLocalImageViewByResource(Resource.Id.emailActionImageView, Resource.Mipmap.email);
+			var emailActionImageView = contentLayout.InflateAndBindLocalImageViewByResource(Resource.Id.emailActionImageView, Resource.Mipmap.email);
 			emailActionImageView.Click += (sender, e) => {
 				// we're using the Messaging plugin from Carel Lotz here (included as a NuGet)
 				var emailTask = MessagingPlugin.EmailMessenger;

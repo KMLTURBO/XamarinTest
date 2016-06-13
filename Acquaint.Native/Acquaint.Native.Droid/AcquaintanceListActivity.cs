@@ -22,16 +22,18 @@ namespace Acquaint.Native.Droid
 	[Activity]
 	public class AcquaintanceListActivity : AppCompatActivity
 	{
+		AcquaintanceCollectionAdapter _Adapter;
+
 		// This override is called only once during the activity's lifecycle, when it is created.
 		protected override async void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
 
 			// instantiate adapter
-			var acquaintanceCollectionAdapter = new AcquaintanceCollectionAdapter();
+			_Adapter = new AcquaintanceCollectionAdapter();
 
 			// load the items
-			await acquaintanceCollectionAdapter.LoadAcquaintances();
+			await _Adapter.LoadAcquaintances();
 
 			// instantiate the layout manager
 			var layoutManager = new LinearLayoutManager(this);
@@ -55,7 +57,21 @@ namespace Acquaint.Native.Droid
 			recyclerView.SetLayoutManager(layoutManager);
 
 			// set RecyclerView's adapter
-			recyclerView.SetAdapter(acquaintanceCollectionAdapter);
+			recyclerView.SetAdapter(_Adapter);
+		}
+
+		async protected override void OnRestart()
+		{
+			base.OnRestart();
+
+			await _Adapter.LoadAcquaintances();
+		}
+
+		protected override void OnResume()
+		{
+			base.OnResume();
+
+			_Adapter.Update();
 		}
 	}
 
@@ -90,17 +106,8 @@ namespace Acquaint.Native.Droid
 	/// </summary>
 	internal class AcquaintanceCollectionAdapter : RecyclerView.Adapter, View.IOnClickListener
 	{
-		// a data source field
-	    readonly IDataSource<Acquaintance> _AcquaintanceDataSource;
-
 		// the list of items that this adapter uses
 		public List<Acquaintance> Acquaintances { get; private set; }
-
-		public AcquaintanceCollectionAdapter()
-		{
-			// instantiate the new data source
-			_AcquaintanceDataSource = new AcquaintanceDataSource();
-		}
 
 		/// <summary>
 		/// Loads the acquaintances.
@@ -108,7 +115,12 @@ namespace Acquaint.Native.Droid
 		/// <returns>Task.</returns>
 		public async Task LoadAcquaintances()
 		{
-			Acquaintances = (await _AcquaintanceDataSource.GetItems()).ToList();
+			Acquaintances = (await MainApplication.AcquaintanceDataSource.GetItems()).ToList();
+		}
+
+		public void Update()
+		{
+			NotifyDataSetChanged();
 		}
 
 		// when a RecyclerView itemView is requested, the OnCreateViewHolder() is called
