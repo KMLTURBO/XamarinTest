@@ -222,8 +222,6 @@ namespace Analysis
 					String.Format(paddedFormat, String.Format("{0:p}", sln.UniqueLinesOfCode / (double)sln.TotalLinesOfCode)),
 					String.Format(paddedFormat, String.Format("{0:p}", sln.SharedLinesOfCode / (double)sln.TotalLinesOfCode)));
 			}
-			Console.WriteLine(string.Empty);
-			Console.WriteLine("DONE");
 		}
 	}
 }
